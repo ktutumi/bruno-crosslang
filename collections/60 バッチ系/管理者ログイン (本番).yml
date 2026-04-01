@@ -1,0 +1,24 @@
+info:
+  name: 管理者ログイン (本番)
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/login"
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": "ex-tsutsumi",
+        "passwd": "uvy9hkg.JCX4nxa7fez",
+        "division": "cross",
+        "lang": "ja"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,42 @@
+info:
+  name: GetDictionaryEntry fr
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <!--
+      対訳語辞書エントリ確認
+      -->
+      <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+          xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:GetDictionaryEntry>
+                  <licence>grooo-new_ap_pj/dev01 e2147f5996b8cad48f780ada42a7f16626d9cde5</licence>
+                  <clientid>[local]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+
+                  <did>19216</did>
+                  <format>csv</format>
+                  <rangeStart>0</rangeStart>
+                  <rangeCount>1000</rangeCount>
+              </cl:GetDictionaryEntry>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

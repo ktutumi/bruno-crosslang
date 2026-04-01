@@ -1,0 +1,42 @@
+info:
+  name: GetDictionaryEntry 本番
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: http://210.140.74.149:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <!--
+      対訳語辞書エントリ確認
+      -->
+      <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+          xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:GetDictionaryEntry>
+                  <licence>cross0306_sc/service 69c526e8099e2c09b254ae8237c7b003f4573f9f</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+
+                  <did>48260</did>
+                  <format>csv</format>
+                  <rangeStart>0</rangeStart>
+                  <rangeCount>1000</rangeCount>
+              </cl:GetDictionaryEntry>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

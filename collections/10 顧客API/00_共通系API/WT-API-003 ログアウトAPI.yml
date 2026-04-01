@@ -1,0 +1,23 @@
+info:
+  name: WT-API-003 ログアウトAPI
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/logout"
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": "user22"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidXNlciJdLCJleHAiOjE2MjgzMjczMTUsImp0aSI6InVzZXIyMiIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.CZJqpf-nAnPP2BGd_Wa1zXnP-yA-ZnNJ7JBvrQr1mso
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

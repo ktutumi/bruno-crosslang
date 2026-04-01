@@ -1,0 +1,46 @@
+info:
+  name: Translate HTML クロステスト
+  type: http
+  seq: 17
+
+http:
+  method: POST
+  url: http://210.140.74.149:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:Translate>
+                  <licence>customer-g/service 84fccb8b4f1996999b58038c7b35a00c7853f4a9</licence>
+                  <clientid>[ktutumi-test]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <engine>
+                      <eid>CR-JE-NMT</eid>
+                      <prop><item><key>dictionaries</key><val>49455,49457,701,702</val></item></prop>
+                  </engine>
+                  <rules>
+                      @data html {
+                          fragment: true;
+                          output: hpedit; tag: clid 1;
+                      }
+                  </rules>
+                  <indata>ICA8c3BhbiBjbGFzcz0icG9zdC10YWciPgoJCTxhIGhyZWY9Imh0dHA6Ly9jcm9zczE1LndlYnQtaG9tZXBhZ2UubmV0L2luZGV4LnBocC8yMDEzLzAxLzEwL21hcmt1cC1pbWFnZS1hbGlnbm1lbnQvIj4KCQkJPGkgY2xhc3M9ImZhIGZhLWZvbGRlci1vcGVuLW8iPjwvaT4KCQk8L2E+CgkJPGEgaHJlZj0iaHR0cDovL2Nyb3NzMTUud2VidC1ob21lcGFnZS5uZXQvaW5kZXgucGhwLzIwMTMvMDEvMTAvbWFya3VwLWltYWdlLWFsaWdubWVudC8iIHJlbD0iY2F0ZWdvcnkgdGFnIj4KCQkJPGEgaHJlZj0iaHR0cDovL2Nyb3NzMTUud2VidC1ob21lcGFnZS5uZXQvaW5kZXgucGhwL3RhZy9jc3MvIiByZWw9InRhZyI+Y3NzPC9hPiwKCQkJPGEgaHJlZj0iaHR0cDovL2Nyb3NzMTUud2VidC1ob21lcGFnZS5uZXQvaW5kZXgucGhwL3RhZy9hbGlnbm1lbnQvIiByZWw9InRhZyI+44Ki44Op44Kk44Oh44Oz44OIPC9hPiwKCQkJPGEgaHJlZj0iaHR0cDovL2Nyb3NzMTUud2VidC1ob21lcGFnZS5uZXQvaW5kZXgucGhwL3RhZy9jb250ZW50LyIgcmVsPSJ0YWciPuOCs+ODs+ODhuODs+ODhDwvYT4sCgkJCTxhIGhyZWY9Imh0dHA6Ly9jcm9zczE1LndlYnQtaG9tZXBhZ2UubmV0L2luZGV4LnBocC90YWcvbWFya3VwLyIgcmVsPSJ0YWciPuODnuODvOOCr+OCouODg+ODlzwvYT4sCgkJCTxhIGhyZWY9Imh0dHA6Ly9jcm9zczE1LndlYnQtaG9tZXBhZ2UubmV0L2luZGV4LnBocC90YWcvY2FwdGlvbnMvIiByZWw9InRhZyI+5a2X5bmVPC9hPiwKCQkJPGEgaHJlZj0iaHR0cDovL2Nyb3NzMTUud2VidC1ob21lcGFnZS5uZXQvaW5kZXgucGhwL3RhZy9pbWFnZS8iIHJlbD0idGFnIj7nlLvlg488L2E+CgkJPC9hPgoJPC9zcGFuPgo=</indata>
+              </cl:Translate>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

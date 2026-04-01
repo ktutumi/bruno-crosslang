@@ -1,0 +1,9 @@
+info:
+  name: 顧客統計管理
+  type: folder
+  seq: 1
+
+request:
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidXNlciIsImh0dHBzIl0sImV4cCI6MTcxMDA0Nzg4OCwianRpIjoidXNlcjI0IiwiaXNzIjoid2ViLXRyYW5zZXItYXBpIn0.PqvQ_-VRMF26YLs7yPWjJj_rXS-IfmJMkSwaz12aNk0

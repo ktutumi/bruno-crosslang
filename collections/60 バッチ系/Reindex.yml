@@ -1,0 +1,19 @@
+info:
+  name: Reindex
+  type: http
+  seq: 11
+
+http:
+  method: PUT
+  url: "{{url}}/batch/elastic/reindex?pattern=error-log.*"
+  params:
+    - name: pattern
+      value: error-log.*
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,63 @@
+info:
+  name: WT-API-506 アクセスログ検索
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{url}}/admin/logs/access-logs?page_size=10&offset=0"
+  params:
+    - name: user_id
+      value: ""
+      type: query
+      disabled: true
+    - name: ip
+      value: ""
+      type: query
+      disabled: true
+    - name: start_time1
+      value: ""
+      type: query
+      disabled: true
+    - name: start_time2
+      value: ""
+      type: query
+      disabled: true
+    - name: handling_time
+      value: ""
+      type: query
+      disabled: true
+    - name: log_level
+      value: ""
+      type: query
+      disabled: true
+    - name: message
+      value: ""
+      type: query
+      disabled: true
+    - name: page_size
+      value: "10"
+      type: query
+    - name: offset
+      value: "0"
+      type: query
+    - name: sort
+      value: ""
+      type: query
+      disabled: true
+    - name: order_column
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY3Jvc3MiXSwiZXhwIjoxNjkzNTQ4MzU3LCJqdGkiOiJhZG1pbiIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.Pw-GG-J94CDlz_zy62MsRKuouEzm1JVcy-j0phfhdUo
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

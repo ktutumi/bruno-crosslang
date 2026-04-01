@@ -1,0 +1,24 @@
+info:
+  name: First Lang tosei-hotel.co.jp
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{url}}/sitectl/first_lang?domain=h10.local-transer.net"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: domain
+      value: h10.local-transer.net
+      type: query
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidXNlciIsImh0dHBzIl0sImV4cCI6MTY2MjAxNzExOCwianRpIjoibGFwbHVzL3VzZXIwMSIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.k-JsjcqAStK6x7sJl2weZBwQup543E3iT2dCNqC9-NI
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

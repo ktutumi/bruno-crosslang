@@ -1,0 +1,31 @@
+info:
+  name: WT-API-505 PVUU
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{url}}/statistics/account/data?target_date_from=2024-03-09&target_date_to=2024-03-09&lang_cd=all&domain_id=75&indicator_cd=pvuu"
+  params:
+    - name: target_date_from
+      value: 2024-03-09
+      type: query
+    - name: target_date_to
+      value: 2024-03-09
+      type: query
+    - name: lang_cd
+      value: all
+      type: query
+    - name: domain_id
+      value: "75"
+      type: query
+    - name: indicator_cd
+      value: pvuu
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

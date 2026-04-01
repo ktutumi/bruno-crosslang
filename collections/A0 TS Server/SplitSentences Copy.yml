@@ -1,0 +1,39 @@
+info:
+  name: SplitSentences Copy
+  type: http
+  seq: 30
+
+http:
+  method: POST
+  url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:SplitSentences>
+                  <licence>grooo-new_ap_pj/dev01 e2147f5996b8cad48f780ada42a7f16626d9cde5</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <eid>CR-EJ</eid>
+                  <blocks>
+                    <item><text>【重要】今月のお知らせについて 〜 全てのユーザ様へのメッセージ 〜</text></item>
+                  </blocks>
+              </cl:SplitSentences>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

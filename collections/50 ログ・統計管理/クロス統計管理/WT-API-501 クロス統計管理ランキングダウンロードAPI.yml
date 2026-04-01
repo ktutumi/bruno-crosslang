@@ -1,0 +1,28 @@
+info:
+  name: WT-API-501 クロス統計管理ランキングダウンロードAPI
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{url}}/statistics-download/cross/ranking?target_date_from=2022-12-31&target_date_to=2023-03-31&lang_cd=all&indicator_cd=userdic"
+  params:
+    - name: target_date_from
+      value: 2022-12-31
+      type: query
+    - name: target_date_to
+      value: 2023-03-31
+      type: query
+    - name: lang_cd
+      value: all
+      type: query
+    - name: indicator_cd
+      value: userdic
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

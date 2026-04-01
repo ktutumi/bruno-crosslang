@@ -1,0 +1,10 @@
+opencollection: 1.0.0
+
+info:
+  name: 50 ログ・統計管理
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

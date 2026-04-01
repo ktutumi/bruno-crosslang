@@ -1,0 +1,103 @@
+info:
+  name: "[本番]Translate HTML 基本"
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:Translate>
+                  <licence>jrtk/service 0c35b08f0342a1a827d82d37d26b5c1dd5d3ddd2</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <engine>
+                      <eid>CR-JE-NMT</eid>
+                      <prop>
+                          <item>
+                              <key>dictionaries</key>
+                              <val>55331</val>
+                          </item>
+                       </prop>
+                  </engine>
+                  <rules>
+      @data html {
+        fragment: true;
+        base-url: "https://beans.jrtk.jp/asagaya";
+        
+      }
+
+      .cl-notranslate {
+       content: ignore;
+      }
+
+      a.cl-norewrite, .cl-norewrite a {
+        attribute: href rewrite "{absurl}" !important;
+      }
+
+      img.cl-norewrite, .cl-norewrite img {
+        attribute: src rewrite "{absurl}" !important;
+      }
+
+      input, textarea {
+        attribute: placeholder translate;
+      }
+
+
+      @urlmap RewriteImage {  
+      }
+
+      @urlmap RewriteCSSURL {
+      }
+
+      @urlmap RewriteALinkURL {
+      }
+
+      @rewrite DefaultRewriteURL {
+        if (url matches "^$") return "";
+        if (url matches "^data:") return "{url}";
+        if (url matches "^#") return "{url}";
+        if (url matches "^\\?") return "{url}";
+        
+
+        if (absurl matches "^http") return "{url}";
+
+        
+
+        return "{absurl}";
+      }
+
+      @rewrite RewriteRules {
+        apply @RewriteImage;
+        apply @RewriteCSSURL;
+        apply @RewriteAlinkURL;
+        return @DefaultRewriteURL;
+      }
+
+      :html-url-attributes, :css, :javascript {
+        attribute: * rewrite @RewriteRules;
+      }
+                  </rules>
+                  <indata>PGJvZHkgaWQ9ImFzYWdheWEiIGNsYXNzPSJ2aWV3IHNob3AgaW5kZXggYmYwIHBjIGduX29mZiI+PGRpdiBpZD0ibWFpbiI+PGZvb3Rlcj48ZGl2IGNsYXNzPSJmb290ZXJfbGlzdCBicmFuZF9saW5rIj48ZGl2IGNsYXNzPSJpbm5lciI+PGRsIGNsYXNzPSJzY2xpc3QiPjxkZCBjbGFzcz0iZm9vdGVyX3NjX25hdmkiPjx1bCBjbGFzcz0ic2NfbmF2aSIgY2wtaWQ9IjgzIiBjbC1zdGF0dXM9InRyYW5zbGF0aW5nIiBjbGVsaWQ9IjMwNiI+CiAgICAgICAgPGxpIGNsYXNzPSJhbGwiIGNsZWxpZD0iMzA3Ij48YSBocmVmPSJodHRwczovL2JlYW5zLWpydGstanAtZS5hdGhwLnRyYW5zZXIuY29tLyIgY2xlbGlkPSIzMDgiPkJlYW5zIEdlbmVyYWwgTWFuYWdlcjwvYT48L2xpPgogICAgICAgIDxsaSBjbGFzcz0iYXNhZ2F5YSBjdXJyZW50IiBjbGVsaWQ9IjMwOSI+PGEgaHJlZj0iaHR0cHM6Ly9iZWFucy1qcnRrLWpwLWUuYXRocC50cmFuc2VyLmNvbS9hc2FnYXlhLyIgY2xlbGlkPSIzMTAiPjxzcGFuIGNsZWxpZD0iMzExIj5CZWFuczwvc3Bhbj4gQXNhZ2F5YTwvYT48L2xpPgogICAgICAgIDxsaSBjbGFzcz0iYWthYmFuZSIgY2xlbGlkPSIzMTIiPjxhIGhyZWY9Imh0dHBzOi8vYmVhbnMtanJ0ay1qcC1lLmF0aHAudHJhbnNlci5jb20vYWthYmFuZS8iIGNsZWxpZD0iMzEzIj48c3BhbiBjbGVsaWQ9IjMxNCI+QmVhbnM8L3NwYW4+IEFrYWJhbmU8L2E+PC9saT4KICAgICAgICA8bGkgY2xhc3M9ImthbWVhcmkiIGNsZWxpZD0iMzE1Ij48YSBocmVmPSJodHRwczovL2JlYW5zLWpydGstanAtZS5hdGhwLnRyYW5zZXIuY29tL2thbWVhcmkvIiBjbGVsaWQ9IjMxNiI+PHNwYW4gY2xlbGlkPSIzMTciPkJlYW5zPC9zcGFuPiBLYW1lYXJpPC9hPjwvbGk+CiAgICAgICAgPGxpIGNsYXNzPSJ0b2Rha291ZW4iIGNsZWxpZD0iMzE4Ij48YSBocmVmPSJodHRwczovL2JlYW5zLWpydGstanAtZS5hdGhwLnRyYW5zZXIuY29tL3RvZGFrb3Vlbi8iIGNsZWxpZD0iMzE5Ij48c3BhbiBjbGVsaWQ9IjMyMCI+QmVhbnM8L3NwYW4+IFRvZGFrb2VuPC9hPjwvbGk+CiAgICAgICAgPGxpIGNsYXNzPSJ0b2RhIiBjbGVsaWQ9IjMyMSI+PGEgaHJlZj0iaHR0cHM6Ly9iZWFucy1qcnRrLWpwLWUuYXRocC50cmFuc2VyLmNvbS90b2RhLyIgY2xlbGlkPSIzMjIiPjxzcGFuIGNsZWxpZD0iMzIzIj5CZWFuczwvc3Bhbj4gVG9kYTwvYT48L2xpPgogICAgICAgIDxsaSBjbGFzcz0ibXVzYXNoaXVyYXdhIiBjbGVsaWQ9IjMyNCI+PGEgaHJlZj0iaHR0cHM6Ly9iZWFucy1qcnRrLWpwLWUuYXRocC50cmFuc2VyLmNvbS9tdXNhc2hpdXJhd2EvIiBjbGVsaWQ9IjMyNSI+PHNwYW4gY2xlbGlkPSIzMjYiPkJlYW5zPC9zcGFuPiBNdXNhc2hpLVVyYXdhPC9hPjwvbGk+CiAgICAgICAgPGxpIGNsYXNzPSJ5b25vaG9ubWFjaGkiIGNsZWxpZD0iMzI3Ij48YSBocmVmPSJodHRwczovL2JlYW5zLWpydGstanAtZS5hdGhwLnRyYW5zZXIuY29tL3lvbm9ob25tYWNoaS8iIGNsZWxpZD0iMzI4Ij48c3BhbiBjbGVsaWQ9IjMyOSI+QmVhbnM8L3NwYW4+IFlvbm8tSG9tbWFjaGk8L2E+PC9saT4KICAgICAgICA8bGkgY2xhc3M9Im5pc2hpa2F3YWd1Y2hpIiBjbGVsaWQ9IjMzMCI+PGEgaHJlZj0iaHR0cHM6Ly9iZWFucy1qcnRrLWpwLWUuYXRocC50cmFuc2VyLmNvbS9uaXNoaWthd2FndWNoaS8iIGNsZWxpZD0iMzMxIj48c3BhbiBjbGVsaWQ9IjMzMiI+QmVhbnM8L3NwYW4+IE5pc2hpLUthd2FndWNoaTwvYT48L2xpPgogICAgICAgIDxsaSBjbGFzcz0ibXVzYXNoaW5ha2FoYXJhIiBjbGVsaWQ9IjMzMyI+PGEgaHJlZj0iaHR0cHM6Ly9iZWFucy1qcnRrLWpwLWUuYXRocC50cmFuc2VyLmNvbS9tdXNhc2hpbmFrYWhhcmEvIiBjbGVsaWQ9IjMzNCI+PHNwYW4gY2xlbGlkPSIzMzUiPkJlYW5zPC9zcGFuPiBNdXNhc2hpLU5ha2FoYXJhPC9hPjwvbGk+CiAgICAgICAgPGxpIGNsYXNzPSJzaGluam8iIGNsZWxpZD0iMzM2Ij48YSBocmVmPSJodHRwczovL2JlYW5zLWpydGstanAtZS5hdGhwLnRyYW5zZXIuY29tL3NoaW5qby8iIGNsZWxpZD0iMzM3Ij48c3BhbiBjbGVsaWQ9IjMzOCI+QmVhbnM8L3NwYW4+IE11c2FzaGktU2hpbmpvPC9hPjwvbGk+CiAgICAgICAgPGxpIGNsYXNzPSJuYWtheWFtYSIgY2xlbGlkPSIzMzkiPjxhIGhyZWY9Imh0dHBzOi8vYmVhbnMtanJ0ay1qcC1lLmF0aHAudHJhbnNlci5jb20vbmFrYXlhbWEvIiBjbGVsaWQ9IjM0MCI+PHNwYW4gY2xlbGlkPSIzNDEiPkJlYW5zPC9zcGFuPiBOYWtheWFtYTwvYT48L2xpPgogICAgICAgIDxsaSBjbGFzcz0ic2hpbnN1Z2l0YSIgY2xlbGlkPSIzNDIiPjxhIGhyZWY9Imh0dHBzOi8vYmVhbnMtanJ0ay1qcC1lLmF0aHAudHJhbnNlci5jb20vc2hpbnN1Z2l0YS8iIGNsZWxpZD0iMzQzIj48c3BhbiBjbGVsaWQ9IjM0NCI+QmVhbnM8L3NwYW4+IFNoaW4tU3VnaXRhPC9hPjwvbGk+CiAgICAgICAgPGxpIGNsYXNzPSJob2RvZ2F5YSIgY2xlbGlkPSIzNDUiPjxhIGhyZWY9Imh0dHBzOi8vYmVhbnMtanJ0ay1qcC1lLmF0aHAudHJhbnNlci5jb20vaG9kb2dheWEvIiBjbGVsaWQ9IjM0NiI+PHNwYW4gY2xlbGlkPSIzNDciPkJlYW5zPC9zcGFuPiBIb2RvZ2F5YTwvYT48L2xpPgoKICAgIDwvdWw+PC9kZD48L2RsPjwvZGl2PjwvZGl2PjwvZm9vdGVyPjwvZGl2PjwvYm9keT4=</indata>
+              </cl:Translate>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

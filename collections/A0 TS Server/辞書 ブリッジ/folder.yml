@@ -1,0 +1,7 @@
+info:
+  name: 辞書 ブリッジ
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit

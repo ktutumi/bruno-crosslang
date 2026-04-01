@@ -1,0 +1,93 @@
+info:
+  name: Translate HTML hpedit
+  type: http
+  seq: 20
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |
+      <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/"
+                xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Body xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+          <Translate xmlns="http://crosslanguage.co.jp/clsoap/2/schema">
+            <licence>ktutumi0307_sc/service a7e8ba2069a5bb677b995697f216f892d97d628a</licence>
+            <clientid>ktutumi-dev-wt-sitectl 0.9.0</clientid>
+            <engine>
+              <eid>CR-JE-NMT</eid>
+              <prop></prop>
+            </engine>
+      <rules>
+      @data html {
+        base-url: "https://h40.local-transer.net/test.html";
+      }
+
+      .cl-notranslate {
+       content: ignore;
+      }
+
+      a.cl-norewrite, .cl-norewrite a {
+        attribute: href rewrite "{absurl}" !important;
+      }
+
+      img.cl-norewrite, .cl-norewrite img {
+        attribute: src rewrite "{absurl}" !important;
+      }
+
+      input, textarea {
+        attribute: placeholder translate;
+      }
+
+      @urlmap RewriteImage {
+        "https://admin.jsbc.jp/store/images/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MjkzNywicHVyIjoiYmxvYl9pZCJ9fQ==--e1543dd187284046832c21a8a46c19f2f62a1299/psj_skateboard_academy.jpg": "https://h40.local-transer.net/images/eyecatch1.jpg";
+        "https://h40.local-transer.net/images/eyecatch2.jpg": "https://h40.local-transer.net/images/eyecatch3.jpg";
+      }
+
+      @urlmap RewriteCSSURL {
+      }
+
+      @urlmap RewriteALinkURL {
+      }
+
+      @rewrite DefaultRewriteURL {
+        if (url matches "^$") return "";
+        if (url matches "^data:") return "{url}";
+        if (url matches "^#") return "{url}";
+        if (url matches "^\\?") return "{url}";
+        if (url matches "^(?:tel|mailto|javascript|sms|fax):") return "{url}";
+        
+        if (absurl matches "^https://h40.local-transer.net/(.*)") apply "https://h40-e.local-transer.net/{$1}";
+        
+        if (absurl matches "^https://www.h40.local-transer.net/(.*)") apply "https://www-h40-e.local-transer.net/{$1}";
+        
+
+        if (absurl matches "^http") return "{url}";
+
+        return "{absurl}";
+      }
+
+      @rewrite RewriteRules {
+        apply @RewriteImage;
+        apply @RewriteCSSURL;
+        apply @RewriteAlinkURL;
+        return @DefaultRewriteURL;
+      }
+
+      :html-url-attributes, :css, :javascript {
+        attribute: * rewrite @RewriteRules;
+      }
+      </rules>
+      <indata>PCFET0NUWVBFIGh0bWw+CjxodG1sPgogIDxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiIC8+CiAgICA8dGl0bGU+44OG44K544OIPC90aXRsZT4KICAgIDxzdHlsZT4KICAgICAgLyoKCQlpZnJhbWUgI3NpdGUtdHJhbnNsYXRlLWhlYWRlci13cmFwcGVyIHsKCQkJZGlzcGxheTogbm9uZTsKCQl9CgkJKi8KICAgIDwvc3R5bGU+CiAgPC9oZWFkPgoKICA8Ym9keT4KICAgIDxoMT50ZXN0Lmh0bWw8L2gxPgoKICAgIDxpbWcKICAgICAgd2lkdGg9IjQ2MSIKICAgICAgaGVpZ2h0PSIyODgiCiAgICAgIHNyYz0iaHR0cHM6Ly93d3cuY3Jvc3MwNy53ZWJ0LWhvbWVwYWdlLmNvbS90ZXN0c2l0ZV8wOC93cC1jb250ZW50L3VwbG9hZHMvMjAxMy8wMy9zb3dvcnRobG92aW5nLXdhbGxwYXBlci5qcGciCiAgICAgIGNsYXNzPSJhdHRhY2htZW50LW5pc2FyZy1mdWxsLXdpZHRoIHNpemUtbmlzYXJnLWZ1bGwtd2lkdGggd3AtcG9zdC1pbWFnZSIKICAgICAgYWx0PSJJIEFtIFdvcnRoIExvdmluZyBXYWxscGFwZXIiCiAgICAgIGRlY29kaW5nPSJhc3luYyIKICAgICAgZmV0Y2hwcmlvcml0eT0iaGlnaCIKICAgICAgc3Jjc2V0PSJodHRwczovL2g0MC5sb2NhbC10cmFuc2VyLm5ldC9pbWFnZXMvZXllY2F0Y2gyLmpwZyA2MDB3LCBodHRwczovL2g0MC5sb2NhbC10cmFuc2VyLm5ldC9pbWFnZXMvZXllY2F0Y2gzLmpwZyAzMDB3IgogICAgICBzaXplcz0iKG1heC13aWR0aDogOTIycHgpIDEwMHZ3LCA5MjJweCIKICAgIC8+CgogICAgPCEtLQogICAgPGltZwogICAgICB3aWR0aD0iOTIyIgogICAgICBoZWlnaHQ9IjU3NiIKICAgICAgc3JjPSJodHRwczovL3d3dy5jcm9zczA3LndlYnQtaG9tZXBhZ2UuY29tL3Rlc3RzaXRlXzA4L3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDEzLzAzL3Nvd29ydGhsb3Zpbmctd2FsbHBhcGVyLmpwZyIKICAgICAgY2xhc3M9ImF0dGFjaG1lbnQtbmlzYXJnLWZ1bGwtd2lkdGggc2l6ZS1uaXNhcmctZnVsbC13aWR0aCB3cC1wb3N0LWltYWdlIgogICAgICBhbHQ9IkkgQW0gV29ydGggTG92aW5nIFdhbGxwYXBlciIKICAgICAgZGVjb2Rpbmc9ImFzeW5jIgogICAgICBmZXRjaHByaW9yaXR5PSJoaWdoIgogICAgICBzcmNzZXQ9IgogICAgICAgIGh0dHBzOi8vd3d3LmNyb3NzMDcud2VidC1ob21lcGFnZS5jb20vdGVzdHNpdGVfMDgvd3AtY29udGVudC91cGxvYWRzLzIwMTMvMDMvc293b3J0aGxvdmluZy13YWxscGFwZXIuanBnICAgICAgICAgIDE5MjB3LAogICAgICAgIGh0dHBzOi8vd3d3LmNyb3NzMDcud2VidC1ob21lcGFnZS5jb20vdGVzdHNpdGVfMDgvd3AtY29udGVudC91cGxvYWRzLzIwMTMvMDMvc293b3J0aGxvdmluZy13YWxscGFwZXItMzAweDE4OC5qcGcgICAzMDB3LAogICAgICAgIGh0dHBzOi8vd3d3LmNyb3NzMDcud2VidC1ob21lcGFnZS5jb20vdGVzdHNpdGVfMDgvd3AtY29udGVudC91cGxvYWRzLzIwMTMvMDMvc293b3J0aGxvdmluZy13YWxscGFwZXItMTAyNHg2NDAuanBnIDEwMjR3LAogICAgICAgIGh0dHBzOi8vd3d3LmNyb3NzMDcud2VidC1ob21lcGFnZS5jb20vdGVzdHNpdGVfMDgvd3AtY29udGVudC91cGxvYWRzLzIwMTMvMDMvc293b3J0aGxvdmluZy13YWxscGFwZXItNzY4eDQ4MC5qcGcgICA3Njh3LAogICAgICAgIGh0dHBzOi8vd3d3LmNyb3NzMDcud2VidC1ob21lcGFnZS5jb20vdGVzdHNpdGVfMDgvd3AtY29udGVudC91cGxvYWRzLzIwMTMvMDMvc293b3J0aGxvdmluZy13YWxscGFwZXItMTUzNng5NjAuanBnIDE1MzZ3LAogICAgICAgIGh0dHBzOi8vd3d3LmNyb3NzMDcud2VidC1ob21lcGFnZS5jb20vdGVzdHNpdGVfMDgvd3AtY29udGVudC91cGxvYWRzLzIwMTMvMDMvc293b3J0aGxvdmluZy13YWxscGFwZXItMTU2OHg5ODAuanBnIDE1Njh3CiAgICAgICIKICAgICAgc2l6ZXM9IihtYXgtd2lkdGg6IDkyMnB4KSAxMDB2dywgOTIycHgiCiAgICAvPgogICAgLS0+CgogICAgPHBpY3R1cmU+CiAgICAgIDxzb3VyY2UKICAgICAgICBzcmNzZXQ9IgogICAgICAgICAgaHR0cHM6Ly9hZG1pbi5qc2JjLmpwL3N0b3JlL2ltYWdlcy9ibG9icy9yZWRpcmVjdC9leUpmY21GcGJITWlPbnNpWkdGMFlTSTZNamt6Tnl3aWNIVnlJam9pWW14dllsOXBaQ0o5ZlE9PS0tZTE1NDNkZDE4NzI4NDA0NjgzMmMyMWE4YTQ2YzE5ZjJmNjJhMTI5OS9wc2pfc2thdGVib2FyZF9hY2FkZW15LmpwZwogICAgICAgICIKICAgICAgICBtZWRpYT0iKG1pbi13aWR0aDogMTA4MnB4KSIKICAgICAgLz4KICAgICAgPGltZwogICAgICAgIHNyYz0iaHR0cHM6Ly9jcm9zczM1LXdlYnQtaG9tZXBhZ2UtY29tLWUuYXRocC50cmFuc2VyLmNvbS90ZXN0c2l0ZV8zNS93cC1jb250ZW50L3VwbG9hZHMvMjAxMy8wMy9pbWFnZS1hbGlnbm1lbnQtMTIwMHg0MDAyLTEtMTAyNHgzNDEuanBnIgogICAgICAvPgogICAgPC9waWN0dXJlPgoKICAgIDxoMSBjbGVsaWQ9IjI5NSI+CiAgICAgIDxzcGFuIGNsZWxpZD0iMjk2Ij4KICAgICAgICA8c3BhbiBjbGVsaWQ9IjI5NyI+CiAgICAgICAgICA8c3BhbiBjbGVsaWQ9IjI5OCI+MjAyNOW5tOaYpeOAgeixiueUsOW4guOBqzwvc3Bhbj4KICAgICAgICA8L3NwYW4+CiAgICAgICAgPHNwYW4gY2xlbGlkPSIyOTkiPgogICAgICAgICAgPHNwYW4gY2xlbGlkPSIzMDAiPuaWsOOBl+OBhOWNmueJqemkqOOBjDwvc3Bhbj4KICAgICAgICA8L3NwYW4+CiAgICAgICAgPHNwYW4gY2xlbGlkPSIzMDEiPgogICAgICAgICAgPHNwYW4gY2xlbGlkPSIzMDIiPuiqleeUn+OBl+OBvuOBmTwvc3Bhbj4KICAgICAgICA8L3NwYW4+CiAgICAgIDwvc3Bhbj4KICAgIDwvaDE+CgogICAgPHA+CiAgICAgIDxhIGhyZWY9Imh0dHBzOi8vaDQwLmxvY2FsLXRyYW5zZXIubmV0L3N1YnBhZ2UuaHRtbCI+44Oq44Oz44KvPC9hPgogICAgPC9wPgoKICAgIDxkbCBjbGFzcz0ibnVtLXNlbGVjdCI+CiAgICAgIDxkaXY+CiAgICAgICAgPGR0PuWkp+S6ujxzcGFuIGlkPSJudW0tYWR1bHQiPjE8L3NwYW4+PC9kdD4KICAgICAgICA8ZGQ+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJidG5zIj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0icGx1cy1hZHVsdCI+PC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9Im1pbnVzLWFkdWx0IGRpc2FjdGl2ZSI+PC9kaXY+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2RkPgogICAgICA8L2Rpdj4KICAgICAgPGRpdj4KICAgICAgICA8ZHQ+5a2Q5L6bPHNwYW4gaWQ9Im51bS1jaGlsZCI+MDwvc3Bhbj48L2R0PgogICAgICAgIDxkZD4KICAgICAgICAgIDxkaXYgY2xhc3M9ImJ0bnMiPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJwbHVzLWNoaWxkIj48L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0ibWludXMtY2hpbGQgZGlzYWN0aXZlIj48L2Rpdj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGQ+CiAgICAgIDwvZGl2PgogICAgPC9kbD4KCiAgICA8ZGl2IGlkPSJmb290ZXIiPjwvZGl2PgogIDwvYm9keT4KPC9odG1sPgo=</indata>    </Translate>
+        </Body>
+      </Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

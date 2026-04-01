@@ -1,0 +1,103 @@
+info:
+  name: Translate HTML Copy
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |-
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:Translate>
+      			<licence>ktutumi0307_sc/service a7e8ba2069a5bb677b995697f216f892d97d628a</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <engine>
+                      <eid>CR-JE-NMT</eid>
+                      <prop>
+                       </prop>
+                  </engine>
+                  <rules>
+      @data html {
+        fragment: true;
+        base-url: "https://www.cross21.webt-homepage.com/index.php/2023/07/26/hello-world/";
+        
+      }
+
+      .cl-notranslate {
+       content: ignore;
+      }
+
+      a.cl-norewrite, .cl-norewrite a {
+        attribute: href rewrite "{absurl}" !important;
+      }
+
+      img.cl-norewrite, .cl-norewrite img {
+        attribute: src rewrite "{absurl}" !important;
+      }
+
+      input, textarea {
+        attribute: placeholder translate;
+      }
+
+
+      @urlmap RewriteImage {
+      }
+
+      @urlmap RewriteCSSURL {
+        
+
+        
+      }
+
+      @urlmap RewriteALinkURL {
+      }
+
+      @rewrite DefaultRewriteURL {
+        if (url matches "^$") return "";
+        if (url matches "^data:") return "{url}";
+        if (url matches "^#") return "{url}";
+        if (url matches "^\\?") return "{url}";
+        if (url matches "^(?:tel|mailto|javascript|sms|fax):") return "{url}";
+
+        if (absurl matches "^https://www.dotonplaza.com/(.*)") apply "https://www.dotonplaza.com/en/{$1}";
+
+
+        if (absurl matches "^http") return "{url}";
+
+        return "{absurl}";
+      }
+
+      @rewrite RewriteRules {
+        apply @RewriteImage;
+        apply @RewriteCSSURL;
+        apply @RewriteAlinkURL;
+        return @DefaultRewriteURL;
+      }
+
+      :html-url-attributes, :css, :javascript {
+        attribute: * rewrite @RewriteRules;
+      }
+                  </rules>
+                  <indata>PGxpIGNsZWxpZD0iMTIyIj48YSBocmVmPSJodHRwczovL3d3dy5kb3RvbnBsYXphLmNvbS9lbi9mbG9vcmd1aWRlLyIgdGFyZ2V0PSJfYmxhbmsiIGNsZWxpZD0iMTIzIj48aW1nIHNyYz0iaHR0cHM6Ly93d3cuZG90b25wbGF6YS5jb20vZW4vZmxvb3JndWlkZS9pbWcvYnJhbmQtMTA0LnBuZyIgY2xlbGlkPSIxMjQiPjwvYT48L2xpPg==</indata>
+              </cl:Translate>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

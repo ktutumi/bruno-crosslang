@@ -1,0 +1,38 @@
+info:
+  name: テストEcho
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: http://localhost:12001/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:TestEcho>
+                  <licence>ktutumi0307_sc/service a7e8ba2069a5bb677b995697f216f892d97d628a</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select>SELECT-STRING</select>
+                  <str>TEXT</str>
+                  <num>123</num>
+                  <bin>DATA</bin>
+              </cl:TestEcho>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

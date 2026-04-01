@@ -1,0 +1,92 @@
+info:
+  name: "[本番]Translate HTML"
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |-
+      <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Body xmlns="http://schemas.xmlsoap.org/soap/envelope/"><Translate xmlns="http://crosslanguage.co.jp/clsoap/2/schema"><licence>dotonplaza/service 272674280d3ddb5a0269e711fa79c8f18764d5e9</licence><clientid>dev-wt-sitectl 0.9.0</clientid><engine><eid>CR-JE-NMT</eid><prop><item><key>dictionaries</key><val>55089,55091,204,701,702,703</val></item></prop></engine><rules>
+      @data html {
+
+        base-url: "https://www.dotonplaza.com/";
+
+      }
+
+      .cl-notranslate {
+       content: ignore;
+      }
+
+      a.cl-norewrite, .cl-norewrite a {
+        attribute: href rewrite "{absurl}" !important;
+      }
+
+      img.cl-norewrite, .cl-norewrite img {
+        attribute: src rewrite "{absurl}" !important;
+      }
+
+      input, textarea {
+        attribute: placeholder translate;
+      }
+
+
+      @urlmap RewriteImage {
+
+
+
+      }
+
+      @urlmap RewriteCSSURL {
+
+
+
+      }
+
+      @urlmap RewriteALinkURL {
+
+
+
+      }
+
+      @rewrite DefaultRewriteURL {
+        if (url matches "^$") return "";
+        if (url matches "^data:") return "{url}";
+        if (url matches "^#") return "{url}";
+        if (url matches "^\\?") return "{url}";
+        if (url matches "^(?:tel|mailto|javascript|sms|fax):") return "{url}";
+
+        if (absurl matches "^https://www.dotonplaza.com/(.*)") apply "https://www.dotonplaza.com/en/{$1}";
+
+
+        if (absurl matches "^http") return "{url}";
+
+        return "{absurl}";
+      }
+
+      @rewrite RewriteRules {
+        apply @RewriteImage;
+        apply @RewriteCSSURL;
+        apply @RewriteAlinkURL;
+        return @DefaultRewriteURL;
+      }
+
+      :html-url-attributes, :css, :javascript {
+        attribute: * rewrite @RewriteRules;
+      }
+
+
+
+
+      </rules><indata>
+      PGxpIGNsZWxpZD0iMTIyIj48YSBocmVmPSJodHRwczovL3d3dy5kb3RvbnBsYXphLmNvbS9lbi9mbG9vcmd1aWRlLyIgdGFyZ2V0PSJfYmxhbmsiIGNsZWxpZD0iMTIzIj48aW1nIHNyYz0iaHR0cHM6Ly93d3cuZG90b25wbGF6YS5jb20vZW4vZmxvb3JndWlkZS9pbWcvYnJhbmQtMTA0LnBuZyIgY2xlbGlkPSIxMjQiPjwvYT48L2xpPg==
+      </indata></Translate></Body></Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

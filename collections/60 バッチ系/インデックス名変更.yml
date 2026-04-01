@@ -1,0 +1,15 @@
+info:
+  name: インデックス名変更
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{url}}/statistics/batch-rename-index"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,61 @@
+info:
+  name: Translate HTML 個別設定
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: http://localhost:12001/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:Translate>
+                  <licence>ktutumi0307_sc/service a7e8ba2069a5bb677b995697f216f892d97d628a</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <engine>
+                      <eid>CR-JE-NMT</eid>
+                      <prop>
+                          <item>
+                              <key>dictionaries</key>
+                              <val></val>
+                          </item>
+                       </prop>
+                  </engine>
+                  <rules>
+      @data html {
+        fragment: true;
+        base-url: "https://h30.local-transer.net/";
+        
+      }
+
+      @preprocess {
+          replace: '<div class="head-line">'
+                  '<div class="head-line cl-notranslate cl-norewrite">';
+          replace: '<div class="languages">'
+                  '<div class="languages cl-notranslate cl-norewrite">';
+      }
+                  </rules>
+                  <indata>
+                  PGRpdiBjbGFzcz0iaGVhZC1saW5lIj4NCgkJCTxkaXYgY2xhc3M9ImlubmVyIGhpZGRlbi14cyI+TEFOR1VBR0UgPGEgaHJlZj0iaHR0cDovL2RvdG9ucGxhemEuY29tLyIgdGFyZ2V0PSJfdG9wIj48aW1nIHNyYz0iaW1nL2NvbW1vbi9pY29uLWxhbmctamEucG5nIiBhbHQ9IkpBUEFORVNFIj48L2E+IDxhIGhyZWY9Imh0dHBzOi8vd3d3LmRvdG9ucGxhemEuY29tL3R3LyIgdGFyZ2V0PSJfdG9wIj48aW1nIHNyYz0iaW1nL2NvbW1vbi9pY29uLWxhbmctY24ucG5nIiBhbHQ9IkNISU5FU0UiPjwvYT4gPGEgaHJlZj0iaHR0cHM6Ly93d3cuZG90b25wbGF6YS5jb20vdHcvIiB0YXJnZXQ9Il90b3AiPjxpbWcgc3JjPSJpbWcvY29tbW9uL2ljb24tbGFuZy1jbi10eXBlLTAxLnBuZyIgYWx0PSJDSElORVNFIExPQ0FMIj48L2E+PGEgaHJlZj0iaHR0cHM6Ly93d3cuZG90b25wbGF6YS5jb20vY24vIiB0YXJnZXQ9Il90b3AiPjxpbWcgc3JjPSJpbWcvY29tbW9uL2ljb24tbGFuZy1jbi10eXBlLTAyLnBuZyIgYWx0PSJDSElORVNFIExPQ0FMIj48L2E+IDxhIGhyZWY9Imh0dHBzOi8vd3d3LmRvdG9ucGxhemEuY29tL2tvLyIgdGFyZ2V0PSJfdG9wIj48aW1nIHNyYz0iaW1nL2NvbW1vbi9pY29uLWxhbmcta3IucG5nIiBhbHQ9IktPUkVBTiI+PC9hPiA8YSBocmVmPSJodHRwczovL3d3dy5kb3RvbnBsYXphLmNvbS9lbi8iIHRhcmdldD0iX3RvcCI+PGltZyBzcmM9ImltZy9jb21tb24vaWNvbi1sYW5nLWVuLnBuZyIgYWx0PSJFTkdMSVNIIj48L2E+PC9kaXY+DQoJCTwvZGl2Pg==
+                  </indata>
+              </cl:Translate>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

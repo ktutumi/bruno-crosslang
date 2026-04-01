@@ -1,0 +1,31 @@
+info:
+  name: エラー通知管理 登録
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{url}}/sitectl/error-notification"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "log_level": "warn",
+          "start_time": "2023-08-08T12:19:58.372915803+09:00",
+          "remote_ip": "192.168.1.11",
+          "method": "POST",
+          "url": "login",
+          "user_id": "",
+          "message": "ユーザーIDまたはパスワードが一致しません",
+          "raw_message": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

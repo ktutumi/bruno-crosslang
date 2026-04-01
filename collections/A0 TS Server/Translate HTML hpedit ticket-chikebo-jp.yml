@@ -1,0 +1,47 @@
+info:
+  name: Translate HTML hpedit ticket-chikebo-jp
+  type: http
+  seq: 21
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |
+      <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/"
+                xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Body xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+          <Translate xmlns="http://crosslanguage.co.jp/clsoap/2/schema">
+            <licence>ticket-chikebo/service 0f72c5868a11e20264046adf05f04ade66799688</licence>
+            <clientid>ktutumi-dev-wt-sitectl 0.9.0</clientid>
+            <engine>
+              <eid>PASSTHRU</eid>
+              <prop></prop>
+            </engine>
+            <rules>
+              @data html {
+                base-url: "https://ticket.chikebo.jp/show/event.html?info=12474";
+                fragment: true;
+                output: hpedit;
+              }
+          @preprocess {
+            replace: '(<div class="evt__date" clelid="\\d+">)([^<]+)(<span class="[^"]*" clelid="\\d+">[^<]+</span>)'
+                     '$1$2<br style="display:none;">(<br style="display:none;">$3<br style="display:none;">)';
+          }
+            </rules>
+            <indata>
+              PGJvZHk+PGRpdiBpZD0iYXBwIiBjbGFzcz0iZy13cmFwcGVyIGV2dCI+PGRpdiBjbGFzcz0iZy13cmFwcGVyX190b3AiPjxkaXYgY2xhc3M9Imctc2VjdGlvbi0tZnVsbHdpZHRoIGV2dF9fY2FsZW5kZXIiIGNsZWxpZD0iMjY1Ij48dWwgY2xhc3M9ImctYWNjb3JkaW9uIGV2dF9fZGF5c0FjY29yZGlvbiIgY2xlbGlkPSIyNjYiPjxsaSBpZD0iRDAiIGNsYXNzPSJ0ZXN0LXRlc3Qg5pel56iL44Ki44Kz44O844OH44Kj44Kq44OzIiBjbC1pZD0iMTIiIGNsLXN0YXR1cz0idHJhbnNsYXRpbmciIGNsZWxpZD0iNjU2Ij48ZGl2IGNsYXNzPSJnLWFjY29yZGlvbl9fbGlzdCBnLXRoZW1lLWFjY29yZGlvbl9fbGlzdCIgY2xlbGlkPSI2NTciPjxkaXYgY2xhc3M9ImctYWNjb3JkaW9uX19saXN0X190aXRsZSIgY2xlbGlkPSI2NTgiPjxkaXYgY2xhc3M9ImV2dF9fZGF0ZSIgY2xlbGlkPSI2NTkiPjnmnIgyNOaXpSg8c3BhbiBjbGFzcz0iIiBjbGVsaWQ9IjY2MCI+5rC0PC9zcGFuPik8L2Rpdj4gPGRpdiBjbGFzcz0iZy1hY2NvcmRpb25fX2V2dF9fZGV0YWlsIGRldGFpbC13aWR0aC1qYSIgY2xlbGlkPSI2NjEiPjxkaXYgY2xhc3M9ImctZGV0YWlsQnV0dG9uIiBjbGVsaWQ9IjY2MiI+CiAgICAgICAgICAgICAgICAgICAgICAgIOips+e0sAogICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iZy1hY2NvcmRpb25fX2V2dF9fZGV0YWlsX19hcnJvdyIgY2xlbGlkPSI2NjMiPjwvc3Bhbj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4gPGRpdiBjbGFzcz0iZy1saXN0SXRlbXMgZXZ0X19hY2NvcmRpb25MaXN0SXRlbXMgZy10aGVtZS1hY2NlbnQtYmctYWxwaGEyIiBjbGVsaWQ9IjY2NCI+PGRpdiBjbGFzcz0iZXZ0X19wZXJmb21hbmNlIGlzLWVuZCIgY2xlbGlkPSI2NjUiPjxkaXYgY2xhc3M9ImV2dF9fcGVyZm9tYW5jZV9fdGltZXMiIGNsZWxpZD0iNjY2Ij48IS0tLS0+IDwhLS0tLT4gPCEtLS0tPjwvZGl2PiA8ZGl2IGNsYXNzPSJldnRfX3BlcmZvbWFuY2VfX3N0YXR1cyIgY2xlbGlkPSI2NjciPjxkaXYgY2xhc3M9ImV2dF9fcGVyZm9tYW5jZV9fc3RhdHVzX19tYXJrIiBjbGVsaWQ9IjY2OCI+PCEtLS0tPiA8aW1nIHNyYz0iL2ltYWdlcy9jb21tb24vaWNvbi1lbmQtd3Quc3ZnIiBhbHQ9IiIgY2xlbGlkPSI2NjkiPiA8IS0tLS0+IDwhLS0tLT4gPCEtLS0tPjwvZGl2PjwvZGl2PjwvZGl2PjwvZGl2PjwvbGk+PGxpIGlkPSJEMSIgY2xhc3M9InRlc3QtdGVzdCDml6XnqIvjgqLjgrPjg7zjg4fjgqPjgqrjg7MiIGNsLWlkPSIxMyIgY2wtc3RhdHVzPSJ0cmFuc2xhdGluZyIgY2xlbGlkPSI2NzAiPjxkaXYgY2xhc3M9ImctYWNjb3JkaW9uX19saXN0IGctdGhlbWUtYWNjb3JkaW9uX19saXN0IiBjbGVsaWQ9IjY3MSI+PGRpdiBjbGFzcz0iZy1hY2NvcmRpb25fX2xpc3RfX3RpdGxlIiBjbGVsaWQ9IjY3MiI+PGRpdiBjbGFzcz0iZXZ0X19kYXRlIiBjbGVsaWQ9IjY3MyI+MTDmnIgxOOaXpSg8c3BhbiBjbGFzcz0iaXMtc2F0IiBjbGVsaWQ9IjY3NCI+5ZyfPC9zcGFuPik8L2Rpdj4gPGRpdiBjbGFzcz0iZy1hY2NvcmRpb25fX2V2dF9fZGV0YWlsIGRldGFpbC13aWR0aC1qYSIgY2xlbGlkPSI2NzUiPjxkaXYgY2xhc3M9ImctZGV0YWlsQnV0dG9uIiBjbGVsaWQ9IjY3NiI+CiAgICAgICAgICAgICAgICAgICAgICAgIOips+e0sAogICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iZy1hY2NvcmRpb25fX2V2dF9fZGV0YWlsX19hcnJvdyIgY2xlbGlkPSI2NzciPjwvc3Bhbj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4gPGRpdiBjbGFzcz0iZy1saXN0SXRlbXMgZXZ0X19hY2NvcmRpb25MaXN0SXRlbXMgZy10aGVtZS1hY2NlbnQtYmctYWxwaGEyIiBjbGVsaWQ9IjY3OCI+PGRpdiBjbGFzcz0iZXZ0X19wZXJmb21hbmNlIGlzLWVuZCIgY2xlbGlkPSI2NzkiPjxkaXYgY2xhc3M9ImV2dF9fcGVyZm9tYW5jZV9fdGltZXMiIGNsZWxpZD0iNjgwIj48c3BhbiBjbGFzcz0iZXZ0X19wZXJmb21hbmNlX190aW1lIiBjbGVsaWQ9IjY4MSI+MTk6MDA8L3NwYW4+IDxzcGFuIGNsZWxpZD0iNjgyIj4tPC9zcGFuPiA8c3BhbiBjbGFzcz0iZXZ0X19wZXJmb21hbmNlX190aW1lIiBjbGVsaWQ9IjY4MyI+MjA6MDA8L3NwYW4+PC9kaXY+IDxkaXYgY2xhc3M9ImV2dF9fcGVyZm9tYW5jZV9fc3RhdHVzIiBjbGVsaWQ9IjY4NCI+PGRpdiBjbGFzcz0iZXZ0X19wZXJmb21hbmNlX19zdGF0dXNfX21hcmsiIGNsZWxpZD0iNjg1Ij48IS0tLS0+IDxpbWcgc3JjPSIvaW1hZ2VzL2NvbW1vbi9pY29uLWVuZC13dC5zdmciIGFsdD0iIiBjbGVsaWQ9IjY4NiI+IDwhLS0tLT4gPCEtLS0tPiA8IS0tLS0+PC9kaXY+PC9kaXY+PC9kaXY+PC9kaXY+PC9saT48bGkgaWQ9IkQyIiBjbGFzcz0idGVzdC10ZXN0IOaXpeeoi+OCouOCs+ODvOODh+OCo+OCquODsyIgY2wtaWQ9IjE0IiBjbC1zdGF0dXM9InRyYW5zbGF0aW5nIiBjbGVsaWQ9IjY4NyI+PGRpdiBjbGFzcz0iZy1hY2NvcmRpb25fX2xpc3QgZy10aGVtZS1hY2NvcmRpb25fX2xpc3QiIGNsZWxpZD0iNjg4Ij48ZGl2IGNsYXNzPSJnLWFjY29yZGlvbl9fbGlzdF9fdGl0bGUiIGNsZWxpZD0iNjg5Ij48ZGl2IGNsYXNzPSJldnRfX2RhdGUiIGNsZWxpZD0iNjkwIj4xMOaciDE55pelKDxzcGFuIGNsYXNzPSJpcy1ob2xpZGF5IiBjbGVsaWQ9IjY5MSI+5pelPC9zcGFuPik8L2Rpdj4gPGRpdiBjbGFzcz0iZy1hY2NvcmRpb25fX2V2dF9fZGV0YWlsIGRldGFpbC13aWR0aC1qYSIgY2xlbGlkPSI2OTIiPjxkaXYgY2xhc3M9ImctZGV0YWlsQnV0dG9uIiBjbGVsaWQ9IjY5MyI+CiAgICAgICAgICAgICAgICAgICAgICAgIOips+e0sAogICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iZy1hY2NvcmRpb25fX2V2dF9fZGV0YWlsX19hcnJvdyIgY2xlbGlkPSI2OTQiPjwvc3Bhbj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4gPGRpdiBjbGFzcz0iZy1saXN0SXRlbXMgZXZ0X19hY2NvcmRpb25MaXN0SXRlbXMgZy10aGVtZS1hY2NlbnQtYmctYWxwaGEyIiBjbGVsaWQ9IjY5NSI+PGRpdiBjbGFzcz0iZXZ0X19wZXJmb21hbmNlIGlzLWVuZCIgY2xlbGlkPSI2OTYiPjxkaXYgY2xhc3M9ImV2dF9fcGVyZm9tYW5jZV9fdGltZXMiIGNsZWxpZD0iNjk3Ij48c3BhbiBjbGFzcz0iZXZ0X19wZXJmb21hbmNlX190aW1lIiBjbGVsaWQ9IjY5OCI+MTk6MDA8L3NwYW4+IDxzcGFuIGNsZWxpZD0iNjk5Ij4tPC9zcGFuPiA8c3BhbiBjbGFzcz0iZXZ0X19wZXJmb21hbmNlX190aW1lIiBjbGVsaWQ9IjcwMCI+MjA6MDA8L3NwYW4+PC9kaXY+IDxkaXYgY2xhc3M9ImV2dF9fcGVyZm9tYW5jZV9fc3RhdHVzIiBjbGVsaWQ9IjcwMSI+PGRpdiBjbGFzcz0iZXZ0X19wZXJmb21hbmNlX19zdGF0dXNfX21hcmsiIGNsZWxpZD0iNzAyIj48IS0tLS0+IDxpbWcgc3JjPSIvaW1hZ2VzL2NvbW1vbi9pY29uLWVuZC13dC5zdmciIGFsdD0iIiBjbGVsaWQ9IjcwMyI+IDwhLS0tLT4gPCEtLS0tPiA8IS0tLS0+PC9kaXY+PC9kaXY+PC9kaXY+PC9kaXY+PC9saT48L3VsPiAgPGRpdiBjbGFzcz0iZXZ0X19jYWxlbmRhcl9fbmF2aSIgY2wtaWQ9IjE1IiBjbC1zdGF0dXM9InRyYW5zbGF0aW5nIiBjbGVsaWQ9IjcwNCI+PGJ1dHRvbiB0eXBlPSJidXR0b24iIGNsYXNzPSJnLWJ1dHRvbiBnLWJ1dHRvbi0tbWVkaXVtIGctYnV0dG9uLS1zZWNvbmRhcnkgZy10aGVtZS1hY2NlbnQtZm9udCBnLXRoZW1lLWFjY2VudC1ib3JkZXIiIGNsZWxpZD0iNzA1Ij4KICAgICAgICAgICAgICAgIOWJjeOBruaciAogICAgICAgICAgICAgIDwvYnV0dG9uPiA8YnV0dG9uIHR5cGU9ImJ1dHRvbiIgY2xhc3M9ImctYnV0dG9uIGctYnV0dG9uLS1tZWRpdW0gZy1idXR0b24tLXNlY29uZGFyeSBnLXRoZW1lLWFjY2VudC1mb250IGctdGhlbWUtYWNjZW50LWJvcmRlciIgY2xlbGlkPSI3MDYiPgogICAgICAgICAgICAgICAg5qyh44Gu5pyICiAgICAgICAgICAgICAgPC9idXR0b24+PC9kaXY+IDxkaXYgY2xhc3M9ImV2dF9fc2VsZWN0U2FsZXNfX25hdmkiIGNsLWlkPSIxNiIgY2wtc3RhdHVzPSJ0cmFuc2xhdGluZyIgY2xlbGlkPSI3MDciPjxkaXYgY2xhc3M9ImctYnV0dG9uIGctYnV0dG9uLS1tZWRpdW0gZy1idXR0b24tLXNlY29uZGFyeSIgY2xlbGlkPSI3MDgiPgogICAgICAgICAgICAgICAg5Yil44Gu6LKp5aOy44KS6YG444G2CiAgICAgICAgICAgICAgPC9kaXY+PC9kaXY+IDwvZGl2PjwvZGl2PjwvZGl2PjwvYm9keT4=
+            </indata>
+          </Translate>
+        </Body>
+      </Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

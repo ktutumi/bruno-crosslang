@@ -1,0 +1,9 @@
+info:
+  name: クロス統計管理
+  type: folder
+  seq: 2
+
+request:
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY3Jvc3MiXSwiZXhwIjoxNzI1OTg4OTc2LCJqdGkiOiJhZG1pbiIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.nXfn0rOFjG0OUvwVbSjT-6v3PXT3BYKjPed1g6JDfXw

@@ -1,0 +1,34 @@
+opencollection: 1.0.0
+info:
+  name: "Crosslang"
+  type: workspace
+
+collections:
+  - name: "10 顧客API"
+    path: "collections/10 顧客API"
+  - name: "50 ログ・統計管理"
+    path: "collections/50 ログ・統計管理"
+  - name: "60 バッチ系"
+    path: "collections/60 バッチ系"
+  - name: "90 サイトコントローラー"
+    path: "collections/90 サイトコントローラー"
+  - name: "A0 TS Server"
+    path: "collections/A0 TS Server"
+  - name: "Elasticsearch管理"
+    path: "collections/Elasticsearch管理"
+  - name: "Login, Users"
+    path: "collections/Login, Users"
+  - name: "USC"
+    path: "collections/USC"
+  - name: "Users"
+    path: "collections/Users"
+  - name: "アクセス統計 ダミーログ"
+    path: "collections/アクセス統計 ダミーログ"
+  - name: "問い合わせ検証"
+    path: "collections/問い合わせ検証"
+
+specs:
+
+docs: ''
+
+activeEnvironmentUid: 1qy4p6t00000000000000

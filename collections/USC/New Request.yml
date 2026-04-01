@@ -1,0 +1,24 @@
+info:
+  name: New Request
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://192.168.1.16:3030/cl.translate.fragment
+  body:
+    type: json
+    data: |-
+      {
+        "text": [
+          "<p data-item-brand=\"アップル\">こんばんは</p>",
+          "<p>テスト</p>"
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

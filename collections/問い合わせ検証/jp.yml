@@ -1,0 +1,55 @@
+info:
+  name: jp
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://cse.google.com/cse/element/v1?rsz=filtered_cse&num=10&hl=ja&source=gcsc&cselibv=8fa85d58e016b414&cx=012670703140409164936:kitt1c5t8rp&q=Arita&safe=off&cse_tok=AB-tC_71UoJYmdHOPDIHlwPyc7BP:1726659016990&sort=&exp=cc,pos,dtsq-3&callback=google.search.cse.api7054&rurl=https://www.arita.jp/search/?q=Arita
+  params:
+    - name: rsz
+      value: filtered_cse
+      type: query
+    - name: num
+      value: "10"
+      type: query
+    - name: hl
+      value: ja
+      type: query
+    - name: source
+      value: gcsc
+      type: query
+    - name: cselibv
+      value: 8fa85d58e016b414
+      type: query
+    - name: cx
+      value: 012670703140409164936:kitt1c5t8rp
+      type: query
+    - name: q
+      value: Arita
+      type: query
+    - name: safe
+      value: off
+      type: query
+    - name: cse_tok
+      value: AB-tC_71UoJYmdHOPDIHlwPyc7BP:1726659016990
+      type: query
+    - name: sort
+      value: ""
+      type: query
+    - name: exp
+      value: cc,pos,dtsq-3
+      type: query
+    - name: callback
+      value: google.search.cse.api7054
+      type: query
+    - name: rurl
+      value: https://www.arita.jp/search/?q=Arita
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

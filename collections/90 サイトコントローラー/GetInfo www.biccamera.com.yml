@@ -1,0 +1,25 @@
+info:
+  name: GetInfo www.biccamera.com
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{url}}/sitectl?domain=www.biccamera.com&timestamp=2006-01-02 15:04:05"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: domain
+      value: www.biccamera.com
+      type: query
+    - name: timestamp
+      value: 2006-01-02 15:04:05
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

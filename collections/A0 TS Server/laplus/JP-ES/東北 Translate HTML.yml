@@ -1,0 +1,56 @@
+info:
+  name: 東北 Translate HTML
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:TranslateText>
+                  <licence>laplace/dev01 8fa23cb6e0a6eb45bc12186f82e661274ddbd338</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select>inter</select>
+                  <engine>
+                    <eid>BR-PR-JA.ES.EN</eid>
+                    <prop>
+                      <item>
+                        <key>dictionaries</key>
+                        <val>24311,24313,24453</val>
+                      </item>
+                    </prop>
+                  </engine>
+                  <blocks>
+                      <item>
+                          <lang>ja</lang>
+                          <text>東北</text>
+                          <track></track>
+                          <phrase></phrase>
+                          <pattern>
+                              <text></text>
+                              <phrase></phrase>
+                          </pattern>
+                      </item>
+                  </blocks>
+              </cl:TranslateText>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

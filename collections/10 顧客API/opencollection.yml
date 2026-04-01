@@ -1,0 +1,15 @@
+opencollection: 1.0.0
+
+info:
+  name: 10 顧客API
+
+request:
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY3Jvc3MiXSwiZXhwIjoxNzI3NDMxODIyLCJqdGkiOiJhZG1pbiIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.3vr6TuVPEDfbCRynBvnvGWcObPJXBdi4MgX6msHm5yw
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

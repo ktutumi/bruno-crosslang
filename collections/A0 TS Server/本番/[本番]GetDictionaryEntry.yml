@@ -1,0 +1,2382 @@
+info:
+  name: "[本番]GetDictionaryEntry"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+          xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:GetDictionaryEntry>
+                  <licence>ekimaru/service 1d7b411e2718a675222aeebf6092bea3a2f83644</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+
+                  <did>54179</did>
+                  <format></format>
+                  <rangeStart>0</rangeStart>
+                  <rangeCount>1000</rangeCount>
+              </cl:GetDictionaryEntry>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: GetDictionaryEntry
+    request:
+      url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+      method: POST
+      body:
+        type: text
+        data: |
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+              <SOAP-ENV:Body>
+
+                  <cl:GetDictionaryEntry>
+                      <licence>grooo-new_ap_pj/dev01 e2147f5996b8cad48f780ada42a7f16626d9cde5</licence>
+                      <clientid>tsclient3 5.4.2</clientid>
+                      <reqgroup></reqgroup>
+                      <select></select>
+
+                      <did>17794</did>
+                      <format>csv</format>
+                      <rangeStart>0</rangeStart>
+                      <rangeCount>1000</rangeCount>
+                  </cl:GetDictionaryEntry>
+
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Encoding
+          value: gzip
+        - name: Content-Length
+          value: "408"
+        - name: Content-Type
+          value: text/xml; charset=utf-8
+        - name: Server
+          value: Translation Server 5.4.5 R45816
+      body:
+        type: xml
+        data: |-
+          <?xml version="1.0" encoding="UTF-8"?>
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema" xmlns:clv1="http://crosslanguage.co.jp/clsoap/schema">
+              <SOAP-ENV:Body>
+                  <cl:GetDictionaryEntryResponse>
+                      <entries>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>9056bb14.FrXJ3JA</entryid>
+                              <headword>フラーグ</headword>
+                              <source>"フラーグ","flurgy"</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>e2d522ed.FrXJ3JA</entryid>
+                              <headword>フラーグ</headword>
+                              <source>"フラーグ","flurg"</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>6a5d8abb.FqeF3LU</entryid>
+                              <headword>デゥーフ</headword>
+                              <source>"デゥーフ","doof"</source>
+                          </item>
+                      </entries>
+                  </cl:GetDictionaryEntryResponse>
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>
+  - name: prod_user_54181
+    request:
+      url: "{{ts_host}}/clsoap/clsoap.cgi"
+      method: POST
+      body:
+        type: text
+        data: |
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+              <SOAP-ENV:Body>
+
+                  <cl:GetDictionaryEntry>
+                      <licence>ekimaru/service 1d7b411e2718a675222aeebf6092bea3a2f83644</licence>
+                      <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                      <reqgroup></reqgroup>
+                      <select></select>
+
+                      <did>54181</did>
+                      <format></format>
+                      <rangeStart>0</rangeStart>
+                      <rangeCount>1000</rangeCount>
+                  </cl:GetDictionaryEntry>
+
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Connection
+          value: close
+        - name: Content-Encoding
+          value: gzip
+        - name: Content-Length
+          value: "416"
+        - name: Content-Type
+          value: text/xml; charset=utf-8
+        - name: Server
+          value: Translation Server2 5.5.7 R48765
+      body:
+        type: xml
+        data: |-
+          <?xml version="1.0" encoding="UTF-8"?>
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema" xmlns:clv1="http://crosslanguage.co.jp/clsoap/schema">
+              <SOAP-ENV:Body>
+                  <cl:GetDictionaryEntryResponse>
+                      <entries>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>2</entryid>
+                              <headword>wt_bridge_1541286</headword>
+                              <source>headword=wt_bridge_1541286	partofspeech=N	translation=Event space	</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>3</entryid>
+                              <headword>wt_bridge_1541287</headword>
+                              <source>headword=wt_bridge_1541287	partofspeech=N	translation=Event space	</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>4</entryid>
+                              <headword>wt_bridge_1541363</headword>
+                              <source>headword=wt_bridge_1541363	partofspeech=N	translation=eki marche Osaka	</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>5</entryid>
+                              <headword>wt_bridge_1541407</headword>
+                              <source>headword=wt_bridge_1541407	partofspeech=N	translation=eki marche Takarazuka	</source>
+                          </item>
+                      </entries>
+                  </cl:GetDictionaryEntryResponse>
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>
+  - name: prod_memory_54183
+    request:
+      url: "{{ts_host}}/clsoap/clsoap.cgi"
+      method: POST
+      body:
+        type: text
+        data: |
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+              <SOAP-ENV:Body>
+
+                  <cl:GetDictionaryEntry>
+                      <licence>ekimaru/service 1d7b411e2718a675222aeebf6092bea3a2f83644</licence>
+                      <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                      <reqgroup></reqgroup>
+                      <select></select>
+
+                      <did>54183</did>
+                      <format></format>
+                      <rangeStart>0</rangeStart>
+                      <rangeCount>1000</rangeCount>
+                  </cl:GetDictionaryEntry>
+
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Connection
+          value: close
+        - name: Content-Encoding
+          value: gzip
+        - name: Content-Length
+          value: "4508"
+        - name: Content-Type
+          value: text/xml; charset=utf-8
+        - name: Server
+          value: Translation Server2 5.5.7 R48765
+      body:
+        type: xml
+        data: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:cl=\"http://crosslanguage.co.jp/clsoap/2/schema\" xmlns:clv1=\"http://crosslanguage.co.jp/clsoap/schema\">
+
+          \    <SOAP-ENV:Body>
+
+          \        <cl:GetDictionaryEntryResponse>
+
+          \            <entries>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>10</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>J'introduis un magasin de branche de mai</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>5月の出店店舗を紹介</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:09:25</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>11</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>NOUVELLES de ekimaru</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルNEWS</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:11:29</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>12</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>\"Les jours dtd.cafe\" ouvrent un magasin dans l'Event space pour la première fois pour un temps limité</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルひろばに「日々dtd.cafe」が期間限定で初出店</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:16:53</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>13</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka du Tibia</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ新大阪</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:26:42</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>14</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>\"Osaka  exploitation standard !</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>「大阪ど定番」開催！</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:31:43</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>15</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Takarazuka</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ宝塚</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:36:33</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>17</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka du Tibia, eki marche Osaka du Tibia Sotoe</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ新大阪・エキマルシェ新大阪ソトエ</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:53:59</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>18</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka, eki marche Osaka grève noire</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ大阪・エキマルシェ大阪クロスト</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:54:32</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>23</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>En mars de 2021, j'ouvre la nouvelle région \"eki marche Osaka du Tibia Sotoe\" &lt;Sotoe&gt; à l'extérieur d'un portillon.</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>2021年3月、改札外に新エリア「エキマルシェ新大阪Sotoe〈ソトエ〉」をオープン。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:55:43</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>24</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>C'est le plus grand équipement commercial dans le portillon du JR à l'ouest la région et \"eki marche Osaka du Tibia\" dans le portillon rencontre des besoins différents du client dans un concept dans les \"magasins dans la station de travail... de l'esprit que je passe vite et petit satisfait - l'adulte est excité à dans 15 minutes\".</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>改札内の「エキマルシェ新大阪」はJR西日本エリアの改札内では最大規模の商業施設であり、「さっと立ち寄り15分でプチ満足～大人がわくわくする気の利くエキナカ～」をコンセプトにお客様の多様なニーズにお応えします。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:55:43</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>25</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>À l'intérieur et à l'extérieur du portillon, je vise l'équipement qu'il est facile de plus loin utiliser pour plus de clients.</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>改札内外で、より多くのお客様に、さらに利用しやすい施設を目指しています。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:55:43</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>26</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>C'est l'équipement commercial localisé au porche, la Station d'Osaka du Tibia de Kansai.</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>関西の玄関口、新大阪駅に位置する商業施設です。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:55:43</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>28</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka du Tibia Sotoe</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ新大阪ソトエ</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:56:52</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>30</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka du Tibia ・</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ新大阪・</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:56:52</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>32</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>\"eki marche Osaka du Tibia sotoe\" (Sotoe) est la facilité qui a ajouté le déjeuner qu'un client du fait de faire la navette, l'école étant présente que la Station d'Osaka du Tibia est utilisée régulièrement est facile à utiliser et la cour de nourriture \"ekimaru la cuisine\" où même la boulangerie, les magasins de ventes de produit tels que les sucreries et un et un client urgent peut passer à d'un air détaché.</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>「エキマルシェ新大阪sotoe(ソトエ)」は、新大阪駅を日常的に利用される通勤・通学のお客様が利用しやすいお弁当やベーカリー、スイーツ等の物販店舗やおひとりさまやお急ぎのお客様でも気軽にお立ち寄りいただけるフードコート「エキマルキッチン」を併設した施設です。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 13:59:00</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>33</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Dans le parc de variété du repas avec un magasin de spécialité et le restaurant qui sont pleins d'un supermarché et un magasin d'avantage, une variété, c'est .</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>スーパーマーケットやコンビニエンスストア、バラエティ豊かな専門店や飲食店を揃えた食のバラエティパークで、ちょっとよりみちをしてみませんか。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:00:34</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>34</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>C'est l'équipement principalement sur \"le repas\" que \"il monte légèrement plus et les jours ayant peuvent utiliser les courses qui conviennent à un concept dans eki marche\" et sont confortables pour à plusieurs reprises régulièrement un jour.</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>「ちょっとよりみち、エキマルシェ」をコンセプトに、便利で快適なお買い物を日常的に、毎日でも、日に何度でもご利用いただける、「食」を中心とした施設です。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:00:34</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>35</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>La Sortie de Sakurabashi de Station d'Osaka conserve dans la station l'équipement commercial qui est localisé immédiatement.</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>大阪駅桜橋口すぐに位置するエキナカ商業施設。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:00:35</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>36</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka grève noire</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ大阪クロスト</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:01:17</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>37</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka ・</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ大阪・</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:01:17</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>38</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Site officiel</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>公式サイト</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:01:18</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>39</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Site officiel d'eki marche Takarazuka</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ宝塚 公式サイト</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:01:45</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>41</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>J'introduis un magasin de branche de mai🎉</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>5月の出店店舗を紹介🎉</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:16:49</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>45</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>\"Montez légèrement plus, la Station d'Osaka JR la bouche de Sakurabashi les magasins dans la station immédiats l'équipement commercial = l'eki marche Osaka qui a supposé eki marche\" un concept.</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>「ちょっとよりみち、エキマルシェ」をコンセプトとした、ＪＲ大阪駅桜橋口すぐの駅ナカ商業施設＝エキマルシェ大阪。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:19:04</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>46</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>C'est l'équipement principalement sur \"le repas\" que le fait d'avoir des jours peut utiliser les courses qui conviennent à un client de l'utilisation à la Station d'Osaka JR qui est le plus grand terminus du Japon Ouest et est confortable pour à plusieurs reprises régulièrement un jour.</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>西日本最大のターミナルであるＪＲ大阪駅をご利用のお客様に、便利で快適なお買い物を日常的に、毎日でも、日に何度でもご利用いただける、「食」を中心とした施設です。</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:19:04</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>48</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka d'eki marche Osaka grève noire</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ大阪 エキマルシェ大阪クロスト</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:20:55</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>49</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ大阪</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:27:50</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>50</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>\"Les jours dtd.cafe\" ouvrent un magasin dans l'Event space pour la première fois pour un temps limit🍪｜</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルひろばに「日々 dtd.cafe」が期間限定で初出店🍪｜</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:27:50</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>51</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>\"Les jours dtd.cafe\" ouvrent un magasin dans l'Event space pour la première fois pour un temps limité🍪</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルひろばに「日々 dtd.cafe」が期間限定で初出店🍪</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:41:58</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>52</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Date 2024.05.23 - 2024.05.29 &lt;eki marche Osaka&gt;</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>開催日 2024.05.23 〜 2024.05.29 〈エキマルシェ大阪〉</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:41:58</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>54</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Sucreries de ekimaru</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルスイーツ</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 14:43:27</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>55</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Date 2024.04.27 - le 2024.05.12</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>開催日 2024.04.27 〜 2024.05.12</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:04:49</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>56</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka du Tibia \"Osaka ど\" exploitation standard !</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ新大阪　「大阪ど定番」開催！</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:04:49</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>58</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Date 2024.03.01 - le 2024.03.20</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>開催日 2024.03.01 〜 2024.03.20</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:15:18</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>61</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Campagne</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>キャンペーン</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:15:44</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>62</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Date 2024.02.10 - le 2024.02.29</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>開催日 2024.02.10 〜 2024.02.29</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:15:44</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>64</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka du Tibia le neuvième anniversaire, Osaka du Tibia Sotoe changent un article ayant de la faveur cela le troisième anniversaire et introduisent !</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ新大阪９周年、新大阪Sotoeが３周年!みなさまにご愛顧いただいているアイテムを改めてご紹介します！</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:17:08</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>65</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>eki marche Osaka du Tibia \"Je suppose le menu du personnel\" l'exploitation !</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルシェ新大阪「スタッフの推しメニュー」開催！</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:17:30</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>66</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>＼ eki marche est le point de WESTER double/chaque mercredi</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>＼エキマルシェは毎週水曜日　WESTERポイント2倍／</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:31:35</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>67</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Date 2024.05.15 - le 2024.05.21</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>開催日 2024.05.15 〜 2024.05.21</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:37:14</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>68</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>\"Wazuka, le jardin d'Uji\" ouvre un magasin dans l'Event space pour la première fois pour un temps limité🍵</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマルひろばに「宇治和束園」が期間限定で初出店🍵</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:37:14</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>70</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>ekimaru Peut publier [la suie de directeur !</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマル誌５月号【店長おすすめ！</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:46:08</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>72</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Marchandises fondamentales😊】</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>定番商品😊】</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:49:00</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>73</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>[Event space]</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>【エキマルひろば】</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:51:17</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>74</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Avril annonce calendaire d'événement spéciale🎉</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>4月催事カレンダー発表🎉</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:51:17</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>76</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>L'édition d'avril de ekimaru [je soutiens la nouvelle vie une unit📢！！】</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマル誌4月号【新生活を応援し隊📢！！】</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:56:52</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>77</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>🎊</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>🎊</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:59:12</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>78</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>🎊La \"Grosse Sorcière tout à fait populaire New York\" se lève dans l'Event space à New York !</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>🎊NYで大人気の”Fat Witch New York”がエキマルひろばに登場！</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:59:12</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>79</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Date 2024.03.08 - le 2024.03.21</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>開催日 2024.03.08 〜 2024.03.21</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 15:59:12</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>81</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Édition de mars de ekimaru [arrivée de saison de vacances printanière ♪ gourmet de sortie]</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマル誌3月号【春休みシーズン到来♪お出かけグルメ】</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 16:01:08</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>83</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>🎁</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>🎁</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 16:01:35</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>84</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>ekimaru l'édition de Jour Blanche [un cadeau dans le cadeau de retour pour choisir dans les magasins dans la station !]</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマル誌ホワイトデー号【駅ナカで選ぶお返しギフト！】</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 16:01:35</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>85</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>ekimaru l'édition de Jour Blanche [un cadeau dans le cadeau de retour pour choisir dans les magasins dans la station !]🍫</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>エキマル誌バレンタイン号【駅ナカで買えるバレンタインギフト】🍫</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 16:03:54</date>
+
+          \                </item>
+
+          \                <item xsi:type=\"cl:DicEntryMemory\">
+
+          \                    <entryid>86</entryid>
+
+          \                    <sentences>
+
+          \                        <item>
+
+          \                            <lang>fr</lang>
+
+          \                            <text>Nouvelles</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                        <item>
+
+          \                            <lang>ja</lang>
+
+          \                            <text>お知らせ</text>
+
+          \                            <isKey>true</isKey>
+
+          \                        </item>
+
+          \                    </sentences>
+
+          \                    <isPattern>false</isPattern>
+
+          \                    <weight>0</weight>
+
+          \                    <info>0</info>
+
+          \                    <date>2024-05-29 16:03:54</date>
+
+          \                </item>
+
+          \            </entries>
+
+          \        </cl:GetDictionaryEntryResponse>
+
+          \    </SOAP-ENV:Body>
+
+          </SOAP-ENV:Envelope>"
+  - name: prod_bridge_54179
+    request:
+      url: "{{ts_host}}/clsoap/clsoap.cgi"
+      method: POST
+      body:
+        type: text
+        data: |
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+              <SOAP-ENV:Body>
+
+                  <cl:GetDictionaryEntry>
+                      <licence>ekimaru/service 1d7b411e2718a675222aeebf6092bea3a2f83644</licence>
+                      <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                      <reqgroup></reqgroup>
+                      <select></select>
+
+                      <did>54179</did>
+                      <format></format>
+                      <rangeStart>0</rangeStart>
+                      <rangeCount>1000</rangeCount>
+                  </cl:GetDictionaryEntry>
+
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Connection
+          value: close
+        - name: Content-Encoding
+          value: gzip
+        - name: Content-Length
+          value: "534"
+        - name: Content-Type
+          value: text/xml; charset=utf-8
+        - name: Server
+          value: Translation Server2 5.5.7 R48765
+      body:
+        type: xml
+        data: |-
+          <?xml version="1.0" encoding="UTF-8"?>
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema" xmlns:clv1="http://crosslanguage.co.jp/clsoap/schema">
+              <SOAP-ENV:Body>
+                  <cl:GetDictionaryEntryResponse>
+                      <entries>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>1ed20e09.FejtFr7L</entryid>
+                              <headword>エキマル</headword>
+                              <source>*エキマル/N/ + = "wt_bridge_1541285"/N/UC/</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>4437a764.FejtFr7LD16DWDQ</entryid>
+                              <headword>エキマル広場</headword>
+                              <source>*エキマル広場/N/ + = "wt_bridge_1541286"/N/UC/</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>43ffdcda.FejtFr7LFbLNsA</entryid>
+                              <headword>エキマルひろば</headword>
+                              <source>*エキマルひろば/N/ + = "wt_bridge_1541287"/N/UC/</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>ab6e2124.FejtFr7Ll4cPWSeWKg</entryid>
+                              <headword>エキマルシェ大阪</headword>
+                              <source>*エキマルシェ大阪/N/ + = "wt_bridge_1541363"/N/UC/</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>f9a17bb2.FejtFr7Ll4cPW51YWg</entryid>
+                              <headword>エキマルシェ宝塚</headword>
+                              <source>*エキマルシェ宝塚/N/ + = "wt_bridge_1541407"/N/UC/</source>
+                          </item>
+                      </entries>
+                  </cl:GetDictionaryEntryResponse>
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>

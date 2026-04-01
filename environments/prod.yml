@@ -1,0 +1,6 @@
+name: prod
+variables:
+  - name: url
+    value: https://hpadmin.transer.com/api/v1
+  - name: ts_host
+    value: http://210.140.74.149:12000

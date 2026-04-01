@@ -1,0 +1,40 @@
+info:
+  name: "[本番]TranslateTextSimple"
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+       xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+       xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+      <SOAP-ENV:Body>
+
+          <cl:TranslateTextSimple>
+              <licence>mercure-tottoridaisen/service 955f21daddb6d19127395be7a19eee42556f6ab8</licence>
+              <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+              <reqgroup></reqgroup>
+              <select></select>
+              <engine>
+                  <eid>CR-JE-NMT</eid>
+                  <prop><item><key>dictionaries</key><val></val></item></prop>
+              </engine>
+              <text>こんにちは</text>
+          </cl:TranslateTextSimple>
+
+      </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

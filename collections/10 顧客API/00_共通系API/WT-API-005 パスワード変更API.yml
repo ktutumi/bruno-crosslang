@@ -1,0 +1,22 @@
+info:
+  name: WT-API-005 パスワード変更API
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/change-passwd"
+  body:
+    type: json
+    data: |-
+      {
+        "reminder_token": "c8b87ed733be1b1644d0b0af6cb6a67fda314723ffb9adfadc77013cea9a4c4b",
+        "passwd": "12345678"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,33 @@
+info:
+  name: WT-API-504 PVUU Export
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{url}}/statistics-download/account/loging?target_date_from=2022-08-25&target_date_to=2022-11-25&lang_cd=all&domain_id=77&indicator_cd=pvuu"
+  params:
+    - name: target_date_from
+      value: 2022-08-25
+      type: query
+    - name: target_date_to
+      value: 2022-11-25
+      type: query
+    - name: lang_cd
+      value: all
+      type: query
+    - name: domain_id
+      value: "77"
+      type: query
+    - name: indicator_cd
+      value: pvuu
+      type: query
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY3Jvc3MiXSwiZXhwIjoxNjY5MzQ5MTgxLCJqdGkiOiJhZG1pbiIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.nE2IIjUgRCO33eEqFXUWI3kZ3exy997b7wp4NK6L2kI
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

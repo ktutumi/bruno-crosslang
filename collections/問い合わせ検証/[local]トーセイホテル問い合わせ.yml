@@ -1,0 +1,69 @@
+info:
+  name: "[local]トーセイホテル問い合わせ"
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://h40-e.local-transer.net/contact/?lang=ja
+  headers:
+    - name: User-Agent
+      value: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:135.0) Gecko/20100101 Firefox/135.0
+    - name: Accept
+      value: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    - name: Accept-Language
+      value: ja,en;q=0.5
+    - name: Accept-Encoding
+      value: gzip, deflate, br, zstd
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+    - name: Origin
+      value: https://h40-e.local-transer.net
+    - name: Connection
+      value: keep-alive
+    - name: Referer
+      value: https://h40-e.local-transer.net/contact/
+    - name: Cookie
+      value: VISIT=1; _ga_NV5CTN7LZ9=GS1.1.1737517439.2.1.1737517440.59.0.0; _ga=GA1.1.1359161799.1737515069; _ga=GA1.3.1359161799.1737515069; _gid=GA1.3.704160645.1737515070; crosslang_confirmed_lang=h40.local-transer.net:en; PHPSESSID=7ikmd0afeoietaihub1k1puug640el9n; _dc_gtm_UA-105266315-10=1; _gali=btn_submit
+    - name: Upgrade-Insecure-Requests
+      value: "1"
+    - name: Sec-Fetch-Dest
+      value: document
+    - name: Sec-Fetch-Mode
+      value: navigate
+    - name: Sec-Fetch-Site
+      value: same-origin
+    - name: Sec-Fetch-User
+      value: ?1
+    - name: Priority
+      value: u=0, i
+  params:
+    - name: lang
+      value: ja
+      type: query
+  body:
+    type: form-urlencoded
+    data:
+      - name: mode
+        value: confirm
+      - name: target
+        value: TOSEI HOTEL COCONE Asakusa
+      - name: category
+        value: 予約について About Reservation
+      - name: name
+        value: Tsutsumi Test
+      - name: mail
+        value: koichi.tsutsumi@gmail.com
+      - name: mail_confirm
+        value: koichi.tsutsumi@gmail.com
+      - name: content
+        value: Test
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Generated from cURL: curl 'https://h40-e.local-transer.net/contact/?lang=ja#contact_form' --compressed -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:135.0) Gecko/20100101 Firefox/135.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Accept-Language: ja,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Origin: https://h40-e.local-transer.net' -H 'Connection: keep-alive' -H 'Referer: https://h40-e.local-transer.net/contact/' -H 'Cookie: VISIT=1; _ga_NV5CTN7LZ9=GS1.1.1737517439.2.1.1737517440.59.0.0; _ga=GA1.1.1359161799.1737515069; _ga=GA1.3.1359161799.1737515069; _gid=GA1.3.704160645.1737515070; crosslang_confirmed_lang=h40.local-transer.net:en; PHPSESSID=7ikmd0afeoietaihub1k1puug640el9n; _dc_gtm_UA-105266315-10=1; _gali=btn_submit' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: document' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: same-origin' -H 'Sec-Fetch-User: ?1' -H 'Priority: u=0, i' --data-raw 'mode=confirm&target=TOSEI+HOTEL+COCONE+Asakusa&category=%E4%BA%88%E7%B4%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6+About+Reservation&name=Tsutsumi+Test&mail=koichi.tsutsumi%40gmail.com&mail_confirm=koichi.tsutsumi%40gmail.com&content=Test'"

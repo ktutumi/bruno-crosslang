@@ -1,0 +1,28 @@
+info:
+  name: WT-API-006 共通ヘッダ情報API
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{url}}/common/header"
+  body:
+    type: json
+    data: |-
+      {
+        "domain_list": [
+          {
+            "domain_id": 1,
+            "domain_name": "vnext.vn"
+          }
+        ]
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidXNlciJdLCJleHAiOjE2MjgzMzMwMTYsImp0aSI6InVzZXIyMiIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.fS3YgTIHp8m_QOo5Bdf9oAOW6zeWKIBC21MgtQyTApY
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

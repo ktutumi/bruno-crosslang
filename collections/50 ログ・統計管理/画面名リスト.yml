@@ -1,0 +1,57 @@
+info:
+  name: 画面名リスト
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{url}}/admin/logs/screen-name-list"
+  params:
+    - name: user_id
+      value: ""
+      type: query
+      disabled: true
+    - name: ip
+      value: ""
+      type: query
+      disabled: true
+    - name: start_time1
+      value: ""
+      type: query
+      disabled: true
+    - name: start_time2
+      value: ""
+      type: query
+      disabled: true
+    - name: handling_time
+      value: ""
+      type: query
+      disabled: true
+    - name: log_level
+      value: ""
+      type: query
+      disabled: true
+    - name: message
+      value: ""
+      type: query
+      disabled: true
+    - name: urls[]
+      value: customer/basic-settings
+      type: query
+      disabled: true
+    - name: urls[]
+      value: customer/cache
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY3Jvc3MiXSwiZXhwIjoxNjkwMjI3MjE4LCJqdGkiOiJhZG1pbiIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.bku31TbGmRUyGPiPdCdIkzrnoyzzedzFGHfr2GzuK_w
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,39 @@
+info:
+  name: "[本番]SplitSentences"
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:SplitSentences>
+                  <licence>customer-n/service 715ff23fb6711295ea82cfeda94637003491e03d</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <eid>CR-JCT-NMT</eid>
+                  <blocks>
+                    <item><text>カテゴリー: 極端な例 | 投稿日: 2014年1月5日 | 投稿者: mypacecreator</text></item>
+                  </blocks>
+              </cl:SplitSentences>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

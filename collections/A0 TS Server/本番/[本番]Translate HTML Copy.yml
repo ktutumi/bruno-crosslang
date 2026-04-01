@@ -1,0 +1,48 @@
+info:
+  name: "[本番]Translate HTML Copy"
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |-
+      <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/"
+      	xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema"
+      	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      	<Body xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+      		<TranslateMulti xmlns="http://crosslanguage.co.jp/clsoap/2/schema">
+      			<licence>ekimaru/service 1d7b411e2718a675222aeebf6092bea3a2f83644</licence>
+      			<clientid>ktutumi-dev-wt-sitectl 0.9.0</clientid>
+      			<engine>
+      				<eid>BR-PR-JA.FR.EN</eid>
+      				<prop>
+      					<item>
+      						<key>dictionaries</key>
+      						<val>54179,54181,54183</val>
+      					</item>
+      				</prop>
+      			</engine>
+      			<rules>
+      @data html {
+        fragment: true;
+        }
+      			</rules>
+      			<indata>
+      				<item>
+      					<data>44Ko44Kt44Oe44Or44K344Kn</data>
+      				</item>
+      			</indata>
+      		</TranslateMulti>
+      	</Body>
+      </Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

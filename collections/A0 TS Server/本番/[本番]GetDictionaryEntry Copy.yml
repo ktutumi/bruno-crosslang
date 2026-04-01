@@ -1,0 +1,110 @@
+info:
+  name: "[本番]GetDictionaryEntry Copy"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+          xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:GetDictionaryEntry>
+                  <licence>customer-n/service 715ff23fb6711295ea82cfeda94637003491e03d</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+
+                  <did>50381</did>
+                  <format>csv</format>
+                  <rangeStart>0</rangeStart>
+                  <rangeCount>1000</rangeCount>
+              </cl:GetDictionaryEntry>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: GetDictionaryEntry
+    request:
+      url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+      method: POST
+      body:
+        type: text
+        data: |
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+              <SOAP-ENV:Body>
+
+                  <cl:GetDictionaryEntry>
+                      <licence>grooo-new_ap_pj/dev01 e2147f5996b8cad48f780ada42a7f16626d9cde5</licence>
+                      <clientid>tsclient3 5.4.2</clientid>
+                      <reqgroup></reqgroup>
+                      <select></select>
+
+                      <did>17794</did>
+                      <format>csv</format>
+                      <rangeStart>0</rangeStart>
+                      <rangeCount>1000</rangeCount>
+                  </cl:GetDictionaryEntry>
+
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Encoding
+          value: gzip
+        - name: Content-Length
+          value: "408"
+        - name: Content-Type
+          value: text/xml; charset=utf-8
+        - name: Server
+          value: Translation Server 5.4.5 R45816
+      body:
+        type: xml
+        data: |-
+          <?xml version="1.0" encoding="UTF-8"?>
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema" xmlns:clv1="http://crosslanguage.co.jp/clsoap/schema">
+              <SOAP-ENV:Body>
+                  <cl:GetDictionaryEntryResponse>
+                      <entries>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>9056bb14.FrXJ3JA</entryid>
+                              <headword>フラーグ</headword>
+                              <source>"フラーグ","flurgy"</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>e2d522ed.FrXJ3JA</entryid>
+                              <headword>フラーグ</headword>
+                              <source>"フラーグ","flurg"</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <entryid>6a5d8abb.FqeF3LU</entryid>
+                              <headword>デゥーフ</headword>
+                              <source>"デゥーフ","doof"</source>
+                          </item>
+                      </entries>
+                  </cl:GetDictionaryEntryResponse>
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>

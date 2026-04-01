@@ -1,0 +1,90 @@
+info:
+  name: 翻訳メモリ DeleteDictionaryEntry
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                         xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                         xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+              <cl:DeleteDictionaryEntry>
+                  <licence>grooo-new_ap_pj/dev01 e2147f5996b8cad48f780ada42a7f16626d9cde5</licence>
+                  <clientid>tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <did>19214</did>
+                  <entries>
+                      <item>
+                          <entryid>0</entryid>
+                      </item>                
+                  </entries>
+              </cl:DeleteDictionaryEntry>
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 翻訳メモリ DeleteDictionaryEntry 成功
+    request:
+      url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+      method: POST
+      body:
+        type: text
+        data: |
+          <?xml version="1.0" encoding="UTF-8"?>
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                             xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                             xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+              <SOAP-ENV:Body>
+                  <cl:DeleteDictionaryEntry>
+                      <licence>grooo-new_ap_pj/dev01 e2147f5996b8cad48f780ada42a7f16626d9cde5</licence>
+                      <clientid>tsclient3 5.4.2</clientid>
+                      <reqgroup></reqgroup>
+                      <did>17878</did>
+                      <entries>
+                          <item>
+                              <entryid>7</entryid>
+                          </item>
+                      </entries>
+                  </cl:DeleteDictionaryEntry>
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Encoding
+          value: gzip
+        - name: Content-Length
+          value: "246"
+        - name: Content-Type
+          value: text/xml; charset=utf-8
+        - name: Server
+          value: Translation Server 5.4.5 R45816
+      body:
+        type: xml
+        data: |-
+          <?xml version="1.0" encoding="UTF-8"?>
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema" xmlns:clv1="http://crosslanguage.co.jp/clsoap/schema">
+              <SOAP-ENV:Body>
+                  <cl:DeleteDictionaryEntryResponse></cl:DeleteDictionaryEntryResponse>
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>

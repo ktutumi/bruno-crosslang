@@ -1,0 +1,112 @@
+info:
+  name: Translate HTML hpedit Internal error
+  type: http
+  seq: 22
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |-
+      <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Body xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+        <Translate xmlns="http://crosslanguage.co.jp/clsoap/2/schema">
+          <licence>ktutumi0307_sc/service a7e8ba2069a5bb677b995697f216f892d97d628a</licence>
+          <clientid>ktutumi-dev-wt-sitectl 0.9.0</clientid>
+          <engine>
+            <eid>CR-JE-NMT</eid>
+            <prop><item><key>dictionaries</key><val></val></item></prop>
+          </engine>
+          <rules>
+      @data html {
+        base-url: "https://h30.local-transer.net/en/rewrite-test/index.html";
+        fragment: true;
+      }
+
+      .cl-notranslate {
+       content: ignore;
+      }
+
+      a.cl-norewrite, .cl-norewrite a {
+        attribute: href rewrite "{absurl}" !important;
+      }
+
+      img.cl-norewrite, .cl-norewrite img {
+        attribute: src rewrite "{absurl}" !important;
+      }
+
+      input, textarea {
+        attribute: placeholder translate;
+      }
+
+      @urlmap RewriteImage {
+      }
+
+      @urlmap RewriteCSSURL {
+      }
+
+      @urlmap RewriteALinkURL {
+      }
+
+      @rewrite DefaultRewriteURL {
+        if (absurl matches "^https://h30.local-transer.net/en/(.*)") return "{absurl}";
+        if (absurl matches "^https://h30.local-transer.net/(.*)") return "https://h30.local-transer.net/en/{$1}";
+        return "{absurl}";
+      }
+
+      @rewrite RewriteRules {
+        apply @RewriteImage;
+        apply @RewriteCSSURL;
+        apply @RewriteAlinkURL;
+        return @DefaultRewriteURL;
+      }
+
+      :html-url-attributes, :css, :javascript {
+        attribute: * rewrite @RewriteRules;
+      }
+
+
+
+
+      </rules>
+      <indata>PGltZyBzcmM9Ii4vbG9jYWwuanBnIiBhbHQ9IkxvY2FsIGltYWdlIGV4YW1wbGUiIC8+</indata>
+      </Translate>
+      </Body>
+      </Envelope>
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        // Test 1: Status code is 200
+        test("Status code is 200", function () {
+            expect(res.getStatus()).to.equal(200);
+        });
+
+        // Test 2: Response body contains a valid SOAP Envelope
+        test("Response contains a valid SOAP Envelope", function () {
+            var responseBody = JSON.stringify(res.getBody());
+            expect(responseBody).to.include("<SOAP-ENV:Envelope");
+            expect(responseBody).to.include("</SOAP-ENV:Envelope>");
+        });
+
+        // Test 3: TranslateResponse element is present in the response XML
+        test("TranslateResponse element is present", function () {
+            var responseBody = JSON.stringify(res.getBody());
+            var jsonObject = xml2Json(responseBody);
+            // Traverse to find TranslateResponse
+            var envelope = jsonObject["SOAP-ENV:Envelope"] || jsonObject.Envelope;
+            expect(envelope).to.be.an("object");
+            var body = envelope["SOAP-ENV:Body"] || envelope.Body;
+            expect(body).to.be.an("object");
+            var translateResponse = body["cl:TranslateResponse"] || body.TranslateResponse;
+            expect(translateResponse, "TranslateResponse element should be present").to.exist;
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

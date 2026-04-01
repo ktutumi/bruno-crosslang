@@ -1,0 +1,40 @@
+info:
+  name: 言語リスト
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: https://admin.local-transer.com/api/v1/customer/translations
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Accept-Language
+      value: ja;q=0.8
+    - name: Authorization
+      value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidXNlciIsImh0dHBzIl0sImV4cCI6MTY2OTY5NjYxMSwianRpIjoic3ViZGlyIiwiaXNzIjoid2ViLXRyYW5zZXItYXBpIn0.XvWV5ZJEM0toMY_s7iphQHRCMIRH-CAPxRoxJH1pwfk
+    - name: Connection
+      value: keep-alive
+    - name: Cookie
+      value: crosslang_preview_flag=1; token_user=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidXNlciIsImh0dHBzIl0sImV4cCI6MTY2OTY5NjYxMSwianRpIjoic3ViZGlyIiwiaXNzIjoid2ViLXRyYW5zZXItYXBpIn0.XvWV5ZJEM0toMY_s7iphQHRCMIRH-CAPxRoxJH1pwfk; last-active-user=1669693100233
+    - name: Cookies
+      value: crosslang_preview_flag=1;Expires=Tue, November 29th 2022, 13:38:16;Path=/;
+    - name: Referer
+      value: https://admin.local-transer.com/translate-manage
+    - name: Sec-Fetch-Dest
+      value: empty
+    - name: Sec-Fetch-Mode
+      value: cors
+    - name: Sec-Fetch-Site
+      value: same-origin
+    - name: Sec-GPC
+      value: "1"
+    - name: User-Agent
+      value: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

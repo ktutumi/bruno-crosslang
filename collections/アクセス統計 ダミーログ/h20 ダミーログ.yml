@@ -1,0 +1,28 @@
+info:
+  name: h20 ダミーログ
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{url_h20_ko}}/dummy-log?date_from=2023-06-01&date_to=2023-07-01&num_from=5&num_to=20"
+  params:
+    - name: date_from
+      value: 2023-06-01
+      type: query
+    - name: date_to
+      value: 2023-07-01
+      type: query
+    - name: num_from
+      value: "5"
+      type: query
+    - name: num_to
+      value: "20"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

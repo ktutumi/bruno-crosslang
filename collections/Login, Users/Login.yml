@@ -1,0 +1,24 @@
+info:
+  name: Login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/login"
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": "customer-stg-a-basic/main",
+        "passwd": "12345678",
+        "division": "customer",
+        "lang": "ja"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

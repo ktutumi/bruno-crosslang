@@ -1,0 +1,56 @@
+info:
+  name: WT-API-507 エラーログ検索
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{url}}/admin/logs/error-logs?page_size=10"
+  params:
+    - name: user_id
+      value: ""
+      type: query
+      disabled: true
+    - name: ip
+      value: ""
+      type: query
+      disabled: true
+    - name: start_time1
+      value: ""
+      type: query
+      disabled: true
+    - name: start_time2
+      value: ""
+      type: query
+      disabled: true
+    - name: handling_time
+      value: ""
+      type: query
+      disabled: true
+    - name: log_level
+      value: ""
+      type: query
+      disabled: true
+    - name: message
+      value: ""
+      type: query
+      disabled: true
+    - name: page_size
+      value: "10"
+      type: query
+    - name: offset
+      value: "3"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY3Jvc3MiXSwiZXhwIjoxNjkwMzg1NzQ3LCJqdGkiOiJhZG1pbiIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.Cocw_S7DAXtXc9IYkXMxIFT6O4VKFbTcv8gxOGOnxfI
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

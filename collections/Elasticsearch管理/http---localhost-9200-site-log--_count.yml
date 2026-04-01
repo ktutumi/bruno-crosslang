@@ -1,0 +1,39 @@
+info:
+  name: http://localhost:9200/site-log*/_count
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{es_url}}/site-log*/_count"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "query": {
+            "query_string": {
+              "query": "domain_identify:ticket-chikebo-jp AND created_at:2026-02-03*"
+            }
+          }
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |
+  Generated from cURL: curl -X GET "http://localhost:9200/site-log*/_count" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "query": {
+        "query_string": {
+          "query": "domain_identify:example.com AND created_at:2026-02-04*"
+        }
+      }
+    }'

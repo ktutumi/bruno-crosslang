@@ -1,0 +1,40 @@
+info:
+  name: Get User
+  type: http
+  seq: 31
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |+
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+        <SOAP-ENV:Body>
+          <cl:GetUser>
+            <licence>_super 125d92db9aead12290e648f62b4c8cbc63d2421d</licence>
+            <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+            <reqgroup></reqgroup>
+            <select>ownerdic</select>
+
+            <!-- ライセンス外ユーザーID -->
+            <userid>
+              <item>cross40-rke2/service</item>
+            </userid>
+
+          </cl:GetUser>
+        </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,39 @@
+info:
+  name: TranslateTextSimple
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: http://localhost:12001/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+       xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+       xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+      <SOAP-ENV:Body>
+
+          <cl:TranslateTextSimple>
+              <licence>ktutumi0307_sc/service a7e8ba2069a5bb677b995697f216f892d97d628a</licence>
+              <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+              <reqgroup></reqgroup>
+              <select></select>
+              <engine>
+                  <eid>CR-JE-NMT</eid>
+              </engine>
+              <text>やめる 確定する</text>
+          </cl:TranslateTextSimple>
+
+      </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

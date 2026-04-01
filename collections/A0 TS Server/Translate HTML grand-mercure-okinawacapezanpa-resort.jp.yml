@@ -1,0 +1,73 @@
+info:
+  name: Translate HTML grand-mercure-okinawacapezanpa-resort.jp
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: http://210.140.74.149:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:Translate>
+                  <licence>grand-mercure/service 51eccdc7cf6517e3493aba737534ff008847b5c3</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <engine>
+                      <eid>CR-JE-NMT</eid>
+                      <prop>
+                          <item>
+                              <key>dictionaries</key>
+                              <val></val>
+                          </item>
+                       </prop>
+                  </engine>
+                  <rules>
+      @data html {
+        fragment: true;
+      }
+
+      @urlmap RewriteImage {
+      }
+
+      @urlmap RewriteCSSURL {
+      }
+
+      @urlmap RewriteALinkURL {
+      }
+
+      @rewrite DefaultRewriteURL {
+      }
+
+      @rewrite RewriteRules {
+        apply @RewriteImage;
+        apply @RewriteCSSURL;
+        apply @RewriteAlinkURL;
+        return @DefaultRewriteURL;
+      }
+
+      :html-url-attributes, :css, :javascript {
+        attribute: * rewrite @RewriteRules;
+      }
+                  </rules>
+                  <indata>PGR0PuWtkOS+mzxzcGFuIGlkPSJudW0tY2hpbGQiPjA8L3NwYW4+PC9kdD4=</indata>
+              </cl:Translate>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

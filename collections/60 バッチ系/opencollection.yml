@@ -1,0 +1,18 @@
+opencollection: 1.0.0
+
+info:
+  name: 60 バッチ系
+
+request:
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+  variables:
+    - name: auth_token
+      value: ""
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

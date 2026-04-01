@@ -1,0 +1,25 @@
+info:
+  name: エラー通知バッチ メールのみ
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{url}}/batch/error-notification"
+  body:
+    type: json
+    data: |-
+      {
+          "last_run_time": "2025-01-20 14:15:00.000000",
+          "run_time": "2025-01-20 15:30:00.000000",
+          "is_debug": false,
+          "mail_only": true,
+          "teams_only": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

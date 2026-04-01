@@ -1,0 +1,79 @@
+info:
+  name: "[本番]Translate HTML hpedit Copy"
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:Translate>
+                  <licence>ekimaru/service 1d7b411e2718a675222aeebf6092bea3a2f83644</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <engine>
+                      <eid>BR-PR-JA.FR.EN</eid>
+                      <prop><item><key>dictionaries</key><val>54181,54179,54183</val></item></prop>
+                  </engine>
+                  <rules>
+      @data html {
+        fragment: true;
+        base-url: "https://osaka.ekimaru.com/";
+        output: hpedit;
+        tag: clid 1;
+      }
+
+      @urlmap RewriteImage {
+      }
+
+      @urlmap RewriteCSSURL {
+      }
+
+      @urlmap RewriteALinkURL {
+      }
+
+      @rewrite DefaultRewriteURL {
+          if (url matches "^$") return "";
+          if (url matches "^data:") return "{url}";
+          if (url matches "^#") return "{url}";
+          if (url matches "^\\?") return "{url}";
+
+          if (absurl matches "^http") return "{url}";
+
+          return "{absurl}";
+      }
+
+      @rewrite RewriteRules {
+        apply @RewriteImage;
+        apply @RewriteCSSURL;
+        apply @RewriteAlinkURL;
+        return @DefaultRewriteURL;
+      }
+
+      :html-url-attributes, :css, :javascript {
+        attribute: * rewrite @RewriteRules;
+      }
+                  </rules>
+                  <indata>PHAgY2xhc3M9InBvcHVwX3R4dCI+NuaciOOBq+OCqOOCreODnuODq+OBsuOCjeOBsOOBq+WHuuW6l+OBmeOCi+OBiuW6l+OCkuOBhOOBoeaXqeOBj+OBiuWxiuOBkTwvcD4=</indata>
+              </cl:Translate>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

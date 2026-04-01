@@ -1,0 +1,105 @@
+info:
+  name: Translate JavaScript
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{ts_host}}/clsoap/clsoap.cgi"
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:Translate>
+                  <licence>ktutumi0307_sc/service a7e8ba2069a5bb677b995697f216f892d97d628a</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <engine>
+                      <eid>CR-JE-NMT</eid>
+                      <prop>
+                          <item>
+                              <key>dictionaries</key>
+                              <val></val>
+                          </item>
+                       </prop>
+                  </engine>
+                  <rules>
+      @data javascript {
+        
+        base-url: "https://www.toshokan.city.shizuoka.jp/js/core.js";
+        
+      }
+
+
+      @urlmap RewriteImage {
+        
+
+        
+      }
+
+      @urlmap RewriteCSSURL {
+        
+
+        
+      }
+
+      @urlmap RewriteALinkURL {
+        
+
+        
+      }
+
+      @rewrite DefaultRewriteURL {
+        if (url matches "^$") return "";
+        if (url matches "^data:") return "{url}";
+        if (url matches "^#") return "{url}";
+        if (url matches "^\\?") return "{url}";
+        
+        if (absurl matches "^https://www.toshokan.city.shizuoka.jp/(.*)") apply "https://www-toshokan-city-shizuoka-jp-e.athp.transer.com/{$1}";
+        
+        if (absurl matches "^https://202.247.60.253/(.*)") apply "https://202-247-60-253-e.athp.transer.com/{$1}";
+        
+
+        if (absurl matches "^http") return "{url}";
+
+        
+
+        return "{absurl}";
+      }
+
+      @rewrite RewriteRules {
+        apply @RewriteImage;
+        apply @RewriteCSSURL;
+        apply @RewriteAlinkURL;
+        return @DefaultRewriteURL;
+      }
+
+      :html-url-attributes, :css, :javascript {
+        attribute: * rewrite @RewriteRules;
+      }
+
+      @postprocess {
+        replace: 'www-toshokan-city-shizuoka-jp-[a-zA-Z]{1,4}\\.athp\\.transer\\.com\\/(.+);'
+                 'www.toshokan.city.shizuoka.jp/$1;';
+      }
+                  </rules>
+                  <indata>ZnVuY3Rpb24gdHJpbSgpIHsKCXZhciBzdHJEYXRhID0gZG9jdW1lbnQuU2VhcmNoRm9ybS5rZW5zYWt1X2tleXdvcmQudmFsdWU7Cgl2YXIgaTsKCWZvciAoaSA9IDA7IGkgPCBzdHJEYXRhLmxlbmd0aCAmJiAoc3RyRGF0YS5jaGFyQ29kZUF0KGkpID09IDMyIHx8IHN0ckRhdGEuY2hhckNvZGVBdChpKSA9PSAxMjI4OCk7IGkrKyk7CglzdHJEYXRhID0gc3RyRGF0YS5zdWJzdHJpbmcoaSwgc3RyRGF0YS5sZW5ndGgpOwoJZm9yIChpID0gc3RyRGF0YS5sZW5ndGggLSAxOyBpID49IDAgJiYgKHN0ckRhdGEuY2hhckNvZGVBdChpKSA9PSAzMiB8fCBzdHJEYXRhLmNoYXJDb2RlQXQoaSkgPT0gMTIyODgpOyBpLS0pOwoJc3RyRGF0YSA9IHN0ckRhdGEuc3Vic3RyaW5nKDAsIGkgKyAxKTsKCWlmIChzdHJEYXRhLmxlbmd0aCA9PSAxKSB7CgkJc3BhY2VGbGcgPSB0cnVlOwoJfSBlbHNlIHsKCQlzcGFjZUZsZyA9IGZhbHNlOwoJfQp9CmZ1bmN0aW9uIHNlYXJjaChzY2hUeXBlKSB7Cgl0cmltKCk7CglpZiAoc3BhY2VGbGcgPT0gdHJ1ZSkgewoJCWFsZXJ0KCJzZWFyY2giKTsKCX0gZWxzZSB7CgkJaWYgKHN1Ym1pdEZsZykgewoJCQlzdWJtaXRGbGcgPSBmYWxzZTsKCQkJZG9jdW1lbnQuU2VhcmNoRm9ybS5hY3Rpb24gPSAiaHR0cHM6Ly93d3cudG9zaG9rYW4uY2l0eS5zaGl6dW9rYS5qcC9saWNzeHAtb3BhYy9XT3BhY0VzU2NoQ21wZEV4ZWNBY3Rpb24uZG8/V2ViTGlua0ZsYWc9MSZtb3ZlVG9HYW1lbklkPXRpZnNjaGNtcGRwcmUmU2NoVHlwZT0iICsgc2NoVHlwZTsKCQkJZG9jdW1lbnQuU2VhcmNoRm9ybS5zdWJtaXQoKTsKCQl9Cgl9Cn0KCi8vIOe5p++9uee5neanre+/vemAle+9qApmdW5jdGlvbiB0cmltU3AoKSB7Cgl2YXIgc3RyRGF0YSA9IGRvY3VtZW50LlNlYXJjaEZvcm1TcC5rZW5zYWt1X2tleXdvcmRfc3AudmFsdWU7Cgl2YXIgaTsKCWZvciAoaSA9IDA7IGkgPCBzdHJEYXRhLmxlbmd0aCAmJiAoc3RyRGF0YS5jaGFyQ29kZUF0KGkpID09IDMyIHx8IHN0ckRhdGEuY2hhckNvZGVBdChpKSA9PSAxMjI4OCk7IGkrKyk7CglzdHJEYXRhID0gc3RyRGF0YS5zdWJzdHJpbmcoaSwgc3RyRGF0YS5sZW5ndGgpOwoJZm9yIChpID0gc3RyRGF0YS5sZW5ndGggLSAxOyBpID49IDAgJiYgKHN0ckRhdGEuY2hhckNvZGVBdChpKSA9PSAzMiB8fCBzdHJEYXRhLmNoYXJDb2RlQXQoaSkgPT0gMTIyODgpOyBpLS0pOwoJc3RyRGF0YSA9IHN0ckRhdGEuc3Vic3RyaW5nKDAsIGkgKyAxKTsKCWlmIChzdHJEYXRhLmxlbmd0aCA9PSAxKSB7CgkJc3BhY2VGbGcgPSB0cnVlOwoJfSBlbHNlIHsKCQlzcGFjZUZsZyA9IGZhbHNlOwoJfQp9CmZ1bmN0aW9uIHNlYXJjaFNwKHNjaFR5cGUpIHsKCXRyaW1TcCgpOwoJaWYgKHNwYWNlRmxnID09IHRydWUpIHsKCQlhbGVydCgic2VhcmNoU3AiKTsKCX0gZWxzZSB7CgkJaWYgKHN1Ym1pdEZsZykgewoJCQlzdWJtaXRGbGcgPSBmYWxzZTsKCQkJZG9jdW1lbnQuU2VhcmNoRm9ybVNwLmFjdGlvbiA9ICJodHRwczovL3d3dy50b3Nob2thbi5jaXR5LnNoaXp1b2thLmpwL2xpY3N4cC1vcGFjL1dPcGFjU210TW51VG9wSW5pdEFjdGlvbi5kbz9XZWJMaW5rRmxhZz0xJm1vdmVUb0dhbWVuSWQ9dGlmc2NoY21wZHByZSZTY2hUeXBlPSIgKyBzY2hUeXBlOwoJCQlkb2N1bWVudC5TZWFyY2hGb3JtU3Auc3VibWl0KCk7CgkJfQoJfQp9</indata>
+              </cl:Translate>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

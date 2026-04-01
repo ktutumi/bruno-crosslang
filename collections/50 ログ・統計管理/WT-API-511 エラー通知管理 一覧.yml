@@ -1,0 +1,47 @@
+info:
+  name: WT-API-511 エラー通知管理 一覧
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{url}}/admin/logs/error-notifications?page_size=10&offset=0"
+  params:
+    - name: id
+      value: "1"
+      type: query
+      disabled: true
+    - name: title
+      value: エラー
+      type: query
+      disabled: true
+    - name: log_level
+      value: fatal
+      type: query
+      disabled: true
+    - name: start_time1
+      value: 2023-08-07 23:49:51
+      type: query
+      disabled: true
+    - name: start_time2
+      value: 2023-08-07 23:50:51
+      type: query
+      disabled: true
+    - name: page_size
+      value: "10"
+      type: query
+    - name: offset
+      value: "0"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY3Jvc3MiXSwiZXhwIjoxNjkxOTk5ODU4LCJqdGkiOiJhZG1pbiIsImlzcyI6IndlYi10cmFuc2VyLWFwaSJ9.fRZghaJoNRIFBUGaBtEt3Ear8nop4rPvsCfnRliiHrQ
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,7 @@
+info:
+  name: cross-biz
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

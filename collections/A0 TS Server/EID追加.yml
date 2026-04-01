@@ -1,0 +1,47 @@
+info:
+  name: EID追加
+  type: http
+  seq: 33
+
+http:
+  method: POST
+  url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |-
+      <?xml version="1.0" encoding="UTF-8"?>
+      <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                         xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                         xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Header></SOAP-ENV:Header>
+          <SOAP-ENV:Body>
+              <cl:UpdateUser>
+                  <licence>ktutumi0307_sc/service a7e8ba2069a5bb677b995697f216f892d97d628a</licence>
+                  <clientid>tsclient3 5.4.2</clientid>
+                  <select>features neweid</select>
+                  <displayLang>en</displayLang>
+                  <user>
+                      <userid>ktutumi0307_sc/service</userid>
+                      <apiAllowed>-1</apiAllowed>
+                      <engines>
+                          <item>
+                              <action>add</action>
+                              <eid>CR-JT</eid>
+                              <type>-1</type>
+                              <support>269076479</support>
+                              <maxTechDic>-1</maxTechDic>
+                              <maxUserDic>-1</maxUserDic>
+                          </item>
+                      </engines>
+                  </user>
+              </cl:UpdateUser>
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

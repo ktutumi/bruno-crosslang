@@ -1,0 +1,24 @@
+info:
+  name: TouchSiteLinkReflectedAt
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{url}}/sitectl/site-link/touch-reflect-at"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "ids": [5, 8]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

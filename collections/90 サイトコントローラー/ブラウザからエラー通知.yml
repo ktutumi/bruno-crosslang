@@ -1,0 +1,25 @@
+info:
+  name: ブラウザからエラー通知
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: https://h10-sitectl.local-transer.com/cl.translate.error-notification
+  body:
+    type: json
+    data: |-
+      {
+          "log_level": "error",
+          "start_time": "2023-09-05 23:12:23",
+          "url": "http://h10.test/top.html",
+          "message": "エラーの概要3",
+          "raw_message": "エラーの詳細3"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

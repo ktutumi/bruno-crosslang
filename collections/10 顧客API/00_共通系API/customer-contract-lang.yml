@@ -1,0 +1,17 @@
+info:
+  name: /customer/contract-lang
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{url}}/customer/contract-lang"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidXNlciJdLCJleHAiOjE2NTI0NDQzMjEsImp0aSI6ImxhcGx1cy91c2VyMDEiLCJpc3MiOiJ3ZWItdHJhbnNlci1hcGkifQ.7VVNfBR2IjTPGvNulaT9Un47FsaB6jc1QWHdwqC0Hso
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,26 @@
+info:
+  name: Update User
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{url}}/users/2"
+  body:
+    type: json
+    data: |-
+      {
+        "id": 2,
+        "user_id": "user2",
+        "password": "secret",
+        "first_name": "first",
+        "last_name": "last",
+        "email": "user2@example.com"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,116 @@
+info:
+  name: AddDictionaryEntry
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                         xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                         xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+              <cl:AddDictionaryEntry>
+                  <licence>grooo-new_ap_pj/dev01 e2147f5996b8cad48f780ada42a7f16626d9cde5</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <did>20235</did>
+                  <format>csv</format>
+                  <entries>
+                      <item xsi:type="cl:DicEntryEngine">
+                          <source>"最新レスポンシブHTMLテンプレート no.004_2","new responsive html template"</source>
+                      </item>                
+                  </entries>
+              </cl:AddDictionaryEntry>
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: AddDictionaryEntry 重複あり
+    request:
+      url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+      method: POST
+      body:
+        type: text
+        data: |
+          <?xml version="1.0" encoding="UTF-8"?>
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                             xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                             xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+              <SOAP-ENV:Body>
+                  <cl:AddDictionaryEntry>
+                      <licence>grooo-new_ap_pj/dev01 e2147f5996b8cad48f780ada42a7f16626d9cde5</licence>
+                      <clientid>tsclient3 5.4.2</clientid>
+                      <reqgroup></reqgroup>
+                      <did>17794</did>
+                      <format>csv</format>
+                      <entries>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <source>フラーフ,flurf</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <source>デゥーフ,doof</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <source>フラーグ,flurg</source>
+                          </item>
+                          <item xsi:type="cl:DicEntryEngine">
+                              <source>フラーグ,flurgy</source>
+                          </item>
+                      </entries>
+                  </cl:AddDictionaryEntry>
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Encoding
+          value: gzip
+        - name: Content-Length
+          value: "311"
+        - name: Content-Type
+          value: text/xml; charset=utf-8
+        - name: Server
+          value: Translation Server 5.4.5 R45816
+      body:
+        type: xml
+        data: |-
+          <?xml version="1.0" encoding="UTF-8"?>
+          <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema" xmlns:clv1="http://crosslanguage.co.jp/clsoap/schema">
+              <SOAP-ENV:Body>
+                  <cl:AddDictionaryEntryResponse>
+                      <entries>
+                          <item>
+                              <error>duplicate</error>
+                          </item>
+                          <item>
+                              <error>duplicate</error>
+                          </item>
+                          <item>
+                              <entryid>e2d522ed.FrXJ3JA</entryid>
+                          </item>
+                          <item>
+                              <entryid>9056bb14.FrXJ3JA</entryid>
+                          </item>
+                      </entries>
+                  </cl:AddDictionaryEntryResponse>
+              </SOAP-ENV:Body>
+          </SOAP-ENV:Envelope>

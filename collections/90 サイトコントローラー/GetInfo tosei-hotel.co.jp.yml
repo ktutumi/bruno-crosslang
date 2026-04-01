@@ -1,0 +1,2499 @@
+info:
+  name: GetInfo tosei-hotel.co.jp
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{url}}/sitectl?domain=www-nihonbashi-lifescience-jp"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: timestamp
+      value: 2006-01-02 15:04:05
+      type: query
+      disabled: true
+    - name: domain
+      value: www-nihonbashi-lifescience-jp
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: grand-mercure-okinawacapezanpa-resort.jp
+    request:
+      url: "{{url}}/sitectl?domain=grand-mercure-okinawacapezanpa-resort.jp"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: timestamp
+          value: 2006-01-02 15:04:05
+          type: query
+          disabled: true
+        - name: domain
+          value: grand-mercure-okinawacapezanpa-resort.jp
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx
+        - name: Date
+          value: Fri, 12 Dec 2025 01:33:04 GMT
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: Access-Control-Allow-Credentials
+          value: "true"
+        - name: Access-Control-Allow-Credentials
+          value: "true"
+        - name: Access-Control-Allow-Credentials
+          value: "true"
+        - name: Access-Control-Expose-Headers
+          value: Content-Length
+        - name: Access-Control-Max-Age
+          value: "86400"
+        - name: Strict-Transport-Security
+          value: max-age=31536000
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: Referrer-Policy
+          value: strict-origin-when-cross-origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: "*"
+        - name: Access-Control-Allow-Headers
+          value: "*"
+        - name: Access-Control-Allow-Headers
+          value: "*"
+        - name: Content-Encoding
+          value: gzip
+      body:
+        type: json
+        data: |-
+          {
+              "domain_context": {
+                  "is_valid": true,
+                  "contract": {
+                      "id": 807,
+                      "contract_state": "service",
+                      "web_state": "service",
+                      "lang_state": "service",
+                      "ts_account_id": "grand-mercure/service",
+                      "ts_password": "grand-mercure/service20231130",
+                      "ts_licence": "grand-mercure/service 51eccdc7cf6517e3493aba737534ff008847b5c3"
+                  },
+                  "domain": {
+                      "id": 699,
+                      "contract_id": 807,
+                      "domain": "grand-mercure-okinawacapezanpa-resort.jp",
+                      "domain_state": "service",
+                      "domain_identify": "grand-mercure-okinawacapezanpa-resort-jp",
+                      "protocol": "https",
+                      "url": "https://grand-mercure-okinawacapezanpa-resort.jp",
+                      "port": 28220,
+                      "delay_proc_method": "default",
+                      "delay_msec": 300
+                  },
+                  "rel_domains": [
+                      {
+                          "id": 699,
+                          "contract_id": 807,
+                          "domain": "grand-mercure-okinawacapezanpa-resort.jp",
+                          "domain_state": "service",
+                          "domain_identify": "grand-mercure-okinawacapezanpa-resort-jp",
+                          "protocol": "https",
+                          "url": "https://grand-mercure-okinawacapezanpa-resort.jp",
+                          "port": 28220,
+                          "delay_proc_method": "default",
+                          "delay_msec": 300
+                      }
+                  ],
+                  "maintenance": {
+                      "id": 2505,
+                      "system_service_state": "service",
+                      "web_service_state": "service",
+                      "admin_service_state": "",
+                      "lang_service_state": "service",
+                      "mente_description": "<div><span style=\"background-color: rgb(255, 255, 0);\"><div><span style=\"font-size: 14.08px;\">下記の日時でメンテナンスを行います。</span></div><div><span style=\"font-size: 14.08px;\"><br></span></div><div><span style=\"font-size: 14.08px;\">・メンテナンス日時: 2022年4月xx日 18:00～22:00</span></div><div><span style=\"font-size: 14.08px;\">　　　　　　　　　※この予定は前後する場合があることを予めご了承ください。</span></div><div><span style=\"font-size: 14.08px;\">・対象サービス：WEB-Transer@ホームページ</span></div><div><span style=\"font-size: 14.08px;\">　　　　　　　　WEB-Transer@ホームページ　ダイレクト</span></div><div><span style=\"font-size: 14.08px;\">　　　　　　　　WEB-Transer@ホームページ　EX</span></div></span></div>"
+                  },
+                  "purges": [
+                      {
+                          "id": 34545,
+                          "purge_method": "all",
+                          "eid": "",
+                          "target_path": "",
+                          "condition": "",
+                          "purge_date": null
+                      }
+                  ],
+                  "seo_admin": {
+                      "id": 648,
+                      "canonical_flag": "0",
+                      "hreflang_flag": "0",
+                      "ga_setting_flag": "1"
+                  },
+                  "site_links": [
+                      {
+                          "id": 2863,
+                          "target_url": "https://accor-resorts-japan.jp/allergie_policy/",
+                          "change_url": "https://accor-resorts-japan.jp/cn/allergie_policy/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T15:00:10.556674Z",
+                          "product_url": "https://accor-resorts-japan.jp/cn/allergie_policy/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/cn/allergie_policy/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2864,
+                          "target_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.ja.shtml",
+                          "change_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.zh.shtml",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T15:00:10.559494Z",
+                          "product_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.zh.shtml",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.zh.shtml?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2862,
+                          "target_url": "https://accor-resorts-japan.jp/allergie_policy/",
+                          "change_url": "https://accor-resorts-japan.jp/cn/allergie_policy/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T15:00:10.553431Z",
+                          "product_url": "https://accor-resorts-japan.jp/cn/allergie_policy/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/cn/allergie_policy/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2688,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route02_01.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/41/419de58c40caf453eff5835a2530138ce4dc460fd9b93d023be6d370e1aa9762.png",
+                          "target_cd": "image",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-12T17:12:47.313953Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/41/419de58c40caf453eff5835a2530138ce4dc460fd9b93d023be6d370e1aa9762.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/41/419de58c40caf453eff5835a2530138ce4dc460fd9b93d023be6d370e1aa9762.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3158,
+                          "target_url": "http://okinawabus.com/wp/ls/",
+                          "change_url": "https://okinawabus.com/zh-cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T16:57:04.197222Z",
+                          "product_url": "https://okinawabus.com/zh-cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://okinawabus.com/zh-cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3157,
+                          "target_url": "http://okinawabus.com/wp/ls/",
+                          "change_url": "https://okinawabus.com/zh-cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T16:57:04.194308Z",
+                          "product_url": "https://okinawabus.com/zh-cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://okinawabus.com/zh-cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3159,
+                          "target_url": "http://okinawabus.com/wp/ls/",
+                          "change_url": "https://okinawabus.com/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:57:04.200441Z",
+                          "product_url": "https://okinawabus.com/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://okinawabus.com/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2853,
+                          "target_url": "https://grand-mercure-awajiisland-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-awajiisland-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.208387Z",
+                          "product_url": "https://grand-mercure-awajiisland-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-awajiisland-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2856,
+                          "target_url": "https://mercure-fukuokamunakata-resortandspa.jp/",
+                          "change_url": "https://mercure-fukuokamunakata-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.216627Z",
+                          "product_url": "https://mercure-fukuokamunakata-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-fukuokamunakata-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2645,
+                          "target_url": "https://accor-resorts-japan.jp/",
+                          "change_url": "https://accor-resorts-japan.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-07T19:19:05.305571Z",
+                          "product_url": "https://accor-resorts-japan.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2832,
+                          "target_url": "https://accor-resorts-japan.jp/",
+                          "change_url": "https://accor-resorts-japan.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T14:50:33.147327Z",
+                          "product_url": "https://accor-resorts-japan.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2646,
+                          "target_url": "https://accor-resorts-japan.jp/member/",
+                          "change_url": "https://accor-resorts-japan.jp/en/member/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-07T19:19:05.308443Z",
+                          "product_url": "https://accor-resorts-japan.jp/en/member/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/en/member/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2757,
+                          "target_url": "https://grand-mercure-sapporo-odoripark.jp/",
+                          "change_url": "https://grand-mercure-sapporo-odoripark.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.099098Z",
+                          "product_url": "https://grand-mercure-sapporo-odoripark.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-sapporo-odoripark.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2764,
+                          "target_url": "https://grand-mercure-lakehamana-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-lakehamana-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.120865Z",
+                          "product_url": "https://grand-mercure-lakehamana-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-lakehamana-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2765,
+                          "target_url": "https://mercure-toyamatonami-resortandspa.jp/",
+                          "change_url": "https://mercure-toyamatonami-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.123055Z",
+                          "product_url": "https://mercure-toyamatonami-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-toyamatonami-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2766,
+                          "target_url": "https://mercure-noto-resortandspa.jp/",
+                          "change_url": "https://mercure-noto-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.125074Z",
+                          "product_url": "https://mercure-noto-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-noto-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2830,
+                          "target_url": "https://accor-resorts-japan.jp/member/",
+                          "change_url": "https://accor-resorts-japan.jp/cn/member/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:50:33.145078Z",
+                          "product_url": "https://accor-resorts-japan.jp/cn/member/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/cn/member/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2828,
+                          "target_url": "https://accor-resorts-japan.jp/",
+                          "change_url": "https://accor-resorts-japan.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:50:33.141615Z",
+                          "product_url": "https://accor-resorts-japan.jp/cn/",
+                          "change_count": 2,
+                          "change_count_url": "https://accor-resorts-japan.jp/cn/?&crosslang_url_count=2"
+                      },
+                      {
+                          "id": 2758,
+                          "target_url": "https://mercure-miyagizao-resortandspa.jp/",
+                          "change_url": "https://mercure-miyagizao-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.104949Z",
+                          "product_url": "https://mercure-miyagizao-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-miyagizao-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2762,
+                          "target_url": "https://grand-mercure-yatsugatake-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-yatsugatake-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.116688Z",
+                          "product_url": "https://grand-mercure-yatsugatake-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-yatsugatake-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2763,
+                          "target_url": "https://mercure-naganomatsushiro-resortandspa.jp/",
+                          "change_url": "https://mercure-naganomatsushiro-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.118872Z",
+                          "product_url": "https://mercure-naganomatsushiro-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-naganomatsushiro-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2768,
+                          "target_url": "https://grand-mercure-lakebiwa-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-lakebiwa-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.128629Z",
+                          "product_url": "https://grand-mercure-lakebiwa-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-lakebiwa-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2769,
+                          "target_url": "https://mercure-kyotomiyazu-resortandspa.jp/",
+                          "change_url": "https://mercure-kyotomiyazu-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.130305Z",
+                          "product_url": "https://mercure-kyotomiyazu-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-kyotomiyazu-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2773,
+                          "target_url": "https://grand-mercure-awajiisland-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-awajiisland-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.137318Z",
+                          "product_url": "https://grand-mercure-awajiisland-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-awajiisland-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2775,
+                          "target_url": "https://mercure-kochitosa-resortandspa.jp/",
+                          "change_url": "https://mercure-kochitosa-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.140896Z",
+                          "product_url": "https://mercure-kochitosa-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-kochitosa-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2844,
+                          "target_url": "https://grand-mercure-lakehamana-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-lakehamana-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.182903Z",
+                          "product_url": "https://grand-mercure-lakehamana-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-lakehamana-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2845,
+                          "target_url": "https://mercure-toyamatonami-resortandspa.jp/",
+                          "change_url": "https://mercure-toyamatonami-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.185557Z",
+                          "product_url": "https://mercure-toyamatonami-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-toyamatonami-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2849,
+                          "target_url": "https://mercure-kyotomiyazu-resortandspa.jp/",
+                          "change_url": "https://mercure-kyotomiyazu-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.195153Z",
+                          "product_url": "https://mercure-kyotomiyazu-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-kyotomiyazu-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2851,
+                          "target_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.203175Z",
+                          "product_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2759,
+                          "target_url": "https://mercure-urabandai-resortandspa.jp/",
+                          "change_url": "https://mercure-urabandai-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.108005Z",
+                          "product_url": "https://mercure-urabandai-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-urabandai-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2760,
+                          "target_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.11186Z",
+                          "product_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2761,
+                          "target_url": "https://grand-mercure-minamiboso-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-minamiboso-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.11438Z",
+                          "product_url": "https://grand-mercure-minamiboso-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-minamiboso-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2767,
+                          "target_url": "https://grand-mercure-iseshima-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-iseshima-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.126959Z",
+                          "product_url": "https://grand-mercure-iseshima-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-iseshima-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2770,
+                          "target_url": "https://grand-mercure-nara-kashihara.jp/",
+                          "change_url": "https://grand-mercure-nara-kashihara.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.13211Z",
+                          "product_url": "https://grand-mercure-nara-kashihara.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-nara-kashihara.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2772,
+                          "target_url": "https://mercure-wakayamakushimoto-resortandspa.jp/",
+                          "change_url": "https://mercure-wakayamakushimoto-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.135631Z",
+                          "product_url": "https://mercure-wakayamakushimoto-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-wakayamakushimoto-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2774,
+                          "target_url": "https://mercure-tottoridaisen-resortandspa.jp/",
+                          "change_url": "https://mercure-tottoridaisen-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.139163Z",
+                          "product_url": "https://mercure-tottoridaisen-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-tottoridaisen-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2833,
+                          "target_url": "https://accor-resorts-japan.jp/",
+                          "change_url": "https://accor-resorts-japan.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T14:50:33.149947Z",
+                          "product_url": "https://accor-resorts-japan.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3032,
+                          "target_url": "https://grand-mercure-sapporo-odoripark.jp/",
+                          "change_url": "https://grand-mercure-sapporo-odoripark.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.358463Z",
+                          "product_url": "https://grand-mercure-sapporo-odoripark.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-sapporo-odoripark.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3065,
+                          "target_url": "https://grand-mercure-lakehamana-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-lakehamana-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.378484Z",
+                          "product_url": "https://grand-mercure-lakehamana-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-lakehamana-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3123,
+                          "target_url": "http://okinawabus.com/wp/ls/",
+                          "change_url": "https://okinawabus.com/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T16:50:16.701526Z",
+                          "product_url": "https://okinawabus.com/en/",
+                          "change_count": 2,
+                          "change_count_url": "https://okinawabus.com/en/?&crosslang_url_count=2"
+                      },
+                      {
+                          "id": 2771,
+                          "target_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.133929Z",
+                          "product_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2777,
+                          "target_url": "https://mercure-sagakaratsu-resort.jp/",
+                          "change_url": "https://mercure-sagakaratsu-resort.jp/en",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.144445Z",
+                          "product_url": "https://mercure-sagakaratsu-resort.jp/en",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-sagakaratsu-resort.jp/en?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2776,
+                          "target_url": "https://mercure-fukuokamunakata-resortandspa.jp/",
+                          "change_url": "https://mercure-fukuokamunakata-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.353827Z",
+                          "product_url": "https://mercure-fukuokamunakata-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-fukuokamunakata-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3033,
+                          "target_url": "https://mercure-miyagizao-resortandspa.jp/",
+                          "change_url": "https://mercure-miyagizao-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.36178Z",
+                          "product_url": "https://mercure-miyagizao-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-miyagizao-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2836,
+                          "target_url": "https://accor-resorts-japan.jp/member/",
+                          "change_url": "https://accor-resorts-japan.jp/ko/member/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T14:50:33.154412Z",
+                          "product_url": "https://accor-resorts-japan.jp/ko/member/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/ko/member/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2835,
+                          "target_url": "https://accor-resorts-japan.jp/member/",
+                          "change_url": "https://accor-resorts-japan.jp/tw/member/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T14:50:33.152314Z",
+                          "product_url": "https://accor-resorts-japan.jp/tw/member/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/tw/member/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3066,
+                          "target_url": "https://mercure-toyamatonami-resortandspa.jp/",
+                          "change_url": "https://mercure-toyamatonami-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.38084Z",
+                          "product_url": "https://mercure-toyamatonami-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-toyamatonami-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2778,
+                          "target_url": "https://grand-mercure-beppubay-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-beppubay-resortandspa.jp/en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:21:56.146192Z",
+                          "product_url": "https://grand-mercure-beppubay-resortandspa.jp/en/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-beppubay-resortandspa.jp/en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2837,
+                          "target_url": "https://grand-mercure-sapporo-odoripark.jp/",
+                          "change_url": "https://grand-mercure-sapporo-odoripark.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.165424Z",
+                          "product_url": "https://grand-mercure-sapporo-odoripark.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-sapporo-odoripark.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2840,
+                          "target_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.17374Z",
+                          "product_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2841,
+                          "target_url": "https://grand-mercure-minamiboso-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-minamiboso-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.175684Z",
+                          "product_url": "https://grand-mercure-minamiboso-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-minamiboso-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3034,
+                          "target_url": "https://mercure-urabandai-resortandspa.jp/",
+                          "change_url": "https://mercure-urabandai-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.364741Z",
+                          "product_url": "https://mercure-urabandai-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-urabandai-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3035,
+                          "target_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.367515Z",
+                          "product_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3037,
+                          "target_url": "https://grand-mercure-yatsugatake-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-yatsugatake-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.373824Z",
+                          "product_url": "https://grand-mercure-yatsugatake-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-yatsugatake-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3067,
+                          "target_url": "https://mercure-noto-resortandspa.jp/",
+                          "change_url": "https://mercure-noto-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.384094Z",
+                          "product_url": "https://mercure-noto-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-noto-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2780,
+                          "target_url": "https://accor-resorts-japan.jp/faq/",
+                          "change_url": "https://accor-resorts-japan.jp/en/faq/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:30:01.336166Z",
+                          "product_url": "https://accor-resorts-japan.jp/en/faq/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/en/faq/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2781,
+                          "target_url": "https://accor-resorts-japan.jp/sitepolicy/",
+                          "change_url": "https://accor-resorts-japan.jp/en/sitepolicy/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:30:01.342056Z",
+                          "product_url": "https://accor-resorts-japan.jp/en/sitepolicy/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/en/sitepolicy/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2838,
+                          "target_url": "https://mercure-miyagizao-resortandspa.jp/",
+                          "change_url": "https://mercure-miyagizao-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.168797Z",
+                          "product_url": "https://mercure-miyagizao-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-miyagizao-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2839,
+                          "target_url": "https://mercure-urabandai-resortandspa.jp/",
+                          "change_url": "https://mercure-urabandai-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.171169Z",
+                          "product_url": "https://mercure-urabandai-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-urabandai-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2842,
+                          "target_url": "https://grand-mercure-yatsugatake-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-yatsugatake-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.178251Z",
+                          "product_url": "https://grand-mercure-yatsugatake-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-yatsugatake-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3036,
+                          "target_url": "https://grand-mercure-minamiboso-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-minamiboso-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.370726Z",
+                          "product_url": "https://grand-mercure-minamiboso-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-minamiboso-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3068,
+                          "target_url": "https://grand-mercure-iseshima-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-iseshima-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.386716Z",
+                          "product_url": "https://grand-mercure-iseshima-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-iseshima-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2782,
+                          "target_url": "https://accor-resorts-japan.jp/allergie_policy/",
+                          "change_url": "https://accor-resorts-japan.jp/en/allergie_policy/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:30:01.345115Z",
+                          "product_url": "https://accor-resorts-japan.jp/en/allergie_policy/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/en/allergie_policy/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2843,
+                          "target_url": "https://mercure-naganomatsushiro-resortandspa.jp/",
+                          "change_url": "https://mercure-naganomatsushiro-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.180246Z",
+                          "product_url": "https://mercure-naganomatsushiro-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-naganomatsushiro-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3038,
+                          "target_url": "https://mercure-naganomatsushiro-resortandspa.jp/",
+                          "change_url": "https://mercure-naganomatsushiro-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.376225Z",
+                          "product_url": "https://mercure-naganomatsushiro-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-naganomatsushiro-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3069,
+                          "target_url": "https://grand-mercure-lakebiwa-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-lakebiwa-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.388876Z",
+                          "product_url": "https://grand-mercure-lakebiwa-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-lakebiwa-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2783,
+                          "target_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.ja.shtml",
+                          "change_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.en.shtml",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T11:30:01.348635Z",
+                          "product_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.en.shtml",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.en.shtml?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2846,
+                          "target_url": "https://mercure-noto-resortandspa.jp/",
+                          "change_url": "https://mercure-noto-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.187694Z",
+                          "product_url": "https://mercure-noto-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-noto-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2850,
+                          "target_url": "https://grand-mercure-nara-kashihara.jp/",
+                          "change_url": "https://grand-mercure-nara-kashihara.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.201076Z",
+                          "product_url": "https://grand-mercure-nara-kashihara.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-nara-kashihara.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3070,
+                          "target_url": "https://mercure-kyotomiyazu-resortandspa.jp/",
+                          "change_url": "https://mercure-kyotomiyazu-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.391131Z",
+                          "product_url": "https://mercure-kyotomiyazu-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-kyotomiyazu-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3072,
+                          "target_url": "https://mercure-wakayamakushimoto-resortandspa.jp/",
+                          "change_url": "https://mercure-wakayamakushimoto-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.395404Z",
+                          "product_url": "https://mercure-wakayamakushimoto-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-wakayamakushimoto-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2847,
+                          "target_url": "https://grand-mercure-iseshima-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-iseshima-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.190042Z",
+                          "product_url": "https://grand-mercure-iseshima-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-iseshima-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2848,
+                          "target_url": "https://grand-mercure-lakebiwa-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-lakebiwa-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.192476Z",
+                          "product_url": "https://grand-mercure-lakebiwa-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-lakebiwa-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2854,
+                          "target_url": "https://mercure-tottoridaisen-resortandspa.jp/",
+                          "change_url": "https://mercure-tottoridaisen-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.210069Z",
+                          "product_url": "https://mercure-tottoridaisen-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-tottoridaisen-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3071,
+                          "target_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.393274Z",
+                          "product_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2852,
+                          "target_url": "https://mercure-wakayamakushimoto-resortandspa.jp/",
+                          "change_url": "https://mercure-wakayamakushimoto-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.206521Z",
+                          "product_url": "https://mercure-wakayamakushimoto-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-wakayamakushimoto-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2855,
+                          "target_url": "https://mercure-kochitosa-resortandspa.jp/",
+                          "change_url": "https://mercure-kochitosa-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.212765Z",
+                          "product_url": "https://mercure-kochitosa-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-kochitosa-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2857,
+                          "target_url": "https://mercure-sagakaratsu-resort.jp/",
+                          "change_url": "https://mercure-sagakaratsu-resort.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.21898Z",
+                          "product_url": "https://mercure-sagakaratsu-resort.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-sagakaratsu-resort.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2858,
+                          "target_url": "https://grand-mercure-beppubay-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-beppubay-resortandspa.jp/cn/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T14:57:36.22092Z",
+                          "product_url": "https://grand-mercure-beppubay-resortandspa.jp/cn/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-beppubay-resortandspa.jp/cn/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3073,
+                          "target_url": "https://grand-mercure-awajiisland-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-awajiisland-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.397619Z",
+                          "product_url": "https://grand-mercure-awajiisland-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-awajiisland-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2860,
+                          "target_url": "https://accor-resorts-japan.jp/faq/",
+                          "change_url": "https://accor-resorts-japan.jp/cn/faq/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T15:00:10.543602Z",
+                          "product_url": "https://accor-resorts-japan.jp/cn/faq/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/cn/faq/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3074,
+                          "target_url": "https://mercure-tottoridaisen-resortandspa.jp/",
+                          "change_url": "https://mercure-tottoridaisen-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.400252Z",
+                          "product_url": "https://mercure-tottoridaisen-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-tottoridaisen-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2861,
+                          "target_url": "https://accor-resorts-japan.jp/sitepolicy/",
+                          "change_url": "https://accor-resorts-japan.jp/cn/sitepolicy/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T15:00:10.549071Z",
+                          "product_url": "https://accor-resorts-japan.jp/cn/sitepolicy/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/cn/sitepolicy/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3075,
+                          "target_url": "https://mercure-kochitosa-resortandspa.jp/",
+                          "change_url": "https://mercure-kochitosa-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.402661Z",
+                          "product_url": "https://mercure-kochitosa-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-kochitosa-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3077,
+                          "target_url": "https://mercure-sagakaratsu-resort.jp/",
+                          "change_url": "https://mercure-sagakaratsu-resort.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.407181Z",
+                          "product_url": "https://mercure-sagakaratsu-resort.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-sagakaratsu-resort.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3076,
+                          "target_url": "https://mercure-fukuokamunakata-resortandspa.jp/",
+                          "change_url": "https://mercure-fukuokamunakata-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.404888Z",
+                          "product_url": "https://mercure-fukuokamunakata-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-fukuokamunakata-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3078,
+                          "target_url": "https://grand-mercure-beppubay-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-beppubay-resortandspa.jp/tw/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:33:19.409477Z",
+                          "product_url": "https://grand-mercure-beppubay-resortandspa.jp/tw/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-beppubay-resortandspa.jp/tw/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3080,
+                          "target_url": "https://accor-resorts-japan.jp/faq/",
+                          "change_url": "https://accor-resorts-japan.jp/tw/faq/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:39:56.193609Z",
+                          "product_url": "https://accor-resorts-japan.jp/tw/faq/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/tw/faq/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3081,
+                          "target_url": "https://accor-resorts-japan.jp/sitepolicy/",
+                          "change_url": "https://accor-resorts-japan.jp/tw/sitepolicy/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:39:56.196747Z",
+                          "product_url": "https://accor-resorts-japan.jp/tw/sitepolicy/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/tw/sitepolicy/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3083,
+                          "target_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.ja.shtml",
+                          "change_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.zh.shtml",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:39:56.201824Z",
+                          "product_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.zh.shtml",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.zh.shtml?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3082,
+                          "target_url": "https://accor-resorts-japan.jp/allergie_policy/",
+                          "change_url": "https://accor-resorts-japan.jp/tw/allergie_policy/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T15:39:56.199416Z",
+                          "product_url": "https://accor-resorts-japan.jp/tw/allergie_policy/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/tw/allergie_policy/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3084,
+                          "target_url": "https://accor-resorts-japan.jp/faq/",
+                          "change_url": "https://accor-resorts-japan.jp/ko/faq/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:03:45.958729Z",
+                          "product_url": "https://accor-resorts-japan.jp/ko/faq/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/ko/faq/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3085,
+                          "target_url": "https://accor-resorts-japan.jp/sitepolicy/",
+                          "change_url": "https://accor-resorts-japan.jp/ko/sitepolicy/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:03:45.964386Z",
+                          "product_url": "https://accor-resorts-japan.jp/ko/sitepolicy/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/ko/sitepolicy/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3086,
+                          "target_url": "https://accor-resorts-japan.jp/allergie_policy/",
+                          "change_url": "https://accor-resorts-japan.jp/ko/allergie_policy/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:03:45.967692Z",
+                          "product_url": "https://accor-resorts-japan.jp/ko/allergie_policy/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/ko/allergie_policy/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3087,
+                          "target_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.ja.shtml",
+                          "change_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.ko.shtml",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:03:45.970274Z",
+                          "product_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.ko.shtml",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/loyalty-program/reasonstojoin/index.ko.shtml?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3090,
+                          "target_url": "https://mercure-urabandai-resortandspa.jp/",
+                          "change_url": "https://mercure-urabandai-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.084057Z",
+                          "product_url": "https://mercure-urabandai-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-urabandai-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3094,
+                          "target_url": "https://mercure-naganomatsushiro-resortandspa.jp/",
+                          "change_url": "https://mercure-naganomatsushiro-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.093027Z",
+                          "product_url": "https://mercure-naganomatsushiro-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-naganomatsushiro-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3095,
+                          "target_url": "https://grand-mercure-lakehamana-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-lakehamana-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.09475Z",
+                          "product_url": "https://grand-mercure-lakehamana-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-lakehamana-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3103,
+                          "target_url": "https://mercure-wakayamakushimoto-resortandspa.jp/",
+                          "change_url": "https://mercure-wakayamakushimoto-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.110239Z",
+                          "product_url": "https://mercure-wakayamakushimoto-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-wakayamakushimoto-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3088,
+                          "target_url": "https://grand-mercure-sapporo-odoripark.jp/",
+                          "change_url": "https://grand-mercure-sapporo-odoripark.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.077622Z",
+                          "product_url": "https://grand-mercure-sapporo-odoripark.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-sapporo-odoripark.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3091,
+                          "target_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.086507Z",
+                          "product_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-nasuhighlands-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3092,
+                          "target_url": "https://grand-mercure-minamiboso-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-minamiboso-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.088779Z",
+                          "product_url": "https://grand-mercure-minamiboso-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-minamiboso-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3093,
+                          "target_url": "https://grand-mercure-yatsugatake-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-yatsugatake-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.091067Z",
+                          "product_url": "https://grand-mercure-yatsugatake-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-yatsugatake-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3108,
+                          "target_url": "https://mercure-sagakaratsu-resort.jp/",
+                          "change_url": "https://mercure-sagakaratsu-resort.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.118511Z",
+                          "product_url": "https://mercure-sagakaratsu-resort.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-sagakaratsu-resort.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3109,
+                          "target_url": "https://grand-mercure-beppubay-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-beppubay-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.120013Z",
+                          "product_url": "https://grand-mercure-beppubay-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-beppubay-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3089,
+                          "target_url": "https://mercure-miyagizao-resortandspa.jp/",
+                          "change_url": "https://mercure-miyagizao-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.081578Z",
+                          "product_url": "https://mercure-miyagizao-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-miyagizao-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3097,
+                          "target_url": "https://mercure-noto-resortandspa.jp/",
+                          "change_url": "https://mercure-noto-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.098531Z",
+                          "product_url": "https://mercure-noto-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-noto-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3096,
+                          "target_url": "https://mercure-toyamatonami-resortandspa.jp/",
+                          "change_url": "https://mercure-toyamatonami-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.096665Z",
+                          "product_url": "https://mercure-toyamatonami-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-toyamatonami-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3098,
+                          "target_url": "https://grand-mercure-iseshima-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-iseshima-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.100616Z",
+                          "product_url": "https://grand-mercure-iseshima-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-iseshima-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3099,
+                          "target_url": "https://grand-mercure-lakebiwa-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-lakebiwa-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.102779Z",
+                          "product_url": "https://grand-mercure-lakebiwa-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-lakebiwa-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3100,
+                          "target_url": "https://mercure-kyotomiyazu-resortandspa.jp/",
+                          "change_url": "https://mercure-kyotomiyazu-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.104605Z",
+                          "product_url": "https://mercure-kyotomiyazu-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-kyotomiyazu-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3101,
+                          "target_url": "https://grand-mercure-nara-kashihara.jp/",
+                          "change_url": "https://grand-mercure-nara-kashihara.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.107002Z",
+                          "product_url": "https://grand-mercure-nara-kashihara.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-nara-kashihara.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3102,
+                          "target_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.108633Z",
+                          "product_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-wakayamaminabe-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3104,
+                          "target_url": "https://grand-mercure-awajiisland-resortandspa.jp/",
+                          "change_url": "https://grand-mercure-awajiisland-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.111966Z",
+                          "product_url": "https://grand-mercure-awajiisland-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://grand-mercure-awajiisland-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3106,
+                          "target_url": "https://mercure-kochitosa-resortandspa.jp/",
+                          "change_url": "https://mercure-kochitosa-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.115504Z",
+                          "product_url": "https://mercure-kochitosa-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-kochitosa-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3107,
+                          "target_url": "https://mercure-fukuokamunakata-resortandspa.jp/",
+                          "change_url": "https://mercure-fukuokamunakata-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.117057Z",
+                          "product_url": "https://mercure-fukuokamunakata-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-fukuokamunakata-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2673,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route01_01.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/27/27b36231070d2753b60b80a5ed6355cf826524c7706993f6d5da8f31f29c2497.png",
+                          "target_cd": "image",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-12T17:05:22.209745Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/27/27b36231070d2753b60b80a5ed6355cf826524c7706993f6d5da8f31f29c2497.png",
+                          "change_count": 4,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/27/27b36231070d2753b60b80a5ed6355cf826524c7706993f6d5da8f31f29c2497.png?&crosslang_url_count=4"
+                      },
+                      {
+                          "id": 3105,
+                          "target_url": "https://mercure-tottoridaisen-resortandspa.jp/",
+                          "change_url": "https://mercure-tottoridaisen-resortandspa.jp/ko/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T16:08:49.113789Z",
+                          "product_url": "https://mercure-tottoridaisen-resortandspa.jp/ko/",
+                          "change_count": 1,
+                          "change_count_url": "https://mercure-tottoridaisen-resortandspa.jp/ko/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 2674,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route01_02.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/aa/aa04e8895d7fb4d3c3847f65dac3e8060a6c52ef3a57ea8c6fe1cc68d2e2730e.png",
+                          "target_cd": "image",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-12T17:05:22.212487Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/aa/aa04e8895d7fb4d3c3847f65dac3e8060a6c52ef3a57ea8c6fe1cc68d2e2730e.png",
+                          "change_count": 3,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/aa/aa04e8895d7fb4d3c3847f65dac3e8060a6c52ef3a57ea8c6fe1cc68d2e2730e.png?&crosslang_url_count=3"
+                      },
+                      {
+                          "id": 2677,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/03/route01_03.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/b7/b7a895090a3d1ff0ae143217bdf0b34b07b3a7dfac63af8007d6d9096927ef80.png",
+                          "target_cd": "image",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-12T17:05:22.215136Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/b7/b7a895090a3d1ff0ae143217bdf0b34b07b3a7dfac63af8007d6d9096927ef80.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/b7/b7a895090a3d1ff0ae143217bdf0b34b07b3a7dfac63af8007d6d9096927ef80.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3422,
+                          "target_url": "https://secure.j-bus.co.jp/hon/RouteList/List?uncd=4702&name=%E6%B2%96%E7%B8%84%E3%83%90%E3%82%B9",
+                          "change_url": "https://japanbusonline.com/en",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-14T17:27:59.17131Z",
+                          "product_url": "https://japanbusonline.com/en",
+                          "change_count": 1,
+                          "change_count_url": "https://japanbusonline.com/en?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3423,
+                          "target_url": "https://secure.j-bus.co.jp/hon/RouteList/List?uncd=4702&name=%E6%B2%96%E7%B8%84%E3%83%90%E3%82%B9",
+                          "change_url": "https://japanbusonline.com/zh-cn",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-14T17:27:59.17607Z",
+                          "product_url": "https://japanbusonline.com/zh-cn",
+                          "change_count": 1,
+                          "change_count_url": "https://japanbusonline.com/zh-cn?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3424,
+                          "target_url": "https://secure.j-bus.co.jp/hon/RouteList/List?uncd=4702&name=%E6%B2%96%E7%B8%84%E3%83%90%E3%82%B9",
+                          "change_url": "https://japanbusonline.com/zh-tw",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-14T17:27:59.173938Z",
+                          "product_url": "https://japanbusonline.com/zh-tw",
+                          "change_count": 1,
+                          "change_count_url": "https://japanbusonline.com/zh-tw?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 3426,
+                          "target_url": "https://secure.j-bus.co.jp/hon/RouteList/List?uncd=4702&name=%E6%B2%96%E7%B8%84%E3%83%90%E3%82%B9",
+                          "change_url": "https://japanbusonline.com/ko",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-14T17:27:59.16883Z",
+                          "product_url": "https://japanbusonline.com/ko",
+                          "change_count": 1,
+                          "change_count_url": "https://japanbusonline.com/ko?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6270,
+                          "target_url": "https://accor-resorts-japan.jp/agreement/",
+                          "change_url": "https://accor-resorts-japan.jp/en/agreement/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-18T15:46:00.994747Z",
+                          "product_url": "https://accor-resorts-japan.jp/en/agreement/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/en/agreement/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6271,
+                          "target_url": "https://accor-resorts-japan.jp/agreement/",
+                          "change_url": "https://accor-resorts-japan.jp/cn/agreement/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-18T15:47:53.821613Z",
+                          "product_url": "https://accor-resorts-japan.jp/cn/agreement/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/cn/agreement/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6273,
+                          "target_url": "https://accor-resorts-japan.jp/agreement/",
+                          "change_url": "https://accor-resorts-japan.jp/ko/agreement/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-18T15:47:53.819991Z",
+                          "product_url": "https://accor-resorts-japan.jp/ko/agreement/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/ko/agreement/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6272,
+                          "target_url": "https://accor-resorts-japan.jp/agreement/",
+                          "change_url": "https://accor-resorts-japan.jp/tw/agreement/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-18T15:47:53.817738Z",
+                          "product_url": "https://accor-resorts-japan.jp/tw/agreement/",
+                          "change_count": 1,
+                          "change_count_url": "https://accor-resorts-japan.jp/tw/agreement/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6353,
+                          "target_url": "https://all.accor.com/a/ja/offers/discover-japan-opening-special.html",
+                          "change_url": "https://all.accor.com/a/en/offers/discover-japan-opening-special.html",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-18T18:20:19.507336Z",
+                          "product_url": "https://all.accor.com/a/en/offers/discover-japan-opening-special.html",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/a/en/offers/discover-japan-opening-special.html?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6354,
+                          "target_url": "https://all.accor.com/a/ja/offers/discover-japan-opening-special.html",
+                          "change_url": "https://all.accor.com/a/en/offers/discover-japan-opening-special.html",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-18T18:23:55.370181Z",
+                          "product_url": "https://all.accor.com/a/en/offers/discover-japan-opening-special.html",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/a/en/offers/discover-japan-opening-special.html?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6355,
+                          "target_url": "https://all.accor.com/a/ja/offers/discover-japan-opening-special.html",
+                          "change_url": "https://all.accor.com/a/en/offers/discover-japan-opening-special.html",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-18T18:23:55.373513Z",
+                          "product_url": "https://all.accor.com/a/en/offers/discover-japan-opening-special.html",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/a/en/offers/discover-japan-opening-special.html?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6356,
+                          "target_url": "https://all.accor.com/a/ja/offers/discover-japan-opening-special.html",
+                          "change_url": "https://all.accor.com/a/ko/offers/discover-japan-opening-special.html",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-18T18:23:55.375924Z",
+                          "product_url": "https://all.accor.com/a/ko/offers/discover-japan-opening-special.html",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/a/ko/offers/discover-japan-opening-special.html?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6557,
+                          "target_url": "https://all.accor.com/hotel/C1Q6/index.ja.shtml",
+                          "change_url": "https://all.accor.com/hotel/C1Q6/index.zh.shtml",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-21T12:10:53.66901Z",
+                          "product_url": "https://all.accor.com/hotel/C1Q6/index.zh.shtml",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/hotel/C1Q6/index.zh.shtml?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6558,
+                          "target_url": "https://all.accor.com/hotel/C1Q6/index.ja.shtml",
+                          "change_url": "https://all.accor.com/hotel/C1Q6/index.zh.shtml",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-21T12:10:53.682336Z",
+                          "product_url": "https://all.accor.com/hotel/C1Q6/index.zh.shtml",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/hotel/C1Q6/index.zh.shtml?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6556,
+                          "target_url": "https://all.accor.com/hotel/C1Q6/index.ja.shtml",
+                          "change_url": "https://all.accor.com/hotel/C1Q6/index.en.shtml",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-21T12:10:53.672892Z",
+                          "product_url": "https://all.accor.com/hotel/C1Q6/index.en.shtml",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/hotel/C1Q6/index.en.shtml?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6559,
+                          "target_url": "https://all.accor.com/hotel/C1Q6/index.ja.shtml",
+                          "change_url": "https://all.accor.com/hotel/C1Q6/index.ko.shtml",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-21T12:10:53.677086Z",
+                          "product_url": "https://all.accor.com/hotel/C1Q6/index.ko.shtml",
+                          "change_count": 1,
+                          "change_count_url": "https://all.accor.com/hotel/C1Q6/index.ko.shtml?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6449,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2023/12/%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB.jpg",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/f5/f57b8e3220146da62bd802f4c8ab2a7698c71927210da62cdebae9c6794aec63.png",
+                          "target_cd": "image",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-03-19T11:42:16.295805Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/f5/f57b8e3220146da62bd802f4c8ab2a7698c71927210da62cdebae9c6794aec63.png",
+                          "change_count": 2,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/f5/f57b8e3220146da62bd802f4c8ab2a7698c71927210da62cdebae9c6794aec63.png?&crosslang_url_count=2"
+                      },
+                      {
+                          "id": 6450,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2023/12/%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB.jpg",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/63/63a2889104db337652af4ea62b7f096497acf88f43bc7e21a967ba00c6a8a024.png",
+                          "target_cd": "image",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-19T11:42:16.299443Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/63/63a2889104db337652af4ea62b7f096497acf88f43bc7e21a967ba00c6a8a024.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/63/63a2889104db337652af4ea62b7f096497acf88f43bc7e21a967ba00c6a8a024.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6451,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2023/12/%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB.jpg",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/29/29d61bea3e2dd1c571eb784d93317aa59c095b03f89374a4ab8c052cd291329e.png",
+                          "target_cd": "image",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-19T11:42:16.302919Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/29/29d61bea3e2dd1c571eb784d93317aa59c095b03f89374a4ab8c052cd291329e.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/29/29d61bea3e2dd1c571eb784d93317aa59c095b03f89374a4ab8c052cd291329e.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6452,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2023/12/%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB.jpg",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/7e/7ece9b01f0d541b5c69cd5528dbc8d979b948fe8c2e892dc24bd583d2060863f.png",
+                          "target_cd": "image",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-19T11:42:16.29154Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/7e/7ece9b01f0d541b5c69cd5528dbc8d979b948fe8c2e892dc24bd583d2060863f.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/7e/7ece9b01f0d541b5c69cd5528dbc8d979b948fe8c2e892dc24bd583d2060863f.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6691,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route01_01.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/4f/4fc89bb570a0435fe7cc03272f98458766d3e93247660a10833b2c7822cdd476.png",
+                          "target_cd": "image",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-21T18:36:42.759095Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/4f/4fc89bb570a0435fe7cc03272f98458766d3e93247660a10833b2c7822cdd476.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/4f/4fc89bb570a0435fe7cc03272f98458766d3e93247660a10833b2c7822cdd476.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6692,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route01_01.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/a4/a413a698e42c2d67bcc12957a9a68de355ca1a68bb3715d864d6d870176235db.png",
+                          "target_cd": "image",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-21T18:36:42.799436Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/a4/a413a698e42c2d67bcc12957a9a68de355ca1a68bb3715d864d6d870176235db.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/a4/a413a698e42c2d67bcc12957a9a68de355ca1a68bb3715d864d6d870176235db.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6693,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route01_02.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/cc/cc12f309f1e2e6ecccf0b0d213f89220d87bc6fb05599bda46500cff05adc0f9.png",
+                          "target_cd": "image",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-21T18:36:42.77487Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/cc/cc12f309f1e2e6ecccf0b0d213f89220d87bc6fb05599bda46500cff05adc0f9.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/cc/cc12f309f1e2e6ecccf0b0d213f89220d87bc6fb05599bda46500cff05adc0f9.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6694,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route01_02.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/b7/b75f6f4a61fa2e6e5f6f79d408303f344834f34fe5cd46a4e93aa06b453a8548.png",
+                          "target_cd": "image",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-21T18:36:42.785707Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/b7/b75f6f4a61fa2e6e5f6f79d408303f344834f34fe5cd46a4e93aa06b453a8548.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/b7/b75f6f4a61fa2e6e5f6f79d408303f344834f34fe5cd46a4e93aa06b453a8548.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6695,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route01_02.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/a1/a192c68ada1f6b4fb001d024335b1cd6cb709242c98c468941bacbf03f58cdf3.png",
+                          "target_cd": "image",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-21T18:36:42.754567Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/a1/a192c68ada1f6b4fb001d024335b1cd6cb709242c98c468941bacbf03f58cdf3.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/a1/a192c68ada1f6b4fb001d024335b1cd6cb709242c98c468941bacbf03f58cdf3.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6696,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/03/route01_03.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/e9/e94b423edc8528d2396efecac0438887df8a167e213c61d3ced88bb6270c81de.png",
+                          "target_cd": "image",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-21T18:36:42.794333Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/e9/e94b423edc8528d2396efecac0438887df8a167e213c61d3ced88bb6270c81de.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/e9/e94b423edc8528d2396efecac0438887df8a167e213c61d3ced88bb6270c81de.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6699,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route02_01.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/53/53c7145928e3538b5155a2a8b32aaf19be14cbc10159c060ba6dbfd6a3bec45f.png",
+                          "target_cd": "image",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-21T18:36:42.80986Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/53/53c7145928e3538b5155a2a8b32aaf19be14cbc10159c060ba6dbfd6a3bec45f.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/53/53c7145928e3538b5155a2a8b32aaf19be14cbc10159c060ba6dbfd6a3bec45f.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6700,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route02_01.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/e3/e363783056841674ff5012e5973a0668f2a532e92b02db52045eb7012e1689d1.png",
+                          "target_cd": "image",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-21T18:36:42.806762Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/e3/e363783056841674ff5012e5973a0668f2a532e92b02db52045eb7012e1689d1.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/e3/e363783056841674ff5012e5973a0668f2a532e92b02db52045eb7012e1689d1.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6697,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/03/route01_03.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/5d/5d3f9e95e357b80e1f687eed11f5dea09b9c3c67b64cf83df5b82ad52f2f0332.png",
+                          "target_cd": "image",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-03-21T18:36:42.748213Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/5d/5d3f9e95e357b80e1f687eed11f5dea09b9c3c67b64cf83df5b82ad52f2f0332.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/5d/5d3f9e95e357b80e1f687eed11f5dea09b9c3c67b64cf83df5b82ad52f2f0332.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6690,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route01_01.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/66/66adb0edab1338bffbf391d33f65c12323eef50d10dc14f3613419fb3737d9c1.png",
+                          "target_cd": "image",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-03-21T18:36:42.76443Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/66/66adb0edab1338bffbf391d33f65c12323eef50d10dc14f3613419fb3737d9c1.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/66/66adb0edab1338bffbf391d33f65c12323eef50d10dc14f3613419fb3737d9c1.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6701,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/01/route02_01.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/1e/1e904ec38ad641c100b61ec3affc2149b34e413e2761d3fc8999ec70bf404bbe.png",
+                          "target_cd": "image",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-21T18:36:42.76867Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/1e/1e904ec38ad641c100b61ec3affc2149b34e413e2761d3fc8999ec70bf404bbe.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/1e/1e904ec38ad641c100b61ec3affc2149b34e413e2761d3fc8999ec70bf404bbe.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 6698,
+                          "target_url": "https://grand-mercure-okinawacapezanpa-resort.jp/wp/wp-content/uploads/2024/03/route01_03.png",
+                          "change_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/4f/4f8fa9ad1c0080dce44aea11df120e9d0c0173109d35a6425172458a9a6800f6.png",
+                          "target_cd": "image",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-03-21T18:36:42.803139Z",
+                          "product_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/4f/4f8fa9ad1c0080dce44aea11df120e9d0c0173109d35a6425172458a9a6800f6.png",
+                          "change_count": 1,
+                          "change_count_url": "https://storage.googleapis.com/wt-cross/grand-mercure-okinawacapezanpa-resort.jp/images/4f/4f8fa9ad1c0080dce44aea11df120e9d0c0173109d35a6425172458a9a6800f6.png?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 11523,
+                          "target_url": "https://drhm.jp/privacypolicy/",
+                          "change_url": "https://drhm.jp/privacypolicy-en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2024-07-22T19:40:56.323342Z",
+                          "product_url": "https://drhm.jp/privacypolicy-en/",
+                          "change_count": 1,
+                          "change_count_url": "https://drhm.jp/privacypolicy-en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 11521,
+                          "target_url": "https://drhm.jp/privacypolicy/",
+                          "change_url": "https://drhm.jp/privacypolicy-en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2024-07-22T19:40:56.327502Z",
+                          "product_url": "https://drhm.jp/privacypolicy-en/",
+                          "change_count": 1,
+                          "change_count_url": "https://drhm.jp/privacypolicy-en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 11522,
+                          "target_url": "https://drhm.jp/privacypolicy/",
+                          "change_url": "https://drhm.jp/privacypolicy-en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2024-07-22T19:40:56.334825Z",
+                          "product_url": "https://drhm.jp/privacypolicy-en/",
+                          "change_count": 1,
+                          "change_count_url": "https://drhm.jp/privacypolicy-en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 11524,
+                          "target_url": "https://drhm.jp/privacypolicy/",
+                          "change_url": "https://drhm.jp/privacypolicy-en/",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2024-07-22T19:40:56.331117Z",
+                          "product_url": "https://drhm.jp/privacypolicy-en/",
+                          "change_count": 1,
+                          "change_count_url": "https://drhm.jp/privacypolicy-en/?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40197,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/?sid=2106?cid=goz",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2025-06-30T11:35:36.116043Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?cid=goz",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?cid=goz?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40198,
+                          "target_url": "https://www.veltra.com/jp/mypage/my_coupon/details/goz5off",
+                          "change_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2025-06-30T11:35:36.120915Z",
+                          "product_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40199,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2025-06-30T11:47:46.8517Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40206,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/?sid=2106?cid=goz",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2025-06-30T11:55:31.304758Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40207,
+                          "target_url": "https://www.veltra.com/jp/mypage/my_coupon/details/goz5off",
+                          "change_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2025-06-30T11:55:31.307694Z",
+                          "product_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40208,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2025-06-30T11:55:31.308638Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "change_count": 2,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz?&crosslang_url_count=2"
+                      },
+                      {
+                          "id": 40203,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/?sid=2106?cid=goz",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2025-06-30T11:55:40.924981Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40204,
+                          "target_url": "https://www.veltra.com/jp/mypage/my_coupon/details/goz5off",
+                          "change_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2025-06-30T11:55:40.928166Z",
+                          "product_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40205,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2025-06-30T11:55:40.929237Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "change_count": 2,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz?&crosslang_url_count=2"
+                      },
+                      {
+                          "id": 40200,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/?sid=2106?cid=goz",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2025-06-30T11:55:55.221818Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40201,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2025-06-30T11:55:55.224171Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz",
+                          "change_count": 2,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/?sid=2222&cid=goz?&crosslang_url_count=2"
+                      },
+                      {
+                          "id": 40202,
+                          "target_url": "https://www.veltra.com/jp/mypage/my_coupon/details/goz5off",
+                          "change_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2025-06-30T11:55:55.226237Z",
+                          "product_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/mypage/my_coupon/details/gozen5off?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40254,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/date_search/tomorrow/",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JE-NMT",
+                          "reflected_at": "2025-07-07T17:01:08.417474Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40255,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/date_search/tomorrow/",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JC-NMT",
+                          "reflected_at": "2025-07-07T17:02:14.035923Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40256,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/date_search/tomorrow/",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JCT-NMT",
+                          "reflected_at": "2025-07-07T17:03:03.083565Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz?&crosslang_url_count=1"
+                      },
+                      {
+                          "id": 40257,
+                          "target_url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/date_search/tomorrow/",
+                          "change_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz",
+                          "target_cd": "alink",
+                          "eid": "CR-JK",
+                          "reflected_at": "2025-07-07T17:03:39.794926Z",
+                          "product_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz",
+                          "change_count": 1,
+                          "change_count_url": "https://www.veltra.com/en/asia/japan/okinawa/okinawa_main_island/date_search/tomorrow/?sid=2222&cid=goz?&crosslang_url_count=1"
+                      }
+                  ],
+                  "translations": [
+                      {
+                          "id": 5,
+                          "eid": "CR-JC-NMT",
+                          "lang_service_state": "service",
+                          "trans_service_state": "service",
+                          "lang_from": {
+                              "id": 1,
+                              "lang_cd": "ja",
+                              "sys_lang_cd": "ja",
+                              "lang_service_state": ""
+                          },
+                          "lang_to": {
+                              "id": 3,
+                              "lang_cd": "zh-hans",
+                              "sys_lang_cd": "cn",
+                              "lang_service_state": ""
+                          },
+                          "prod_user_dicid": "52622",
+                          "stg_user_dicid": "52623",
+                          "prod_memory_dicid": "52624",
+                          "stg_memory_dicid": "52625",
+                          "prod_bridge_dicid": "",
+                          "stg_bridge_dicid": "",
+                          "special_dic_ids": "711|712"
+                      },
+                      {
+                          "id": 6,
+                          "eid": "CR-JCT-NMT",
+                          "lang_service_state": "service",
+                          "trans_service_state": "service",
+                          "lang_from": {
+                              "id": 1,
+                              "lang_cd": "ja",
+                              "sys_lang_cd": "ja",
+                              "lang_service_state": ""
+                          },
+                          "lang_to": {
+                              "id": 4,
+                              "lang_cd": "zh-hant",
+                              "sys_lang_cd": "tw",
+                              "lang_service_state": ""
+                          },
+                          "prod_user_dicid": "52626",
+                          "stg_user_dicid": "52627",
+                          "prod_memory_dicid": "52628",
+                          "stg_memory_dicid": "52629",
+                          "prod_bridge_dicid": "",
+                          "stg_bridge_dicid": "",
+                          "special_dic_ids": "721|722"
+                      },
+                      {
+                          "id": 8,
+                          "eid": "CR-JK",
+                          "lang_service_state": "service",
+                          "trans_service_state": "service",
+                          "lang_from": {
+                              "id": 1,
+                              "lang_cd": "ja",
+                              "sys_lang_cd": "ja",
+                              "lang_service_state": ""
+                          },
+                          "lang_to": {
+                              "id": 5,
+                              "lang_cd": "ko",
+                              "sys_lang_cd": "ko",
+                              "lang_service_state": ""
+                          },
+                          "prod_user_dicid": "52630",
+                          "stg_user_dicid": "52631",
+                          "prod_memory_dicid": "52632",
+                          "stg_memory_dicid": "52633",
+                          "prod_bridge_dicid": "",
+                          "stg_bridge_dicid": "",
+                          "special_dic_ids": ""
+                      },
+                      {
+                          "id": 3,
+                          "eid": "CR-JE-NMT",
+                          "lang_service_state": "service",
+                          "trans_service_state": "service",
+                          "lang_from": {
+                              "id": 1,
+                              "lang_cd": "ja",
+                              "sys_lang_cd": "ja",
+                              "lang_service_state": ""
+                          },
+                          "lang_to": {
+                              "id": 2,
+                              "lang_cd": "en",
+                              "sys_lang_cd": "en",
+                              "lang_service_state": ""
+                          },
+                          "prod_user_dicid": "52618",
+                          "stg_user_dicid": "52619",
+                          "prod_memory_dicid": "52620",
+                          "stg_memory_dicid": "52621",
+                          "prod_bridge_dicid": "",
+                          "stg_bridge_dicid": "",
+                          "special_dic_ids": "701|702"
+                      }
+                  ],
+                  "ignore_caches": [],
+                  "ignore_translations": [],
+                  "base_translation": {
+                      "id": 758,
+                      "first_lang_cd": "ja",
+                      "default_lang_cd": "en",
+                      "anotation_pos": "bottom-center",
+                      "start_anotation": "0",
+                      "pdf_use_flag": "0"
+                  },
+                  "service": {
+                      "id": 3,
+                      "service_cd": "H30",
+                      "service_name": "サブディレクトリ方式"
+                  },
+                  "urls": [
+                      {
+                          "id": 2613,
+                          "url": "https://grand-mercure-okinawacapezanpa-resort.jp/cn",
+                          "service_state": "service",
+                          "eid": "CR-JC-NMT",
+                          "html_edits": [],
+                          "css_edits": [
+                              {
+                                  "id": 2400,
+                                  "css_data": "",
+                                  "css_status": "common",
+                                  "reflected_state": "created",
+                                  "reflected_at": null
+                              }
+                          ]
+                      },
+                      {
+                          "id": 2614,
+                          "url": "https://grand-mercure-okinawacapezanpa-resort.jp/tw",
+                          "service_state": "service",
+                          "eid": "CR-JCT-NMT",
+                          "html_edits": [],
+                          "css_edits": [
+                              {
+                                  "id": 2401,
+                                  "css_data": "",
+                                  "css_status": "common",
+                                  "reflected_state": "created",
+                                  "reflected_at": null
+                              }
+                          ]
+                      },
+                      {
+                          "id": 2615,
+                          "url": "https://grand-mercure-okinawacapezanpa-resort.jp/ko",
+                          "service_state": "service",
+                          "eid": "CR-JK",
+                          "html_edits": [],
+                          "css_edits": [
+                              {
+                                  "id": 2402,
+                                  "css_data": "",
+                                  "css_status": "common",
+                                  "reflected_state": "created",
+                                  "reflected_at": null
+                              }
+                          ]
+                      },
+                      {
+                          "id": 2616,
+                          "url": "https://grand-mercure-okinawacapezanpa-resort.jp/en",
+                          "service_state": "service",
+                          "eid": "CR-JE-NMT",
+                          "html_edits": [
+                              {
+                                  "id": 930,
+                                  "style_data": "text-align: center;color: #010037;font-size: 32px;font-weight: bold;",
+                                  "befor_html_data": "",
+                                  "after_html_data": "",
+                                  "css_data": "",
+                                  "element_position": "body #container .front-main #front-spend .section-title b",
+                                  "element_hash": "ee8ca9abd9c5209337f69b4a9d5173064a2d254208c1aa8b69a305ac9aba4138",
+                                  "reflected_state": "reflect",
+                                  "reflected_at": "2024-01-12T12:57:10.578173Z",
+                                  "prd_element_position": "body #container .front-main #front-spend .section-title b"
+                              },
+                              {
+                                  "id": 931,
+                                  "style_data": "text-align: center;color: #010037;font-size: 32px;font-weight: bold;",
+                                  "befor_html_data": "",
+                                  "after_html_data": "",
+                                  "css_data": "display:none;",
+                                  "element_position": "body #container .front-main #front-spend .section-title b small",
+                                  "element_hash": "cadf8e271bfb05fd6a03d57b8021c3ceddcb576a45bd40b041b81b4e16fa0a9a",
+                                  "reflected_state": "reflect",
+                                  "reflected_at": "2024-01-12T12:57:10.581817Z",
+                                  "prd_element_position": "body #container .front-main #front-spend .section-title b small"
+                              },
+                              {
+                                  "id": 1137,
+                                  "style_data": "text-align: left;color: #010037;font-size: 14px;",
+                                  "befor_html_data": "",
+                                  "after_html_data": "",
+                                  "css_data": "",
+                                  "element_position": "body #container .front-main .section-front-plan .inner .text .section-title small",
+                                  "element_hash": "f864f766c0f51373cd3598c1cabdf77d53bd6fc57b1004112c6aaf05866d5976",
+                                  "reflected_state": "reflect",
+                                  "reflected_at": "2024-03-14T11:59:38.60097Z",
+                                  "prd_element_position": "body #container .front-main .section-front-plan .inner .text .section-title small"
+                              },
+                              {
+                                  "id": 1138,
+                                  "style_data": "text-align: left;color: #ffffff;font-size: 16px;",
+                                  "befor_html_data": "<small class=\"rooms\">客室</small></h2>",
+                                  "after_html_data": "",
+                                  "css_data": "",
+                                  "element_position": "body #container .page-main .page-header #swiper-pagetitle .page-title small",
+                                  "element_hash": "07a1f0ae4cc52c6760c34970a2caa2aedfce9f5badb7ab22c6ca9dd54637a1ba",
+                                  "reflected_state": "reflect",
+                                  "reflected_at": "2024-03-15T10:48:27.599428Z",
+                                  "prd_element_position": "body #container .page-main .page-header #swiper-pagetitle .page-title small"
+                              }
+                          ],
+                          "css_edits": [
+                              {
+                                  "id": 2403,
+                                  "css_data": "h2.page-title small.rooms {\n display: none;\n}",
+                                  "css_status": "common",
+                                  "reflected_state": "reflect",
+                                  "reflected_at": "2024-03-15T10:48:27.619411Z"
+                              }
+                          ]
+                      }
+                  ],
+                  "system_messages": null
+              },
+              "system_messages": {
+                  "ar": {
+                      "id": 23,
+                      "notice_message": "تمت ترجمة هذه الصفحة باستخدام الترجمة الآلية. يرجى ملاحظة أن المحتوى قد لا يكون دقيقًا بنسبة 100٪.",
+                      "warning_title": "<ترجمة لغة أجنبية>",
+                      "warning_means": "سنقوم بترجمة الصفحة الرئيسية إلى لغة أجنبية باستخدام خدمة الترجمة الآلية.\nنظرًا لأن هذه الخدمة عبارة عن نظام ترجمة تلقائي ، فقد لا تتم ترجمتها بشكل صحيح وقد تختلف عن المحتوى الأصلي للصفحة قبل الترجمة.\nبالإضافة إلى ذلك ، لا نتحمل أي مسؤولية عن أي ضرر مباشر أو غير مباشر ناتج عن استخدام هذه الخدمة. يرجى الملاحظة.",
+                      "pdf_err_message": "فشلت ترجمة مستند PDF.",
+                      "translate_page_btn": "العودة إلى صفحة الترجمة",
+                      "original_pdf_btn": "عرض وثيقة PDF الأصلية"
+                  },
+                  "de": {
+                      "id": 7,
+                      "notice_message": "Diese Seite wurde maschinell übersetzt. Bitte beachten Sie, dass der Inhalt möglicherweise nicht zu 100 % korrekt ist.",
+                      "warning_title": "< über fremdsprachige Übersetzungen>",
+                      "warning_means": "Wir verwenden einen automatischen Übersetzungsdienst, um die Homepage in eine Fremdsprache zu übersetzen.\nDa es sich bei diesem Dienst um ein automatisches Übersetzungssystem handelt, ist es möglicherweise nicht möglich, korrekt zu übersetzen und kann sich vor der Übersetzung vom ursprünglichen Inhalt der Seite unterscheiden.\nDarüber hinaus sind wir nicht verantwortlich für Schäden, die direkt oder indirekt durch die Nutzung dieses Dienstes verursacht werden. Vielen Dank für Ihr Verständnis.",
+                      "pdf_err_message": "PDFドキュメントの翻訳に失敗しました。",
+                      "translate_page_btn": "翻訳ページに戻る",
+                      "original_pdf_btn": "オリジナルのPDFドキュメントを表示"
+                  },
+                  "en": {
+                      "id": 2,
+                      "notice_message": "This page is translated using machine translation. Please note that the content may not be 100% accurate.",
+                      "warning_title": "<About foreign language translation>",
+                      "warning_means": "We will translate the homepage into a foreign language using the automatic translation service.\nSince this service is an automatic translation system, it may not be translated correctly and may differ from the original content of the page before translation.\nIn addition, we do not take any responsibility for any direct or indirect damage caused by using this service. Thank you for your understanding in advance.",
+                      "pdf_err_message": "Failed to translate the PDF document.",
+                      "translate_page_btn": "Back to Translation Page",
+                      "original_pdf_btn": "View the original PDF document"
+                  },
+                  "es": {
+                      "id": 10,
+                      "notice_message": "Esta página fue traducida por un software de traducción. El contenido puede no estar 100% correcto.",
+                      "warning_title": "<Traducción de idioma extranjero>",
+                      "warning_means": "Traduciremos la página de inicio a un idioma extranjero utilizando el servicio de traducción automática.\nDado que este servicio es un sistema de traducción automática, es posible que no se traduzca correctamente y que difiera del contenido original de la página antes de la traducción.\nAdemás, no asumimos ninguna responsabilidad por cualquier daño directo o indirecto causado por el uso de este servicio. Tenga en cuenta.",
+                      "pdf_err_message": "No se pudo traducir el documento PDF.\t\t",
+                      "translate_page_btn": "Volver a la página de traducción",
+                      "original_pdf_btn": "Ver documento PDF original"
+                  },
+                  "fr": {
+                      "id": 8,
+                      "notice_message": "Cette page a été traduite automatiquement par un logiciel. Il se peut que le résultat ne soit pas parfait.",
+                      "warning_title": "< à propos de la traduction en langues étrangères>",
+                      "warning_means": "Nous utilisons un service de traduction automatique pour traduire la page d’accueil dans une langue étrangère.\nÉtant donné que ce service est un système de traduction automatique, il peut ne pas être possible de traduire correctement et peut différer du contenu original de la page avant la traduction.\nDe plus, nous ne sommes pas responsables des dommages causés directement ou indirectement par l’utilisation de ce service. Merci de votre compréhension.",
+                      "pdf_err_message": "Échec de la traduction du document PDF.",
+                      "translate_page_btn": "Retour à la page de traduction",
+                      "original_pdf_btn": "Afficher le document PDF d'origine"
+                  },
+                  "hi": {
+                      "id": 24,
+                      "notice_message": "इस पृष्ठ का अनुवाद मशीनी अनुवाद का उपयोग करके किया गया है। कृपया ध्यान दें कि सामग्री 100% सटीक नहीं हो सकती है।",
+                      "warning_title": "<विदेशी भाषा में अनुवाद>",
+                      "warning_means": "हम स्वचालित अनुवाद सेवा का उपयोग करके मुखपृष्ठ का विदेशी भाषा में अनुवाद करेंगे।\nचूंकि यह सेवा एक स्वचालित अनुवाद प्रणाली है, इसलिए इसका सही अनुवाद नहीं किया जा सकता है और अनुवाद से पहले पृष्ठ की मूल सामग्री से भिन्न हो सकती है।\nइसके अलावा, हम इस सेवा का उपयोग करने से होने वाले किसी भी प्रत्यक्ष या अप्रत्यक्ष नुकसान के लिए कोई जिम्मेदारी नहीं लेते हैं। कृपया ध्यान दें।",
+                      "pdf_err_message": "PDF दस्तावेज़ का अनुवाद करने में विफल.",
+                      "translate_page_btn": "अनुवाद पृष्ठ पर लौटें",
+                      "original_pdf_btn": "मूल पीडीएफ दस्तावेज़ देखें"
+                  },
+                  "id": {
+                      "id": 13,
+                      "notice_message": "Halaman ini diterjemahkan dengan menggunakan mesin penerjemah. Harap dimaklumi bahwa hasil terjemahan tidak 100% akurat.",
+                      "warning_title": "<Terjemahan bahasa asing>",
+                      "warning_means": "Kami akan menerjemahkan beranda ke dalam bahasa asing menggunakan layanan terjemahan otomatis.\nKarena layanan ini adalah sistem terjemahan otomatis, mungkin tidak diterjemahkan dengan benar dan mungkin berbeda dari konten asli halaman sebelum terjemahan.\nSelain itu, kami tidak bertanggung jawab atas kerusakan langsung atau tidak langsung yang disebabkan oleh penggunaan layanan ini. Tolong dicatat.",
+                      "pdf_err_message": "Gagal menerjemahkan dokumen PDF.",
+                      "translate_page_btn": "Kembali ke halaman terjemahan",
+                      "original_pdf_btn": "Lihat dokumen PDF asli"
+                  },
+                  "it": {
+                      "id": 9,
+                      "notice_message": "Questa pagina è stata tradotta utilizzando la traduzione automatica. Tieni presente che il contenuto potrebbe non essere accurato al 100%.",
+                      "warning_title": "<Traduzione in lingua straniera>",
+                      "warning_means": "Tradurremo la homepage in una lingua straniera utilizzando il servizio di traduzione automatica.\nPoiché questo servizio è un sistema di traduzione automatica, potrebbe non essere tradotto correttamente e potrebbe differire dal contenuto originale della pagina prima della traduzione.\nInoltre, non ci assumiamo alcuna responsabilità per eventuali danni diretti o indiretti causati dall'utilizzo di questo servizio. Notare che.",
+                      "pdf_err_message": "Impossibile tradurre il documento PDF.",
+                      "translate_page_btn": "Ritorna alla pagina di traduzione",
+                      "original_pdf_btn": "Visualizza il documento PDF originale"
+                  },
+                  "ja": {
+                      "id": 1,
+                      "notice_message": "このページは機械翻訳を使用して翻訳されています。内容が100％正確でない場合がありますのでご注意ください。",
+                      "warning_title": "＜外国語翻訳について＞",
+                      "warning_means": "ホームページを自動翻訳サービスを利用し、外国語に翻訳します。本サービスは自動翻訳システムのため、正しく翻訳できない場合があり、翻訳前のページの本来の内容と異なる場合もあります。また、当サービスのご利用により、直接的あるいは間接的に何らかの損害が生じた場合、一切の責任を負いません。あらかじめご了承ください。",
+                      "pdf_err_message": "PDFドキュメントの翻訳に失敗しました。",
+                      "translate_page_btn": "翻訳ページに戻る",
+                      "original_pdf_btn": "オリジナルのPDFドキュメントを表示"
+                  },
+                  "km": {
+                      "id": 17,
+                      "notice_message": "ទំព័រនេះត្រូវបានបកប្រែដោយប្រើម៉ាស៊ីនបកប្រែ។ សូម​ចំណាំ​ថា​មាតិកា​អាច​នឹង​មិន​ត្រឹមត្រូវ 100% ។",
+                      "warning_title": "< អំពី ការបកប្រែភាសាបរទេស>",
+                      "warning_means": "យើង ប្រើ សេវា បកប្រែ ដោយ ស្វ័យ ប្រវត្តិ ដើម្បី បកប្រែ គេហទំព័រ នេះ ទៅ ជា ភាសា បរទេស ។\nពីព្រោះសេវាកម្មនេះជាប្រព័ន្ធបកប្រែដោយស្វ័យប្រវត្តិ វាអាចមិនអាចបកប្រែបានត្រឹមត្រូវ និងអាចខុសគ្នាពីមាតិកាដើមនៃទំព័រមុនពេលបកប្រែ។\nលើស ពី នេះ ទៀត យើង មិន ទទួល ខុស ត្រូវ ចំពោះ ការ ខូច ខាត ណា មួយ ដែល បង្ក ឡើង ដោយ ផ្ទាល់ ឬ ដោយ ប្រយោល ដោយ ការ ប្រើប្រាស់ សេវា កម្ម នេះ ទេ ។ សូមអរគុណសម្រាប់ការយល់ចិត្តរបស់អ្នក។",
+                      "pdf_err_message": "បរាជ័យក្នុងការបកប្រែឯកសារ PDF ។",
+                      "translate_page_btn": "ត្រឡប់ទៅទំព័របកប្រែ",
+                      "original_pdf_btn": "មើលឯកសារ PDF ដើម"
+                  },
+                  "ko": {
+                      "id": 5,
+                      "notice_message": "이 페이지는 기계번역을 이용해 번역되었습니다. 번역결과가 100% 정확하지 않는 점 양해 부탁드립니다.",
+                      "warning_title": "<외국어 번역에 대해>",
+                      "warning_means": "홈페이지를 자동 번역 서비스를 이용하여 외국어로 번역합니다.\n본 서비스는 자동번역 시스템이므로 제대로 번역할 수 없는 경우가 있으며, 번역전 페이지의 본래 내용과 다를 수 있습니다.\n또, 당 서비스의 이용에 의해, 직접적 혹은 간접적으로 어떠한 손해가 생겼을 경우, 일절의 책임을 지지 않습니다. 미리 양해 바랍니다.",
+                      "pdf_err_message": "PDF 문서를 번역하지 못했습니다.",
+                      "translate_page_btn": "번역 페이지로 돌아가기",
+                      "original_pdf_btn": "원본 PDF 문서 보기"
+                  },
+                  "mn": {
+                      "id": 20,
+                      "notice_message": "Энэ хуудсыг машин орчуулга ашиглан орчуулсан. Агуулга нь 100% үнэн зөв биш байж магадгүй гэдгийг анхаарна уу.",
+                      "warning_title": "<Гадаад хэлний орчуулга>",
+                      "warning_means": "Бид нүүр хуудсыг автомат орчуулгын үйлчилгээг ашиглан гадаад хэл рүү орчуулах болно.\nЭнэхүү үйлчилгээ нь автомат орчуулгын систем учраас зөв орчуулагдаагүй, орчуулгын өмнөх хуудасны эх агуулгаас өөр байж болно.\nНэмж дурдахад бид энэ үйлчилгээг ашигласнаар шууд болон шууд бус хохирол учруулахад хариуцлага хүлээхгүй. Тэмдэглэнэ үү.",
+                      "pdf_err_message": "PDF баримтыг орчуулж чадсангүй.",
+                      "translate_page_btn": "Орчуулгын хуудас руу буцах",
+                      "original_pdf_btn": "Эх PDF баримтыг үзэх"
+                  },
+                  "ms": {
+                      "id": 22,
+                      "notice_message": "Halaman ini telah diterjemahkan menggunakan terjemahan mesin. Sila ambil perhatian bahawa kandungan mungkin tidak 100% tepat.",
+                      "warning_title": "<Terjemahan bahasa asing>",
+                      "warning_means": "Kami akan menterjemah halaman utama ke dalam bahasa asing menggunakan perkhidmatan terjemahan automatik.\nMemandangkan perkhidmatan ini ialah sistem terjemahan automatik, ia mungkin tidak diterjemahkan dengan betul dan mungkin berbeza daripada kandungan asal halaman sebelum terjemahan.\nDi samping itu, kami tidak bertanggungjawab untuk sebarang kerosakan langsung atau tidak langsung yang disebabkan oleh menggunakan perkhidmatan ini. Sila ambil perhatian.",
+                      "pdf_err_message": "Gagal menterjemah dokumen PDF.",
+                      "translate_page_btn": "Kembali ke halaman terjemahan",
+                      "original_pdf_btn": "Lihat dokumen PDF asal"
+                  },
+                  "my": {
+                      "id": 16,
+                      "notice_message": "ဤစာမျက်နှာကို စက်ဘာသာပြန်ဆိုချက်ဖြင့် ဘာသာပြန်ထားပါသည်။ အကြောင်းအရာသည် 100% တိကျမည်မဟုတ်ကြောင်း ကျေးဇူးပြု၍ သတိပြုပါ။",
+                      "warning_title": "< နိုင်ငံခြားဘာသာပြန်ဆိုမှုအကြောင်း >",
+                      "warning_means": "ကျွန်ုပ်တို့သည် အိမ်စာအုပ်ကို နိုင်ငံခြားဘာသာစကားအဖြစ် ဘာသာပြန်ဆိုရန် အလိုအလျောက်ဘာသာပြန်ဆိုရေး ဝန်ဆောင်မှုတစ်ခုကို အသုံးပြုကြသည်။\nဤလုပ်ငန်းသည် အလိုအလျောက်ဘာသာပြန်စနစ်တစ်ခုဖြစ်သောကြောင့် မှန်ကန်စွာပြန်ဆိုနိုင်မည်မဟုတ်ဘဲ ဘာသာပြန်ခြင်းမတိုင်မီ စာမျက်နှာ၏မူရင်းအကြောင်းအရာနှင့် ကွာခြားနိုင်မည်မဟုတ်ချေ။\nထို့ပြင် ဤလုပ်ငန်းတော်အသုံးပြုခြင်းကြောင့် တိုက်ရိုက် သို့မဟုတ် သွယ်ဝိုက်စွာ ထိခိုက်ပျက်စီးမှုမှန်သမျှအတွက် ကျွန်ုပ်တို့တာဝန်မရှိပါ။ နားလည်မှုအတွက် ကျေးဇူးတင်ပါတယ်။",
+                      "pdf_err_message": "PDF စာရွက်စာတမ်းကို ဘာသာပြန်ရန် ပျက်ကွက်ခဲ့သည်။",
+                      "translate_page_btn": "ဘာသာပြန် စာမျက်နှာ သို့ ပြန်သွားရန်",
+                      "original_pdf_btn": "မူရင်း PDF ဖိုင်ကို ကြည့်ရှုပါ။"
+                  },
+                  "ne": {
+                      "id": 21,
+                      "notice_message": "यो पृष्ठ मेशिन अनुवाद प्रयोग गरेर अनुवाद गरिएको छ। कृपया ध्यान दिनुहोस् कि सामग्री 100% सही नहुन सक्छ।",
+                      "warning_title": "<विदेशी भाषा अनुवाद>",
+                      "warning_means": "हामी स्वचालित अनुवाद सेवा प्रयोग गरेर गृहपृष्ठलाई विदेशी भाषामा अनुवाद गर्नेछौं।\nयो सेवा एक स्वचालित अनुवाद प्रणाली भएको हुनाले, यो सही रूपमा अनुवाद नहुन सक्छ र अनुवाद गर्नु अघि पृष्ठको मूल सामग्री भन्दा फरक हुन सक्छ।\nथप रूपमा, हामी यो सेवा प्रयोग गरेर हुने कुनै पनि प्रत्यक्ष वा अप्रत्यक्ष क्षतिको लागि कुनै जिम्मेवारी लिने छैनौं। कृपया ध्यान दिनुहोस्।",
+                      "pdf_err_message": "PDF कागजात अनुवाद गर्न असफल भयो।",
+                      "translate_page_btn": "अनुवाद पृष्ठमा फर्कनुहोस्",
+                      "original_pdf_btn": "मूल PDF कागजात हेर्नुहोस्"
+                  },
+                  "prs": {
+                      "id": 18,
+                      "notice_message": "این صفحه با استفاده از ترجمه ماشینی ترجمه شده است. لطفاً توجه داشته باشید که ممکن است محتوا 100٪ دقیق نباشد.",
+                      "warning_title": "< در مورد ترجمه زبان خارجی>",
+                      "warning_means": "ما از یک سرویس ترجمه خودکار برای ترجمه صفحه اصلی به یک زبان خارجی استفاده می کنیم.\nاز آنجا که این سرویس یک سیستم ترجمه خودکار است، ممکن است ترجمه صحیح امکان پذیر نیست و ممکن است قبل از ترجمه با محتوای اصلی صفحه متفاوت باشد.\nعلاوه بر این، ما مسئول هر گونه آسیب ناشی از استفاده از این سرویس به طور مستقیم یا غیر مستقیم نیست. با تشکر از شما برای درک شما.",
+                      "pdf_err_message": "موفق به ترجمه سند پی دی اف.",
+                      "translate_page_btn": "بازگشت به صفحه ترجمه",
+                      "original_pdf_btn": "مشاهده سند پی دی اف اصلی"
+                  },
+                  "ps": {
+                      "id": 19,
+                      "notice_message": "دا پاڼه د ماشین ژباړې په کارولو سره ژباړل شوې. مهرباني وکړئ په یاد ولرئ چې مینځپانګه ممکن 100٪ دقیق نه وي.",
+                      "warning_title": "<په بهرنۍ ژبه ژباړه>",
+                      "warning_means": "موږ به د اتوماتیک ژباړې خدمت په کارولو سره کورپاڼه په بهرنۍ ژبه وژباړو.\nڅرنګه چې دا خدمت د ژباړې یو اتوماتیک سیسټم دی، دا ممکن په سمه توګه ونه ژباړل شي او ممکن د ژباړې دمخه د پاڼې اصلي منځپانګې سره توپیر ولري.\nسربیره پردې ، موږ د دې خدمت کارولو له امله د کوم مستقیم یا غیر مستقیم زیان لپاره هیڅ مسؤلیت نه اخلو. مهرباني وکړئ په یاد ولرئ.",
+                      "pdf_err_message": "د PDF سند په ژباړلو کې پاتې راغی.",
+                      "translate_page_btn": "بېرته د ژباړې پاڼې ته",
+                      "original_pdf_btn": "اصلي PDF سند وګورئ"
+                  },
+                  "pt": {
+                      "id": 11,
+                      "notice_message": "Esta página foi traduzida por um softer de tradução. O conteúdo da mesma pode não estar 100% correto.",
+                      "warning_title": "< sobre tradução de língua estrangeira>",
+                      "warning_means": "Utilizamos um serviço de tradução automática para traduzir a página inicial numa língua estrangeira.\nComo este serviço é um sistema de tradução automática, pode não ser possível traduzir corretamente e pode diferir do conteúdo original da página antes da tradução.\nAlém disso, não nos responsabilizamos por quaisquer danos causados direta ou indiretamente pela utilização deste serviço. Obrigado pela sua compreensão.",
+                      "pdf_err_message": "Falha ao traduzir o documento PDF.\t\t",
+                      "translate_page_btn": "De volta à página de tradução",
+                      "original_pdf_btn": "Ver o documento PDF original"
+                  },
+                  "ru": {
+                      "id": 12,
+                      "notice_message": "Эта страница была переведена с использованием машинного перевода. Обратите внимание, что содержание может быть не на 100% точным.",
+                      "warning_title": "<Перевод на иностранный язык>",
+                      "warning_means": "Мы переведем главную страницу на иностранный язык с помощью сервиса автоматического перевода.\nПоскольку эта служба представляет собой систему автоматического перевода, она может быть переведена неправильно и может отличаться от исходного содержания страницы до перевода.\nКроме того, мы не несем никакой ответственности за любой прямой или косвенный ущерб, причиненный использованием этого сервиса. Пожалуйста, обрати внимание",
+                      "pdf_err_message": "Не удалось перевести PDF-документ.",
+                      "translate_page_btn": "Вернуться на страницу перевода",
+                      "original_pdf_btn": "Посмотреть исходный PDF-документ"
+                  },
+                  "th": {
+                      "id": 6,
+                      "notice_message": "เนื่องจากหน้าเว็บนี้ใช้บริการเครื่องแปลภาษาอยู่ในปัจจุบัน ดังนั้นโปรดระวังว่าเนื้อหาอาจไม่ถูกต้องแม่นยำ100%",
+                      "warning_title": "<แปลภาษาต่างประเทศ>",
+                      "warning_means": "เราจะแปลหน้าแรกเป็นภาษาต่างประเทศโดยใช้บริการแปลอัตโนมัติ\nเนื่องจากบริการนี้เป็นระบบการแปลอัตโนมัติ จึงอาจแปลไม่ถูกต้องและอาจแตกต่างไปจากเนื้อหาต้นฉบับของหน้าก่อนการแปล\nนอกจากนี้ เราไม่รับผิดชอบต่อความเสียหายโดยตรงหรือโดยอ้อมที่เกิดจากการใช้บริการนี้ โปรดทราบ",
+                      "pdf_err_message": "ไม่สามารถแปลเอกสาร PDF",
+                      "translate_page_btn": "กลับไปที่หน้าการแปล",
+                      "original_pdf_btn": "ดูเอกสาร PDF ต้นฉบับ"
+                  },
+                  "tl": {
+                      "id": 15,
+                      "notice_message": "Ang pahinang ito ay isinalin gamit ang machine translation. Pakitandaan na maaaring hindi 100% tumpak ang nilalaman.",
+                      "warning_title": "< Tungkol sa Pagsasalin ng Wikang Banyaga>",
+                      "warning_means": "Gumagamit kami ng awtomatikong serbisyong pagsasalin para isalin ang homepage sa wikang banyaga.\nDahil ang serbisyong ito ay isang awtomatikong sistema ng pagsasalin, maaaring hindi posibleng isalin nang tama at maaaring magkaiba mula sa orihinal na nilalaman ng pahina bago isalin.\nBukod pa rito, hindi tayo responsable sa anumang pinsala na dulot ng direkta o di-tuwirang paggamit ng serbisyong ito. Salamat sa iyong pang-unawa.",
+                      "pdf_err_message": "Nabigong isalin ang PDF na dokumento.",
+                      "translate_page_btn": "Bumalik sa pahina ng pagsasalin",
+                      "original_pdf_btn": "Tingnan ang orihinal na dokumento ng PDF"
+                  },
+                  "vi": {
+                      "id": 14,
+                      "notice_message": "Trang này được dịch bằng máy dịch thuật tự động. Xin chú ý nội dung có thể không chính xác 100%.",
+                      "warning_title": "< về dịch ngoại ngữ>",
+                      "warning_means": "Chúng tôi sẽ dịch trang chủ sang tiếng nước ngoài bằng dịch vụ dịch tự động.\nVì dịch vụ này là hệ thống dịch tự động nên nó có thể không được dịch chính xác và có thể khác với nội dung gốc của trang trước khi dịch.\nNgoài ra, chúng tôi không chịu bất kỳ trách nhiệm nào đối với những thiệt hại trực tiếp hoặc gián tiếp do sử dụng dịch vụ này. Xin lưu ý.",
+                      "pdf_err_message": "Thất bại trong việc dịch tài liệu PDF.",
+                      "translate_page_btn": "Trở lại Trang Dịch thuật",
+                      "original_pdf_btn": "Xem tài liệu PDF gốc"
+                  },
+                  "zh-hans": {
+                      "id": 3,
+                      "notice_message": "这个网页是被机器进行翻译的。翻译结果不可能100%正确。望您多理解而利用。",
+                      "warning_title": "<关于外语翻译>",
+                      "warning_means": "使用自动翻译服务，将网页翻译成外语。\n本服务为自动翻译系统，有可能无法正确翻译，或与翻译前的页面内容有差异。\n如使用本服务直接地或间接地造成任何损失的情形，本公司一概不予负责。请您事先谅解。",
+                      "pdf_err_message": "PDF 文档翻译失败。",
+                      "translate_page_btn": "返回翻译页面",
+                      "original_pdf_btn": "查看原始 PDF 文档"
+                  },
+                  "zh-hant": {
+                      "id": 4,
+                      "notice_message": "這個網頁是被機器進行翻譯的。翻譯結果不可能100%正確。望您多理解而利用。",
+                      "warning_title": "<關于外文翻譯>",
+                      "warning_means": "使用自動翻譯服務，將網頁翻譯成外文。\n本服務為自動翻譯系統，有可能無法正確翻譯，或與翻譯前的頁面內容有差異。\n如使用本服務直接地或間接地造成任何損失的情形，本公司一概不予負責。請您事先諒解。",
+                      "pdf_err_message": "PDF 文件翻譯失敗。",
+                      "translate_page_btn": "返回翻譯頁面",
+                      "original_pdf_btn": "查看原始 PDF 文件"
+                  }
+              }
+          }

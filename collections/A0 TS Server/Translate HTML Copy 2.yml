@@ -1,0 +1,122 @@
+info:
+  name: Translate HTML Copy 2
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |-
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:Translate>
+      			<licence>ktutumi0307_sc/service a7e8ba2069a5bb677b995697f216f892d97d628a</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <engine>
+                      <eid>CR-JE-NMT</eid>
+                      <prop>
+                       </prop>
+                  </engine>
+                  <rules>
+      @data html {
+        fragment: true;
+        base-url: "https://www.cross21.webt-homepage.com/index.php/2023/07/26/hello-world/";
+        
+      }
+
+      .cl-notranslate {
+       content: ignore;
+      }
+
+      a.cl-norewrite, .cl-norewrite a {
+        attribute: href rewrite "{absurl}" !important;
+      }
+
+      img.cl-norewrite, .cl-norewrite img {
+        attribute: src rewrite "{absurl}" !important;
+      }
+
+      input, textarea {
+        attribute: placeholder translate;
+      }
+
+
+      @urlmap RewriteImage {
+        
+        "https://www.cross21.webt-homepage.com/testsite_22/wp-content/uploads/2012/07/manhattansummer-300x225.jpg": "https://storage.googleapis.com/wt-cross-stg/www.cross21.webt-homepage.com/images/e2/e22ef7d0a6e22b6e60efb33c7be978602c1babce22469ff6f271bfb1f4aff362.png";
+        
+        "https://www.cross21.webt-homepage.com/testsite_22/wp-content/uploads/2013/03/featured-image-vertical.jpg": "https://storage.googleapis.com/wt-cross-stg/www.cross21.webt-homepage.com/images/6c/6cca122837f6feb8f148d0dd27ddb6a6da226d93e2d69db8a1a71c598b1ebfe5.png";
+        
+        "https://www.cross21.webt-homepage.com/testsite_22/wp-content/uploads/2013/03/soworthloving-wallpaper.jpg": "https://storage.googleapis.com/wt-cross-stg/www.cross21.webt-homepage.com/images/45/455be28b34369fd299a27046503c6feed2acf2c86b77a1ad2a2648394296333b.png";
+        
+        "http://wpthemetestdata.files.wordpress.com/2013/03/image-alignment-150x150.jpg": "https://storage.googleapis.com/wt-cross-stg/www.cross21.webt-homepage.com/images/99/99ecd5bdb7ef02b30134b2ca2ca5e36d56e63d3dab2627390bbd1b62f9914041.png";
+        
+        "http://www.cross21.webt-homepage.com/testsite_22/wp-content/uploads/2008/06/img_0767-300x200.jpg": "https://storage.googleapis.com/wt-cross-stg/www.cross21.webt-homepage.com/images/a1/a12ac4c02ff65687f7d58e47e51b5840c4b762fa6b5f082d8a77315df7da2080.png";
+        
+
+        
+      }
+
+      @urlmap RewriteCSSURL {
+        
+
+        
+      }
+
+      @urlmap RewriteALinkURL {
+        
+        "https://www.cross21.webt-homepage.com/index.php/2023/07/": "http://www.google.com";
+        
+        "https://www.cross21.webt-homepage.com/index.php/page-a/": "https://www.cross21.webt-homepage.com/index.php/page-a-test/";
+        
+
+        
+      }
+
+      @rewrite DefaultRewriteURL {
+        if (url matches "^$") return "";
+        if (url matches "^data:") return "{url}";
+        if (url matches "^#") return "{url}";
+        if (url matches "^\\\\?") return "{url}";
+        
+
+        if (absurl matches "^http") return "{url}";
+
+        
+
+        return "{absurl}";
+      }
+
+      @rewrite RewriteRules {
+        apply @RewriteImage;
+        apply @RewriteCSSURL;
+        apply @RewriteAlinkURL;
+        return @DefaultRewriteURL;
+      }
+
+      :html-url-attributes, :css, :javascript {
+        attribute: * rewrite @RewriteRules;
+      }
+                  </rules>
+                  <indata>PGltZyBzcmM9InRlc3RzaXRlXzIyL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDEyLzA3L21hbmhhdHRhbnN1bW1lci0zMDB4MjI1LmpwZyI+</indata>
+              </cl:Translate>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

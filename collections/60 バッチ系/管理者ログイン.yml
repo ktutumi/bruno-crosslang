@@ -1,0 +1,47 @@
+info:
+  name: 管理者ログイン
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/login"
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": "admin",
+        "passwd": "12345678",
+        "division": "cross",
+        "lang": "ja"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        var res = res.getBody();
+        console.log('Cross API',res);
+
+        // access_tokenが存在するかチェック
+        if (res && res.data && res.data.access_token) {
+            // トークンを環境変数に設定
+        //     pm.collectionVariables.set("auth_token", res.data.access_token);
+            console.log("Auth Server API set: " + res.data.access_token);
+        } else {
+            // access_tokenが無い場合、エラーメッセージを表示
+        //     pm.collectionVariables.unset("auth_token"); // 古いトークンをクリア
+            console.log("Error: Access token not found in response!");
+
+            // テストを失敗させる
+            test("Access token should be present", function () {
+                expect(res.access_token).to.exist;
+            });
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

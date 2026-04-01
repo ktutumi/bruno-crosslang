@@ -1,0 +1,58 @@
+info:
+  name: プレビュー後から翻訳
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: https://h30.local-transer.net/en/cl.translate.fragment?crosslang_preview_flag=true&crosslang_ts_log=1
+  headers:
+    - name: Connection
+      value: keep-alive
+    - name: Accept
+      value: application/json, text/plain, */*
+    - name: User-Agent
+      value: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36
+    - name: Content-Type
+      value: application/json
+    - name: Sec-GPC
+      value: "1"
+    - name: Origin
+      value: https://en.la-place.fun
+    - name: Sec-Fetch-Site
+      value: same-origin
+    - name: Sec-Fetch-Mode
+      value: cors
+    - name: Sec-Fetch-Dest
+      value: empty
+    - name: Referer
+      value: https://en.la-place.fun/
+    - name: Accept-Language
+      value: ja
+    - name: Cookie
+      value: crosslang_preview_flag=1
+  params:
+    - name: crosslang_preview_flag
+      value: "true"
+      type: query
+    - name: crosslang_ts_log
+      value: "1"
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+          "text_list": [
+              "<li clelid=\"122\"><a href=\"https://h30.local-transer.net/en/floorguide/\" target=\"_blank\" clelid=\"123\"><img src=\"https://h30.local-transer.net/en/floorguide/img/brand-104.png\" clelid=\"124\"></a></li>"
+          ],
+          "pathname": "/en/",
+          "request_id": 0,
+          "next_clid": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

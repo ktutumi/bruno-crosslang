@@ -1,0 +1,6 @@
+name: stg-v2-ssh-tunnel
+variables:
+  - name: url
+    value: https://stg2-athp.transer.com/api/v1
+  - name: ts_host
+    value: http://localhost:12001

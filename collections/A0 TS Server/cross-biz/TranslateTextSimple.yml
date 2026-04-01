@@ -1,0 +1,45 @@
+info:
+  name: TranslateTextSimple
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://hp-ts-dev02.transer.com:12000/clsoap/clsoap.cgi
+  body:
+    type: text
+    data: |
+      <SOAP-ENV:Envelope
+              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:cl="http://crosslanguage.co.jp/clsoap/2/schema">
+          <SOAP-ENV:Body>
+
+              <cl:TranslateTextSimple>
+                  <licence>cross-biz/service d053968b1a7bc3cdbd3e48345feed9f2527d7922</licence>
+                  <clientid>[ktutumi-dev]tsclient3 5.4.2</clientid>
+                  <reqgroup></reqgroup>
+                  <select></select>
+                  <engine>
+                      <eid>GO-JAAR</eid>
+                      <prop>
+                          <item>
+                              <key>dictionaries</key>
+                              <val>24054</val>
+                          </item>
+                      </prop>
+                  </engine>
+                  <text>テスト</text>
+              </cl:TranslateTextSimple>
+
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
