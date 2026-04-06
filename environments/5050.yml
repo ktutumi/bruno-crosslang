@@ -1,0 +1,6 @@
+name: "5050"
+variables:
+  - name: url
+    value: http://localhost:5050/api/v1
+  - name: ts_host
+    value: http://localhost:12001
