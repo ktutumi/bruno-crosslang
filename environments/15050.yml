@@ -1,8 +1,8 @@
-name: "5050"
+name: "15050"
 variables:
   - name: url
-    value: http://localhost:5050/api/v1
+    value: http://localhost:15050/api/v1
   - name: ts_host
     value: http://localhost:12001
   - name: es_url
-    value: http://localhost:9201
+    value: http://localhost:9205

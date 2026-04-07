@@ -17,6 +17,24 @@ http:
       }
   auth: inherit
 
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res && res.body && res.body.data) {
+          let data = res.body.data;
+          
+          if (data.access_token) {
+            bru.setVar("auth_token", data.access_token);
+            console.log("✅ Token set successfully: " + data.access_token);
+          } else {
+            console.error("❌ access_token not found in response");
+            console.log("Response data:", JSON.stringify(data, null, 2));
+          }
+        } else {
+          console.error("❌ Response or response body is null");
+        }
+
 settings:
   encodeUrl: true
   timeout: 0

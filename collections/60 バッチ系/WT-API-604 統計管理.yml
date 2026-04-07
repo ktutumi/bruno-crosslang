@@ -11,8 +11,8 @@ http:
     data: |-
       {
           "domains": "",
-          "target_date_from": "2026-02-03",
-          "target_date_to": "2026-02-03"
+          "target_date_from": "2026-04-07",
+          "target_date_to": "2026-04-07"
       }
   auth: inherit
 
