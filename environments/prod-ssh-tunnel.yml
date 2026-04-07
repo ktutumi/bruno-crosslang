@@ -4,3 +4,5 @@ variables:
     value: https://localhost:20443/api/v1
   - name: ts_host
     value: http://localhost:12002
+  - name: es_url
+    value: http://localhost:9205

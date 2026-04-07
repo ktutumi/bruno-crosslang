@@ -4,3 +4,5 @@ variables:
     value: https://api.local-transer.test/api/v1
   - name: ts_host
     value: http://localhost:12001
+  - name: es_url
+    value: http://localhost:9201

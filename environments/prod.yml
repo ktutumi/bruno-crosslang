@@ -4,3 +4,5 @@ variables:
     value: https://hpadmin.transer.com/api/v1
   - name: ts_host
     value: http://210.140.74.149:12000
+  - name: es_url
+    value: http://localhost:9205
